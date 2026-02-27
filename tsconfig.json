@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./server"
+    },
+    {
+      "path": "./web"
+    },
+    {
+      "path": "./mobile"
+    }
+  ],
+  "extends": "expo/tsconfig.base"
+}

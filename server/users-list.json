@@ -1,0 +1,44 @@
+[
+  {
+    "email": "usman@gmail.com",
+    "role": "PATIENT",
+    "firstName": "Usman",
+    "lastName": "DItucalan"
+  },
+  {
+    "email": "admin@clinic.com",
+    "role": "ADMIN",
+    "firstName": "Clinic",
+    "lastName": "Admin"
+  },
+  {
+    "email": "doctor@clinic.com",
+    "role": "DOCTOR",
+    "firstName": "Dr. Jane",
+    "lastName": "Smith"
+  },
+  {
+    "email": "patient@clinic.com",
+    "role": "PATIENT",
+    "firstName": "John",
+    "lastName": "Doe"
+  },
+  {
+    "email": "carlgalito@gmail.com",
+    "role": "NURSE",
+    "firstName": "Carl",
+    "lastName": "Galito"
+  },
+  {
+    "email": "staff@clinic.com",
+    "role": "NURSE",
+    "firstName": "Sarah",
+    "lastName": "Staff"
+  },
+  {
+    "email": "d@gmail.com",
+    "role": "NURSE",
+    "firstName": "d",
+    "lastName": "d"
+  }
+]

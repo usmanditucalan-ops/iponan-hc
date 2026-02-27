@@ -1,0 +1,166 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 String         @id @default(uuid())
+  email              String         @unique
+  password           String
+  resetOtp           String?
+  resetOtpExpiry     DateTime?
+  role               UserRole       @default(PATIENT)
+  isActive           Boolean        @default(true)
+  language           String         @default("English")
+  firstName          String
+  lastName           String
+  phone              String?
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @updatedAt
+  doctorAppointments Appointment[]  @relation("DoctorAppointments")
+  patient            Patient?
+  notifications      Notification[]
+  recordedVitals     VitalSign[]    @relation("RecordedBy")
+  auditLogs          AuditLog[]
+
+  @@map("users")
+}
+
+model Patient {
+  id               String          @id @default(uuid())
+  userId           String          @unique
+  dateOfBirth      DateTime
+  gender           Gender
+  address          String
+  emergencyContact String?
+  bloodType        String?
+  allergies        String?
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  appointments     Appointment[]
+  vitalSigns       VitalSign[]
+  medicalRecords   MedicalRecord[]
+  user             User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("patients")
+}
+
+model Appointment {
+  id               String            @id @default(uuid())
+  patientId        String
+  doctorId         String
+  date             DateTime
+  time             String
+  reason           String
+  status           AppointmentStatus @default(PENDING)
+  notes            String?
+  intakeForm       Json?
+  consultationForm Json?
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  doctor           User              @relation("DoctorAppointments", fields: [doctorId], references: [id])
+  patient          Patient           @relation(fields: [patientId], references: [id], onDelete: Cascade)
+
+  @@map("appointments")
+}
+
+model MedicalRecord {
+  id             String   @id @default(uuid())
+  patientId      String
+  visitDate      DateTime @default(now())
+  chiefComplaint String
+  diagnosis      String?
+  treatment      String?
+  prescription   String?
+  vitalSignsJson Json? // Kept for backward compatibility if needed, but we'll use VitalSign model
+  labResults     String?
+  attachments    Json? // Array of file metadata { name, url, type, size, date }
+  notes          String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  patient        Patient  @relation(fields: [patientId], references: [id], onDelete: Cascade)
+
+  @@map("medical_records")
+}
+
+model VitalSign {
+  id           String   @id @default(uuid())
+  patientId    String
+  recordedById String
+  recordedAt   DateTime @default(now())
+
+  // Vitals Data
+  bloodPressure    String? // e.g., "120/80"
+  heartRate        Int? // bpm
+  temperature      Float? // °C
+  weight           Float? // kg
+  height           Float? // cm
+  respiratoryRate  Int? // breaths per minute
+  oxygenSaturation Float? // SpO2 %
+
+  notes String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  patient    Patient @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  recordedBy User    @relation("RecordedBy", fields: [recordedById], references: [id])
+
+  @@map("vital_signs")
+}
+
+enum UserRole {
+  ADMIN
+  STAFF
+  DOCTOR
+  PATIENT
+}
+
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+  RESCHEDULED
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  title     String
+  message   String
+  type      String   @default("INFO")
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("notifications")
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  userId    String?
+  action    String
+  entity    String?
+  entityId  String?
+  status    String   @default("SUCCESS")
+  ipAddress String?
+  userAgent String?
+  details   Json?
+  createdAt DateTime @default(now())
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([action, createdAt])
+  @@index([entity, entityId])
+  @@map("audit_logs")
+}
