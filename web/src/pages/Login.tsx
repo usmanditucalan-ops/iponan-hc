@@ -148,7 +148,7 @@ const Login = () => {
     <AuthLayout title="Login">
       <form onSubmit={handleSubmit} className="text-left">
         {error && (
-          <div className="mb-6 p-4 bg-red-50 dark:bg-red-950/20 border border-red-100 dark:border-red-900/50 rounded-lg flex items-start gap-3 text-red-600 dark:text-red-400">
+          <div className="mb-6 p-4 bg-red-50 dark:bg-red-950/20 border border-red-100 dark:border-red-900/50 rounded flex items-start gap-3 text-red-600 dark:text-red-400">
             <AlertCircle size={18} className="shrink-0 mt-0.5" />
             <p className="text-xs font-semibold">{error}</p>
           </div>
@@ -211,7 +211,7 @@ const Login = () => {
       {/* Forgot Password Modal */}
       {showForgotModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-white dark:bg-dark-surface rounded-2xl shadow-xl w-full max-w-md overflow-hidden animate-in zoom-in-95 duration-200 relative">
+          <div className="bg-white dark:bg-dark-surface rounded-lg shadow-xl w-full max-w-md overflow-hidden animate-in zoom-in-95 duration-200 relative">
             <div className="absolute top-4 right-4">
               <button 
                 onClick={handleForgotClose}
@@ -241,7 +241,7 @@ const Login = () => {
               )}
 
               {forgotError && (
-                <div className="mb-6 p-4 bg-red-50 dark:bg-red-950/20 border border-red-100 dark:border-red-900/50 rounded-lg flex items-start gap-3 text-red-600 dark:text-red-400">
+                <div className="mb-6 p-4 bg-red-50 dark:bg-red-950/20 border border-red-100 dark:border-red-900/50 rounded flex items-start gap-3 text-red-600 dark:text-red-400">
                   <AlertCircle size={18} className="shrink-0 mt-0.5" />
                   <p className="text-xs font-semibold">{forgotError}</p>
                 </div>

@@ -34,7 +34,7 @@ export const StatCards: React.FC<StatCardsProps> = ({ stats, loading }) => {
         {[1, 2, 3, 4].map((i) => (
           <View 
             key={i} 
-            className="w-[48%] h-32 rounded-2xl border items-center justify-center bg-white dark:bg-dark-surface-secondary border-gray-200 dark:border-dark-border"
+            className="w-[48%] h-32 rounded-lg border items-center justify-center bg-white dark:bg-dark-surface-secondary border-gray-200 dark:border-dark-border"
           >
             <ActivityIndicator color={colors.primary} />
           </View>
@@ -95,7 +95,7 @@ export const StatCards: React.FC<StatCardsProps> = ({ stats, loading }) => {
         return (
           <View 
             key={index} 
-            className="w-[48%] mb-4 rounded-3xl border border-gray-100 dark:border-dark-border bg-white dark:bg-dark-surface-secondary overflow-hidden"
+            className="w-[48%] mb-4 rounded-xl border border-gray-100 dark:border-dark-border bg-white dark:bg-dark-surface-secondary overflow-hidden"
             style={{ 
                 backgroundColor: isDark ? '#1E293B' : '#FFFFFF',
                 borderColor: isDark ? '#334155' : '#E5E7EB',
@@ -119,7 +119,7 @@ export const StatCards: React.FC<StatCardsProps> = ({ stats, loading }) => {
                     {stat.value}
                     </Text>
                 </View>
-                <View className={`p-2 rounded-xl ${stat.iconBg}`}>
+                <View className={`p-2 rounded-md ${stat.iconBg}`}>
                     <Icon size={18} color={stat.iconColor} />
                 </View>
                 </View>

@@ -25,7 +25,7 @@ const LandingPage = () => {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 font-bold text-lg text-slate-900">
-            <img src={logo} alt="Logo" className="w-8 h-8 rounded-md" />
+            <img src={logo} alt="Logo" className="w-8 h-8 rounded-sm" />
             Barangay Iponan Health Clinic
           </Link>
 
@@ -69,7 +69,7 @@ const LandingPage = () => {
             <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="font-medium text-slate-600">Contact</a>
             <hr className="my-2 border-slate-100" />
             <Link to="/login" className="font-medium text-slate-700 text-center py-2" onClick={() => setMobileMenuOpen(false)}>Log In</Link>
-            <Link to="/register" className="bg-[#b721ff] bg-gradient-to-r from-[#b721ff] to-[#f426c1] text-white font-semibold py-3 rounded-xl text-center" onClick={() => setMobileMenuOpen(false)}>Sign Up</Link>
+            <Link to="/register" className="bg-[#b721ff] bg-gradient-to-r from-[#b721ff] to-[#f426c1] text-white font-semibold py-3 rounded-md text-center" onClick={() => setMobileMenuOpen(false)}>Sign Up</Link>
           </div>
         )}
       </nav>
@@ -101,10 +101,10 @@ const LandingPage = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 mb-16">
-              <Link to="/login" className="px-8 py-3.5 bg-white text-slate-800 font-bold border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors shadow-sm text-sm">
+              <Link to="/login" className="px-8 py-3.5 bg-white text-slate-800 font-bold border border-slate-200 rounded-md hover:bg-slate-50 transition-colors shadow-sm text-sm">
                 Log In
               </Link>
-              <Link to="/register" className="px-8 py-3.5 bg-gradient-to-r from-[#b721ff] to-[#f426c1] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:opacity-90 transition-all text-sm flex items-center gap-2">
+              <Link to="/register" className="px-8 py-3.5 bg-gradient-to-r from-[#b721ff] to-[#f426c1] text-white font-bold rounded-md shadow-lg hover:shadow-xl hover:opacity-90 transition-all text-sm flex items-center gap-2">
                 Sign Up Free <span>→</span>
               </Link>
             </div>
@@ -128,11 +128,11 @@ const LandingPage = () => {
 
           {/* Right side illustration block */}
           <div className="relative">
-             <div className="relative z-10 bg-gradient-to-b from-[#f8fafc] to-[#f1f5f9] rounded-[2rem] p-10 shadow-2xl overflow-hidden aspect-square border border-white max-w-lg ml-auto flex items-center justify-center">
+             <div className="relative z-10 bg-gradient-to-b from-[#f8fafc] to-[#f1f5f9] rounded-[1.5rem] p-10 shadow-2xl overflow-hidden aspect-square border border-white max-w-lg ml-auto flex items-center justify-center">
                  {/* This represents the abstract clinic building from the screenshot */}
-                 <div className="w-[85%] h-[85%] bg-white rounded-xl shadow-sm border border-slate-100 flex flex-col p-4 relative">
+                 <div className="w-[85%] h-[85%] bg-white rounded-md shadow-sm border border-slate-100 flex flex-col p-4 relative">
                     <div className="flex gap-4 p-4 border-b border-slate-100">
-                        <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center"><Calendar size={20} className="text-teal-500" /></div>
+                        <div className="w-10 h-10 rounded bg-teal-50 flex items-center justify-center"><Calendar size={20} className="text-teal-500" /></div>
                         <div>
                             <div className="h-3 w-20 bg-slate-200 rounded-full mb-2"></div>
                             <div className="h-2 w-32 bg-slate-100 rounded-full"></div>
@@ -144,14 +144,14 @@ const LandingPage = () => {
                         <div className="h-2 w-[90%] bg-slate-100 rounded-full mb-3"></div>
                         <div className="h-2 w-[70%] bg-slate-100 rounded-full mb-5"></div>
                         <div className="grid grid-cols-2 gap-3 mt-auto">
-                            <div className="h-10 bg-[#f4e8ff] rounded-lg"></div>
-                            <div className="h-10 bg-teal-50 rounded-lg"></div>
+                            <div className="h-10 bg-[#f4e8ff] rounded"></div>
+                            <div className="h-10 bg-teal-50 rounded"></div>
                         </div>
                     </div>
 
                     {/* Floating 'Easy Booking' element matching the screenshot */}
-                    <div className="absolute -top-4 -right-10 bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] p-4 flex items-center gap-3 border border-slate-50 animate-[landing-float_3s_ease-in-out_infinite_alternate]">
-                       <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] flex items-center justify-center">
+                    <div className="absolute -top-4 -right-10 bg-white rounded-md shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] p-4 flex items-center gap-3 border border-slate-50 animate-[landing-float_3s_ease-in-out_infinite_alternate]">
+                       <div className="w-10 h-10 rounded bg-[#e0f2fe] flex items-center justify-center">
                          <Calendar size={18} className="text-[#0ea5e9]"/>
                        </div>
                        <div>
@@ -161,8 +161,8 @@ const LandingPage = () => {
                     </div>
 
                     {/* Floating 'Secure Records' element matching screenshot */}
-                    <div className="absolute -bottom-6 -left-12 bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] p-4 flex items-center gap-3 border border-slate-50 animate-[landing-float_3s_ease-in-out_infinite_alternate_reverse]">
-                       <div className="w-10 h-10 rounded-lg bg-[#f4e8ff] flex items-center justify-center">
+                    <div className="absolute -bottom-6 -left-12 bg-white rounded-md shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] p-4 flex items-center gap-3 border border-slate-50 animate-[landing-float_3s_ease-in-out_infinite_alternate_reverse]">
+                       <div className="w-10 h-10 rounded bg-[#f4e8ff] flex items-center justify-center">
                          <Shield size={18} className="text-[#a855f7]"/>
                        </div>
                        <div>
@@ -193,9 +193,9 @@ const LandingPage = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="bg-white rounded-[2rem] p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] transition-all duration-300 group border border-slate-100/50 relative overflow-hidden">
+            <div className="bg-white rounded-[1.5rem] p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] transition-all duration-300 group border border-slate-100/50 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-[#00bcd4] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="w-16 h-16 rounded-2xl bg-[#ecfeff] flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-lg bg-[#ecfeff] flex items-center justify-center mb-6">
                 <Calendar size={28} className="text-[#00bcd4]" />
               </div>
               <h3 className="text-xl font-[800] text-slate-900 mb-4">Easy Appointments</h3>
@@ -205,9 +205,9 @@ const LandingPage = () => {
             </div>
 
             {/* Card 2 */}
-            <div className="bg-white rounded-[2rem] p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] transition-all duration-300 group border border-slate-100/50 relative overflow-hidden">
+            <div className="bg-white rounded-[1.5rem] p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] transition-all duration-300 group border border-slate-100/50 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-[#b721ff] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="w-16 h-16 rounded-2xl bg-[#f4e8ff] flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-lg bg-[#f4e8ff] flex items-center justify-center mb-6">
                 <Shield size={28} className="text-[#b721ff]" />
               </div>
               <h3 className="text-xl font-[800] text-slate-900 mb-4">Secure EMR</h3>
@@ -217,9 +217,9 @@ const LandingPage = () => {
             </div>
 
             {/* Card 3 */}
-            <div className="bg-white rounded-[2rem] p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] transition-all duration-300 group border border-slate-100/50 relative overflow-hidden">
+            <div className="bg-white rounded-[1.5rem] p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] transition-all duration-300 group border border-slate-100/50 relative overflow-hidden">
                <div className="absolute top-0 left-0 w-full h-1 bg-[#f426c1] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="w-16 h-16 rounded-2xl bg-[#fdf2f8] flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-lg bg-[#fdf2f8] flex items-center justify-center mb-6">
                 <Heart size={28} className="text-[#f426c1]" />
               </div>
               <h3 className="text-xl font-[800] text-slate-900 mb-4">Community Health</h3>
@@ -233,11 +233,11 @@ const LandingPage = () => {
 
       {/* ── Testimonial Section ── */}
       <section id="testimonial" className="py-24 px-6 bg-[#fcfcfd]">
-        <div className="max-w-5xl mx-auto bg-white rounded-[2.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-slate-50 overflow-hidden">
+        <div className="max-w-5xl mx-auto bg-white rounded-[1.75rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-slate-50 overflow-hidden">
           <div className="grid md:grid-cols-2">
             {/* Left Graphic Block */}
             <div className="bg-[#f0f9f9] p-12 flex items-center justify-center relative overflow-hidden">
-               <div className="w-[80%] aspect-square bg-white/60 backdrop-blur-sm rounded-3xl shadow-sm border border-white flex items-center justify-center relative">
+               <div className="w-[80%] aspect-square bg-white/60 backdrop-blur-sm rounded-xl shadow-sm border border-white flex items-center justify-center relative">
                   {/* Decorative sprinkles */}
                   <div className="absolute top-10 left-10 w-2 h-2 rounded-full bg-cyan-300"></div>
                   <div className="absolute bottom-20 right-10 w-2 h-2 rounded-full bg-purple-300"></div>
@@ -259,7 +259,7 @@ const LandingPage = () => {
 
             {/* Right Content Block */}
             <div className="p-12 md:p-16 flex flex-col justify-center">
-              <div className="w-12 h-12 bg-gradient-to-tr from-[#b721ff] to-[#f426c1] rounded-2xl flex items-center justify-center mb-10 shadow-lg shadow-purple-500/20">
+              <div className="w-12 h-12 bg-gradient-to-tr from-[#b721ff] to-[#f426c1] rounded-lg flex items-center justify-center mb-10 shadow-lg shadow-purple-500/20">
                 <span className="text-white text-3xl font-serif leading-none mt-2">"</span>
               </div>
               
@@ -286,7 +286,7 @@ const LandingPage = () => {
 
       {/* ── CTA Section ── */}
       <section className="py-24 px-6 bg-white overflow-hidden">
-        <div className="max-w-6xl mx-auto bg-gradient-to-r from-[#00bcd4] via-[#3b82f6] via-[#a855f7] to-[#f426c1] rounded-[3rem] p-16 md:p-24 text-center relative overflow-hidden shadow-2xl">
+        <div className="max-w-6xl mx-auto bg-gradient-to-r from-[#00bcd4] via-[#3b82f6] via-[#a855f7] to-[#f426c1] rounded-[2rem] p-16 md:p-24 text-center relative overflow-hidden shadow-2xl">
           {/* Subtle light overlay on gradient */}
           <div className="absolute top-[-50%] left-[-10%] w-[120%] h-[200%] bg-[radial-gradient(ellipse,rgba(255,255,255,0.15)_0%,transparent_60%)] pointer-events-none"></div>
 
@@ -298,10 +298,10 @@ const LandingPage = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5 relative z-10">
-            <Link to="/register" className="w-full sm:w-auto px-10 py-4 bg-white text-[#a855f7] font-bold rounded-2xl shadow-xl shadow-black/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+            <Link to="/register" className="w-full sm:w-auto px-10 py-4 bg-white text-[#a855f7] font-bold rounded-lg shadow-xl shadow-black/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
               Create Free Account
             </Link>
-            <Link to="/login" className="w-full sm:w-auto px-10 py-4 bg-white/20 backdrop-blur-md text-white border-2 border-white/30 font-bold rounded-2xl hover:bg-white/30 transition-all duration-300">
+            <Link to="/login" className="w-full sm:w-auto px-10 py-4 bg-white/20 backdrop-blur-md text-white border-2 border-white/30 font-bold rounded-lg hover:bg-white/30 transition-all duration-300">
               Log In
             </Link>
           </div>
@@ -315,8 +315,8 @@ const LandingPage = () => {
           {/* Brand Col */}
           <div className="md:col-span-5">
              <div className="flex items-center gap-3 font-bold text-xl text-white mb-6">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 p-[1px]">
-                  <img src={logo} alt="Logo" className="w-full h-full rounded-md object-cover bg-white" />
+                <div className="w-8 h-8 rounded bg-gradient-to-br from-cyan-400 to-purple-500 p-[1px]">
+                  <img src={logo} alt="Logo" className="w-full h-full rounded-sm object-cover bg-white" />
                 </div>
                 Barangay Iponan Health Clinic
             </div>
@@ -348,13 +348,13 @@ const LandingPage = () => {
           <div className="md:col-span-2">
              {/* No social links requested, padding column for symmetry or could add generic ones */}
              <div className="flex gap-3">
-                <a href="#" className="w-10 h-10 rounded-xl bg-slate-800/50 border border-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-br hover:from-cyan-500 hover:to-purple-500 hover:text-white hover:border-transparent transition-all">
+                <a href="#" className="w-10 h-10 rounded-md bg-slate-800/50 border border-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-br hover:from-cyan-500 hover:to-purple-500 hover:text-white hover:border-transparent transition-all">
                   <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                 </a>
-                <a href="#" className="w-10 h-10 rounded-xl bg-slate-800/50 border border-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-br hover:from-cyan-500 hover:to-purple-500 hover:text-white hover:border-transparent transition-all">
+                <a href="#" className="w-10 h-10 rounded-md bg-slate-800/50 border border-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-br hover:from-cyan-500 hover:to-purple-500 hover:text-white hover:border-transparent transition-all">
                   <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
                 </a>
-                <a href="#" className="w-10 h-10 rounded-xl bg-slate-800/50 border border-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-br hover:from-cyan-500 hover:to-purple-500 hover:text-white hover:border-transparent transition-all">
+                <a href="#" className="w-10 h-10 rounded-md bg-slate-800/50 border border-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-br hover:from-cyan-500 hover:to-purple-500 hover:text-white hover:border-transparent transition-all">
                   <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 </a>
              </div>

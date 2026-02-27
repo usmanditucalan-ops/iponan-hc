@@ -116,13 +116,13 @@ const MedicalRecords = () => {
     <DashboardLayout>
       <div className="mb-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
         {isMedicalStaff ? (
-          <div className="px-4 py-2.5 rounded-xl bg-surface-secondary dark:bg-dark-surface-secondary border border-border dark:border-dark-border text-xs font-bold text-text-muted dark:text-dark-text-muted-dark">
+          <div className="px-4 py-2.5 rounded-md bg-surface-secondary dark:bg-dark-surface-secondary border border-border dark:border-dark-border text-xs font-bold text-text-muted dark:text-dark-text-muted-dark">
             EMR is generated automatically after consultation.
           </div>
         ) : (
           <button
             onClick={handleExportCSV}
-            className="flex items-center gap-2 px-6 py-2.5 bg-white dark:bg-dark-surface-secondary border border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary rounded-xl font-bold text-sm hover:bg-surface-tertiary dark:hover:bg-dark-surface-tertiary transition-all shadow-sm dark:shadow-md">
+            className="flex items-center gap-2 px-6 py-2.5 bg-white dark:bg-dark-surface-secondary border border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary rounded-md font-bold text-sm hover:bg-surface-tertiary dark:hover:bg-dark-surface-tertiary transition-all shadow-sm dark:shadow-md">
             <Download size={18} />
             Export My History
           </button>
@@ -138,7 +138,7 @@ const MedicalRecords = () => {
               placeholder="Search records by complaint or patient name..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border rounded-xl outline-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary transition-all text-sm text-text-primary dark:text-dark-text-primary"
+              className="w-full pl-12 pr-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border rounded-md outline-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary transition-all text-sm text-text-primary dark:text-dark-text-primary"
             />
           </div>
         </div>
@@ -151,10 +151,10 @@ const MedicalRecords = () => {
           )}
 
               {filteredRecords.map((record) => (
-                <div key={record.id} className="group p-5 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30 rounded-2xl border border-border dark:border-dark-border hover:border-primary/20 dark:hover:border-dark-primary/20 hover:bg-white dark:hover:bg-dark-surface-tertiary/50 transition-all">
+                <div key={record.id} className="group p-5 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30 rounded-lg border border-border dark:border-dark-border hover:border-primary/20 dark:hover:border-dark-primary/20 hover:bg-white dark:hover:bg-dark-surface-tertiary/50 transition-all">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div className="flex gap-4">
-                      <div className="w-12 h-12 bg-white dark:bg-dark-surface-secondary rounded-xl border border-border dark:border-dark-border flex items-center justify-center text-primary dark:text-dark-primary shadow-sm dark:shadow-md">
+                      <div className="w-12 h-12 bg-white dark:bg-dark-surface-secondary rounded-md border border-border dark:border-dark-border flex items-center justify-center text-primary dark:text-dark-primary shadow-sm dark:shadow-md">
                         <FileText size={24} />
                       </div>
                       <div className="text-left">
@@ -202,7 +202,7 @@ const MedicalRecords = () => {
                                 window.dispatchEvent(new Event('recentActivityUpdated'));
                             }
                           }}
-                          className="p-2 hover:bg-primary/5 dark:hover:bg-dark-primary/10 text-text-muted dark:text-dark-text-muted-dark hover:text-primary dark:hover:text-dark-primary rounded-lg transition-colors"
+                          className="p-2 hover:bg-primary/5 dark:hover:bg-dark-primary/10 text-text-muted dark:text-dark-text-muted-dark hover:text-primary dark:hover:text-dark-primary rounded transition-colors"
                           title="View record details"
                         >
                           <Eye size={18} />
@@ -214,7 +214,7 @@ const MedicalRecords = () => {
               ))}
 
               {!loading && filteredRecords.length === 0 && (
-                <div className="p-12 text-center text-text-muted dark:text-dark-text-muted-dark font-medium bg-surface-secondary/20 dark:bg-dark-surface-tertiary/20 rounded-2xl border border-dashed border-border dark:border-dark-border">
+                <div className="p-12 text-center text-text-muted dark:text-dark-text-muted-dark font-medium bg-surface-secondary/20 dark:bg-dark-surface-tertiary/20 rounded-lg border border-dashed border-border dark:border-dark-border">
                   No medical records found.
                 </div>
               )}
@@ -227,7 +227,7 @@ const MedicalRecords = () => {
           <Card className="w-full max-w-2xl max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-200 p-0 overflow-hidden">
             <div className="p-6 border-b border-border dark:border-dark-border flex items-center justify-between bg-primary/5 dark:bg-dark-primary/10">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary rounded-xl flex items-center justify-center">
+                <div className="w-10 h-10 bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary rounded-md flex items-center justify-center">
                   <ClipboardList size={20} />
                 </div>
                 <div className="text-left">
@@ -237,7 +237,7 @@ const MedicalRecords = () => {
               </div>
               <button
                 onClick={() => setShowAddModal(false)}
-                className="p-2 hover:bg-white dark:hover:bg-dark-surface-tertiary rounded-xl transition-colors"
+                className="p-2 hover:bg-white dark:hover:bg-dark-surface-tertiary rounded-md transition-colors"
               >
                 <X size={20} />
               </button>
@@ -257,11 +257,11 @@ const MedicalRecords = () => {
                         setPatientSearch(e.target.value);
                         setSelectedPatient(null);
                       }}
-                      className="w-full pl-10 pr-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm outline-none focus:ring-2 focus:ring-primary font-bold transition-all"
+                      className="w-full pl-10 pr-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm outline-none focus:ring-2 focus:ring-primary font-bold transition-all"
                     />
                   </div>
                   {patientSearch && !selectedPatient && (
-                    <div className="absolute left-0 right-0 top-full mt-2 bg-white dark:bg-dark-surface-secondary rounded-2xl shadow-2xl border border-border dark:border-dark-border z-50 max-h-48 overflow-y-auto">
+                    <div className="absolute left-0 right-0 top-full mt-2 bg-white dark:bg-dark-surface-secondary rounded-lg shadow-2xl border border-border dark:border-dark-border z-50 max-h-48 overflow-y-auto">
                       {searchingPatients ? (
                         <div className="p-4 text-center"><Loader2 className="animate-spin mx-auto text-primary" size={20} /></div>
                       ) : searchPatients.length > 0 ? (
@@ -290,7 +290,7 @@ const MedicalRecords = () => {
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold text-text-muted-dark uppercase tracking-widest pl-1">Visit Date</label>
-                  <input type="date" defaultValue={new Date().toISOString().split('T')[0]} className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm outline-none focus:ring-2 focus:ring-primary font-bold" />
+                  <input type="date" defaultValue={new Date().toISOString().split('T')[0]} className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm outline-none focus:ring-2 focus:ring-primary font-bold" />
                 </div>
               </div>
 
@@ -302,7 +302,7 @@ const MedicalRecords = () => {
                   placeholder="Reason for visit..."
                   value={formData.chiefComplaint}
                   onChange={(e) => setFormData({...formData, chiefComplaint: e.target.value})}
-                  className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm outline-none focus:ring-2 focus:ring-primary transition-all"
+                  className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm outline-none focus:ring-2 focus:ring-primary transition-all"
                 />
               </div>
 
@@ -313,7 +313,7 @@ const MedicalRecords = () => {
                     value={formData.diagnosis}
                     onChange={(e) => setFormData({...formData, diagnosis: e.target.value})}
                     placeholder="Findings after examination..."
-                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm outline-none focus:ring-2 focus:ring-primary h-24 resize-none transition-all"
+                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm outline-none focus:ring-2 focus:ring-primary h-24 resize-none transition-all"
                   ></textarea>
                 </div>
                 <div className="space-y-2">
@@ -322,7 +322,7 @@ const MedicalRecords = () => {
                     value={formData.treatment}
                     onChange={(e) => setFormData({...formData, treatment: e.target.value})}
                     placeholder="Steps for recovery..."
-                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm outline-none focus:ring-2 focus:ring-primary h-24 resize-none transition-all"
+                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm outline-none focus:ring-2 focus:ring-primary h-24 resize-none transition-all"
                   ></textarea>
                 </div>
               </div>
@@ -333,12 +333,12 @@ const MedicalRecords = () => {
                   <button type="button" onClick={() => fileInputRef.current?.click()} className="text-[10px] font-bold text-primary hover:underline">ATTACH FILE</button>
                   <input ref={fileInputRef} type="file" className="hidden" onChange={handleFileUpload} accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" />
                 </div>
-                <div className="p-4 border-2 border-dashed border-border dark:border-dark-border rounded-2xl flex flex-wrap gap-3">
+                <div className="p-4 border-2 border-dashed border-border dark:border-dark-border rounded-lg flex flex-wrap gap-3">
                   {formData.attachments.length === 0 ? (
                     <p className="text-xs text-text-muted w-full text-center py-2 font-medium">No files attached yet. Click "Attach File" above.</p>
                   ) : (
                     formData.attachments.map((file, idx) => (
-                      <div key={idx} className="flex items-center gap-2 px-3 py-1.5 bg-emerald-50 dark:bg-emerald-950/20 text-emerald-600 dark:text-emerald-400 rounded-lg border border-emerald-100 dark:border-emerald-900/50 text-xs font-bold">
+                      <div key={idx} className="flex items-center gap-2 px-3 py-1.5 bg-emerald-50 dark:bg-emerald-950/20 text-emerald-600 dark:text-emerald-400 rounded border border-emerald-100 dark:border-emerald-900/50 text-xs font-bold">
                         <FileText size={14} />
                         {file.name}
                         <button type="button" onClick={() => setFormData(p => ({...p, attachments: p.attachments.filter((_, i) => i !== idx)}))}>
@@ -351,11 +351,11 @@ const MedicalRecords = () => {
               </div>
 
               <div className="flex justify-end gap-3 pt-4 border-t border-border dark:border-dark-border">
-                <button type="button" onClick={() => setShowAddModal(false)} className="px-6 py-3 text-text-secondary font-bold text-sm hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-xl transition-all">Cancel</button>
+                <button type="button" onClick={() => setShowAddModal(false)} className="px-6 py-3 text-text-secondary font-bold text-sm hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-md transition-all">Cancel</button>
                 <button
                   type="submit"
                   disabled={saving}
-                  className="px-10 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-xl font-bold text-sm shadow-lg shadow-primary/20 hover:opacity-90 active:scale-95 transition-all flex items-center gap-2"
+                  className="px-10 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-md font-bold text-sm shadow-lg shadow-primary/20 hover:opacity-90 active:scale-95 transition-all flex items-center gap-2"
                 >
                   {saving ? <Loader2 className="animate-spin" size={18} /> : 'Finalize Record'}
                 </button>
@@ -419,7 +419,7 @@ const MedicalRecords = () => {
                 <>
                   <div className="px-4 py-3 border-b border-border dark:border-dark-border flex items-center justify-between">
                     <h3 className="flex-1 text-center text-base font-black text-text-primary dark:text-dark-text-primary uppercase tracking-tight">Patient EMR Summary</h3>
-                    <button onClick={() => setViewingRecord(null)} className="p-2 hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-lg transition-colors text-text-muted hover:text-text-primary dark:text-dark-text-muted dark:hover:text-white">
+                    <button onClick={() => setViewingRecord(null)} className="p-2 hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded transition-colors text-text-muted hover:text-text-primary dark:text-dark-text-muted dark:hover:text-white">
                       <X size={20} />
                     </button>
                   </div>

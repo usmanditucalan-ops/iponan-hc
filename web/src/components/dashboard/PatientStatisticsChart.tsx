@@ -45,7 +45,7 @@ export const PatientStatisticsChart = () => {
         <h3 className="text-[17px] font-bold text-text-primary dark:text-dark-text-primary tracking-tight">
           System Overview Distribution
         </h3>
-        <button className="w-8 h-8 rounded-lg flex items-center justify-center border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-primary dark:text-dark-primary shadow-sm hover:bg-surface-secondary transition-colors shrink-0">
+        <button className="w-8 h-8 rounded flex items-center justify-center border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-primary dark:text-dark-primary shadow-sm hover:bg-surface-secondary transition-colors shrink-0">
           <BarChart2 size={16} strokeWidth={2.5} />
         </button>
       </div>
@@ -90,7 +90,7 @@ export const PatientStatisticsChart = () => {
                           
                           {/* The Bar Itself */}
                           <div 
-                            className="w-full rounded-t-lg transition-all duration-700 ease-out group-hover:brightness-110"
+                            className="w-full rounded-t-md transition-all duration-700 ease-out group-hover:brightness-110"
                             style={{ 
                               height: heightPercent, 
                               backgroundColor: bucket.color,
@@ -98,7 +98,7 @@ export const PatientStatisticsChart = () => {
                             }}
                           >
                              {/* Overlay to give subtle depth, matching reference */}
-                             <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-t-lg" />
+                             <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-t-md" />
                           </div>
                        </div>
                     </div>

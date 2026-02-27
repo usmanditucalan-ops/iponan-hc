@@ -12,10 +12,10 @@ export const QuickActionsPanel = () => {
   const ActionRow = ({ title, description, icon: Icon, onClick, gradientClass }: { title: string; description: string; icon: LucideIcon; onClick: () => void; gradientClass: string }) => (
     <button 
       onClick={onClick}
-      className={`w-full h-[84px] group relative overflow-hidden rounded-[16px] p-4 flex items-center gap-4 transition-all duration-300 shadow-sm hover:shadow-md border border-white/20 active:scale-[0.98] ${gradientClass}`}
+      className={`w-full h-[84px] group relative overflow-hidden rounded-[11px] p-4 flex items-center gap-4 transition-all duration-300 shadow-sm hover:shadow-md border border-white/20 active:scale-[0.98] ${gradientClass}`}
     >
       <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors" />
-      <div className="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center shrink-0 backdrop-blur-sm">
+      <div className="w-11 h-11 rounded-md bg-white/20 flex items-center justify-center shrink-0 backdrop-blur-sm">
         <Icon className="text-white" size={20} />
       </div>
       <div className="flex flex-col items-start justify-center flex-1 h-full pt-0.5">
@@ -108,7 +108,7 @@ export const QuickActionsPanel = () => {
   );
 
   return (
-    <div className="w-full h-full min-h-[350px] bg-white dark:bg-dark-surface-secondary border-2 border-border/50 dark:border-dark-border rounded-[24px] p-6 flex flex-col shadow-sm">
+    <div className="w-full h-full min-h-[350px] bg-white dark:bg-dark-surface-secondary border-2 border-border/50 dark:border-dark-border rounded-[17px] p-6 flex flex-col shadow-sm">
       <h3 className="text-[17px] font-bold text-text-primary dark:text-dark-text-primary mb-5 flex items-center gap-2">
         <span>Quick Actions</span>
       </h3>

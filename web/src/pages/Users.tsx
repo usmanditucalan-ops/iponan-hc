@@ -233,7 +233,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
               });
               setShowCreateModal(true);
           }}
-          className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-primary to-accent text-white rounded-xl font-bold text-sm hover:opacity-90 active:scale-95 transition-all duration-200 shadow-lg shadow-primary/30 dark:shadow-dark-primary/30"
+          className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-primary to-accent text-white rounded-md font-bold text-sm hover:opacity-90 active:scale-95 transition-all duration-200 shadow-lg shadow-primary/30 dark:shadow-dark-primary/30"
         >
           <Plus size={18} />
           {viewMode === 'patients' ? 'Register Patient' : 'Create Staff Member'}
@@ -251,13 +251,13 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                   placeholder="Search by name or email..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border rounded-xl outline-none focus:border-primary/50 dark:focus:border-dark-primary/50 transition-all text-sm text-text-primary dark:text-dark-text-primary"
+                  className="w-full pl-12 pr-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border rounded-md outline-none focus:border-primary/50 dark:focus:border-dark-primary/50 transition-all text-sm text-text-primary dark:text-dark-text-primary"
                 />
               </div>
               <div className="flex items-center gap-2">
                 {viewMode !== 'patients' && (
                   <select
-                    className="px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary rounded-xl font-bold text-sm outline-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary dark:focus:ring-offset-dark-surface-secondary"
+                    className="px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary rounded-md font-bold text-sm outline-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary dark:focus:ring-offset-dark-surface-secondary"
                     value={roleFilter}
                     onChange={(e) => setRoleFilter(e.target.value)}
                   >
@@ -269,7 +269,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                 )}
                 <button
                   onClick={() => setStatusFilter(statusFilter === '' ? 'active' : '')}
-                  className="flex items-center gap-2 px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary rounded-xl font-bold text-sm hover:bg-surface-tertiary dark:hover:bg-dark-surface-secondary transition-all focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none">
+                  className="flex items-center gap-2 px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary rounded-md font-bold text-sm hover:bg-surface-tertiary dark:hover:bg-dark-surface-secondary transition-all focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none">
                   <Filter size={18} />
                   Status
                 </button>
@@ -307,7 +307,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                         <tr key={p.id} className="group hover:bg-surface-secondary/30 dark:hover:bg-dark-surface-tertiary/30 transition-colors">
                           <td className="py-4 px-2">
                             <div className="flex items-center gap-3">
-                              <div className="w-10 h-10 bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary rounded-xl flex items-center justify-center font-bold">
+                              <div className="w-10 h-10 bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary rounded-md flex items-center justify-center font-bold">
                                 {p.user.firstName[0]}
                               </div>
                               <div>
@@ -352,7 +352,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                                   address: p.address || '',
                                   createdAt: ''
                                 })}
-                                className="p-1.5 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"
+                                className="p-1.5 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded transition-colors"
                                 title="Edit User"
                               >
                                 <Edit2 size={16} />
@@ -363,7 +363,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                                     console.log('Archive user', p.user.id);
                                   }
                                 }}
-                                className="p-1.5 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
+                                className="p-1.5 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded transition-colors"
                                 title="Archive User"
                               >
                                 <Archive size={16} />
@@ -399,7 +399,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                         <tr key={u.id} className="group hover:bg-surface-secondary/30 dark:hover:bg-dark-surface-tertiary/30 transition-colors">
                           <td className="py-4 px-2">
                             <div className="flex items-center gap-3">
-                              <div className={`w-10 h-10 ${u.role === 'ADMIN' ? 'bg-primary dark:bg-dark-primary text-white' : 'bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary'} rounded-xl flex items-center justify-center font-bold`}>
+                              <div className={`w-10 h-10 ${u.role === 'ADMIN' ? 'bg-primary dark:bg-dark-primary text-white' : 'bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary'} rounded-md flex items-center justify-center font-bold`}>
                                 {u.firstName[0]}
                               </div>
                               <div>
@@ -439,7 +439,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                             <div className="flex items-center gap-2">
                               <button
                                 onClick={() => handleUserOptions(u)}
-                                className="p-1.5 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"
+                                className="p-1.5 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded transition-colors"
                                 title="Edit User"
                               >
                                 <Edit2 size={16} />
@@ -451,7 +451,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                                       console.log('Archive user', u.id); 
                                    }
                                 }}
-                                className="p-1.5 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
+                                className="p-1.5 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded transition-colors"
                                 title="Archive User"
                               >
                                 <Archive size={16} />
@@ -499,7 +499,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                             {u.phone || '-'}
                           </td>
                           <td className="py-4 px-2">
-                            <span className={`px-2 py-0.5 rounded text-[10px] font-bold tracking-wide uppercase ${
+                            <span className={`px-2 py-0.5 rounded-sm text-[10px] font-bold tracking-wide uppercase ${
                               u.role === 'ADMIN' ? 'bg-primary/10 text-primary dark:text-dark-primary border border-primary/20' :
                               u.role === 'DOCTOR' ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950/30 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800' :
                               'bg-amber-50 text-amber-600 dark:bg-amber-950/30 dark:text-amber-400 border border-amber-200 dark:border-amber-800'
@@ -511,7 +511,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                             <div className="flex items-center justify-end gap-2">
                               <button
                                 onClick={() => handleUserOptions(u)}
-                                className="p-1.5 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"
+                                className="p-1.5 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded transition-colors"
                                 title="Edit User"
                               >
                                 <Edit2 size={16} />
@@ -523,7 +523,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                                     console.log('Archive user', u.id); 
                                   }
                                 }}
-                                className="p-1.5 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
+                                className="p-1.5 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded transition-colors"
                                 title="Archive User"
                               >
                                 <Archive size={16} />
@@ -551,7 +551,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
       {showCreateModal && (
         <div className="fixed inset-0 z-[140] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200" role="presentation">
           <div
-            className="bg-white dark:bg-dark-surface-secondary w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
+            className="bg-white dark:bg-dark-surface-secondary w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
             role="dialog"
             aria-modal="true"
             aria-labelledby="create-user-title"
@@ -560,7 +560,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
               <h3 id="create-user-title" className="text-xl font-bold text-white">Create System User</h3>
               <button
                 onClick={() => setShowCreateModal(false)}
-                className="p-2 hover:bg-white/10 dark:hover:bg-white/20 rounded-xl transition-colors text-white/60 focus:ring-2 focus:ring-offset-0 focus:ring-white outline-none"
+                className="p-2 hover:bg-white/10 dark:hover:bg-white/20 rounded-md transition-colors text-white/60 focus:ring-2 focus:ring-offset-0 focus:ring-white outline-none"
                 aria-label="Close dialog"
               >
                 <X size={20} />
@@ -576,7 +576,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                     required
                     value={formData.firstName}
                     onChange={(e) => setFormData({...formData, firstName: e.target.value})}
-                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm border-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none text-text-primary dark:text-dark-text-primary"
+                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm border-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none text-text-primary dark:text-dark-text-primary"
                   />
                 </div>
                 <div className="space-y-2 text-left">
@@ -587,7 +587,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                     required
                     value={formData.lastName}
                     onChange={(e) => setFormData({...formData, lastName: e.target.value})}
-                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm border-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none text-text-primary dark:text-dark-text-primary"
+                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm border-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none text-text-primary dark:text-dark-text-primary"
                   />
                 </div>
               </div>
@@ -599,7 +599,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm border-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none text-text-primary dark:text-dark-text-primary"
+                  className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm border-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none text-text-primary dark:text-dark-text-primary"
                 />
               </div>
               <div className="space-y-2 text-left">
@@ -612,7 +612,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                     value={formData.password}
                     onChange={(e) => setFormData({...formData, password: e.target.value})}
                     placeholder="Min 8 chars, 1 uppercase, 1 lowercase, 1 number"
-                    className="w-full px-4 py-3 pr-12 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm border-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none text-text-primary dark:text-dark-text-primary"
+                    className="w-full px-4 py-3 pr-12 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm border-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none text-text-primary dark:text-dark-text-primary"
                   />
                   <button type="button" onClick={() => setShowCreatePassword(!showCreatePassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-text-muted dark:text-dark-text-muted-dark hover:text-text-primary dark:hover:text-dark-text-primary transition-colors" aria-label="Toggle password visibility">
                     {showCreatePassword ? <EyeOff size={18} /> : <Eye size={18} />}
@@ -628,7 +628,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                     required
                     value={formData.role}
                     onChange={(e) => setFormData({...formData, role: e.target.value})}
-                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm border-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none text-text-primary dark:text-dark-text-primary appearance-none cursor-pointer"
+                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm border-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none text-text-primary dark:text-dark-text-primary appearance-none cursor-pointer"
                   >
                     {viewMode === 'patients' ? (
                        <option value="PATIENT">Patient</option>
@@ -651,7 +651,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value.replace(/[^0-9+]/g, '')})}
                     onKeyDown={(e) => { if (!/[0-9+]/.test(e.key) && !['Backspace','Tab','Delete','ArrowLeft','ArrowRight'].includes(e.key)) e.preventDefault(); }}
-                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm border-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none text-text-primary dark:text-dark-text-primary"
+                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm border-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none text-text-primary dark:text-dark-text-primary"
                     placeholder="Required"
                   />
                 </div>
@@ -663,7 +663,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                     id="userGender"
                     value={formData.gender}
                     onChange={(e) => setFormData({...formData, gender: e.target.value})}
-                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm border-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none text-text-primary dark:text-dark-text-primary appearance-none cursor-pointer"
+                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm border-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none text-text-primary dark:text-dark-text-primary appearance-none cursor-pointer"
                   >
                     <option value="FEMALE">Female</option>
                     <option value="MALE">Male</option>
@@ -676,7 +676,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                     id="userAddress"
                     value={formData.address}
                     onChange={(e) => setFormData({...formData, address: e.target.value})}
-                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm border-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none text-text-primary dark:text-dark-text-primary"
+                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm border-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none text-text-primary dark:text-dark-text-primary"
                     placeholder="Enter address"
                   />
                 </div>
@@ -684,7 +684,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
               <button
                 type="submit"
                 disabled={creationLoading}
-                className="w-full py-4 bg-gray-900 dark:bg-dark-surface-tertiary text-white rounded-2xl font-bold hover:bg-black dark:hover:bg-dark-surface-primary shadow-lg transition-all mt-4 flex items-center justify-center gap-2"
+                className="w-full py-4 bg-gray-900 dark:bg-dark-surface-tertiary text-white rounded-lg font-bold hover:bg-black dark:hover:bg-dark-surface-primary shadow-lg transition-all mt-4 flex items-center justify-center gap-2"
               >
                 {creationLoading ? (
                    <>
@@ -702,7 +702,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
       {showEditModal && (
         <div className="fixed inset-0 z-[140] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200" role="presentation">
           <div
-            className="bg-white dark:bg-dark-surface-secondary w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
+            className="bg-white dark:bg-dark-surface-secondary w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
             role="dialog"
             aria-modal="true"
             aria-labelledby="edit-user-title"
@@ -711,7 +711,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
               <h3 id="edit-user-title" className="text-xl font-bold text-text-primary dark:text-dark-text-primary">Edit System User</h3>
               <button
                 onClick={() => setShowEditModal(false)}
-                className="p-2 hover:bg-surface-tertiary dark:hover:bg-dark-surface-tertiary rounded-xl transition-colors text-text-muted dark:text-dark-text-muted-dark focus:ring-2 focus:ring-primary outline-none"
+                className="p-2 hover:bg-surface-tertiary dark:hover:bg-dark-surface-tertiary rounded-md transition-colors text-text-muted dark:text-dark-text-muted-dark focus:ring-2 focus:ring-primary outline-none"
                 aria-label="Close dialog"
               >
                 <X size={20} />
@@ -727,7 +727,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                     required
                     value={editFormData.firstName}
                     onChange={(e) => setEditFormData({...editFormData, firstName: e.target.value})}
-                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm border-none focus:ring-2 focus:ring-primary outline-none text-text-primary dark:text-dark-text-primary"
+                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm border-none focus:ring-2 focus:ring-primary outline-none text-text-primary dark:text-dark-text-primary"
                   />
                 </div>
                 <div className="space-y-2">
@@ -738,7 +738,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                     required
                     value={editFormData.lastName}
                     onChange={(e) => setEditFormData({...editFormData, lastName: e.target.value})}
-                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm border-none focus:ring-2 focus:ring-primary outline-none text-text-primary dark:text-dark-text-primary"
+                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm border-none focus:ring-2 focus:ring-primary outline-none text-text-primary dark:text-dark-text-primary"
                   />
                 </div>
               </div>
@@ -751,7 +751,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                   required
                   value={editFormData.email}
                   onChange={(e) => setEditFormData({...editFormData, email: e.target.value})}
-                  className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm border-none focus:ring-2 focus:ring-primary outline-none text-text-primary dark:text-dark-text-primary"
+                  className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm border-none focus:ring-2 focus:ring-primary outline-none text-text-primary dark:text-dark-text-primary"
                 />
               </div>
               
@@ -762,7 +762,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                   value={editFormData.role}
                   onChange={(e) => setEditFormData({...editFormData, role: e.target.value})}
                   disabled={viewMode !== 'all'}
-                  className={`w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm border-none focus:ring-2 focus:ring-primary outline-none font-bold text-text-primary dark:text-dark-text-primary ${viewMode !== 'all' ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  className={`w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm border-none focus:ring-2 focus:ring-primary outline-none font-bold text-text-primary dark:text-dark-text-primary ${viewMode !== 'all' ? 'opacity-50 cursor-not-allowed' : ''}`}
                 >
                   <option value="ADMIN">ADMIN</option>
                   <option value="DOCTOR">PHYSICIAN</option>
@@ -780,7 +780,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                   value={editFormData.phone}
                   onChange={(e) => setEditFormData({...editFormData, phone: e.target.value.replace(/[^0-9+]/g, '')})}
                   onKeyDown={(e) => { if (!/[0-9+]/.test(e.key) && !['Backspace','Tab','Delete','ArrowLeft','ArrowRight'].includes(e.key)) e.preventDefault(); }}
-                  className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm border-none focus:ring-2 focus:ring-primary outline-none text-text-primary dark:text-dark-text-primary"
+                  className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm border-none focus:ring-2 focus:ring-primary outline-none text-text-primary dark:text-dark-text-primary"
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -790,7 +790,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                     id="editGender"
                     value={editFormData.gender}
                     onChange={(e) => setEditFormData({...editFormData, gender: e.target.value})}
-                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm border-none focus:ring-2 focus:ring-primary outline-none text-text-primary dark:text-dark-text-primary appearance-none cursor-pointer"
+                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm border-none focus:ring-2 focus:ring-primary outline-none text-text-primary dark:text-dark-text-primary appearance-none cursor-pointer"
                   >
                     <option value="FEMALE">Female</option>
                     <option value="MALE">Male</option>
@@ -803,7 +803,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                     id="editAddress"
                     value={editFormData.address}
                     onChange={(e) => setEditFormData({...editFormData, address: e.target.value})}
-                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm border-none focus:ring-2 focus:ring-primary outline-none text-text-primary dark:text-dark-text-primary"
+                    className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm border-none focus:ring-2 focus:ring-primary outline-none text-text-primary dark:text-dark-text-primary"
                     placeholder="Enter address"
                   />
                 </div>
@@ -817,7 +817,7 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                     id="editPassword"
                     value={editFormData.password}
                     onChange={(e) => setEditFormData({...editFormData, password: e.target.value})}
-                    className="w-full px-4 py-3 pr-12 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm border-none focus:ring-2 focus:ring-primary outline-none text-text-primary dark:text-dark-text-primary"
+                    className="w-full px-4 py-3 pr-12 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm border-none focus:ring-2 focus:ring-primary outline-none text-text-primary dark:text-dark-text-primary"
                     placeholder="••••••••"
                   />
                   <button type="button" onClick={() => setShowEditPassword(!showEditPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-text-muted dark:text-dark-text-muted-dark hover:text-text-primary dark:hover:text-dark-text-primary transition-colors" aria-label="Toggle password visibility">
@@ -830,14 +830,14 @@ const Users: React.FC<UsersProps> = ({ viewMode = 'all' }) => {
                 <button
                   type="button"
                   onClick={() => setShowEditModal(false)}
-                  className="flex-1 py-4 bg-surface-secondary dark:bg-dark-surface-tertiary text-text-secondary dark:text-dark-text-secondary rounded-2xl font-bold hover:bg-surface-tertiary transition-all"
+                  className="flex-1 py-4 bg-surface-secondary dark:bg-dark-surface-tertiary text-text-secondary dark:text-dark-text-secondary rounded-lg font-bold hover:bg-surface-tertiary transition-all"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={editLoading}
-                  className="flex-1 py-4 bg-gradient-to-r from-primary to-accent text-white rounded-2xl font-bold hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/30 flex items-center justify-center gap-2"
+                  className="flex-1 py-4 bg-gradient-to-r from-primary to-accent text-white rounded-lg font-bold hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/30 flex items-center justify-center gap-2"
                 >
                   {editLoading ? <Loader2 className="animate-spin" size={18} /> : 'Save Changes'}
                 </button>

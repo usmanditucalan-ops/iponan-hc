@@ -92,14 +92,14 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
         {/* Mobile close button */}
         <button
           onClick={onClose}
-          className="lg:hidden absolute right-3 top-5 p-2 hover:bg-surface-tertiary dark:hover:bg-dark-surface-tertiary rounded-xl transition-colors text-text-muted dark:text-dark-text-muted-dark"
+          className="lg:hidden absolute right-3 top-5 p-2 hover:bg-surface-tertiary dark:hover:bg-dark-surface-tertiary rounded-md transition-colors text-text-muted dark:text-dark-text-muted-dark"
           aria-label="Close sidebar"
         >
           <X size={20} />
         </button>
 
         <div className="px-4 py-5 flex items-center gap-3 border-b border-border dark:border-dark-border">
-          <img src={logo} alt="Logo" className="w-8 h-8 rounded-lg" />
+          <img src={logo} alt="Logo" className="w-8 h-8 rounded" />
           <div>
             <h1 className="font-bold text-base leading-tight text-text-primary dark:text-dark-text-primary">Barangay Iponan</h1>
             <p className="text-[10px] text-text-muted-dark dark:text-dark-text-muted-dark font-medium">Health Clinic</p>
@@ -116,7 +116,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                 to={item.href}
                 onClick={onClose}
                 className={cn(
-                  "flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 group relative border-l-4",
+                  "flex items-center gap-3 px-3 py-2 rounded transition-all duration-200 group relative border-l-4",
                   isActive
                     ? "bg-gradient-to-r from-primary/10 to-accent/10 dark:from-dark-primary/10 dark:to-dark-accent/10 text-primary dark:text-dark-primary font-semibold border-l-primary dark:border-l-dark-primary"
                     : "text-text-secondary dark:text-dark-text-secondary hover:bg-surface-tertiary dark:hover:bg-dark-surface-tertiary hover:text-text-primary dark:hover:text-dark-text-primary border-l-transparent"
@@ -136,7 +136,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
               logout();
               navigate('/login');
             }}
-            className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-red-500 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30 transition-all duration-200 mt-4 font-bold text-sm focus:ring-2 focus:ring-red-600 dark:focus:ring-red-400 focus:ring-offset-2 dark:focus:ring-offset-dark-surface-primary outline-none"
+            className="w-full flex items-center gap-3 px-3 py-2 rounded text-red-500 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30 transition-all duration-200 mt-4 font-bold text-sm focus:ring-2 focus:ring-red-600 dark:focus:ring-red-400 focus:ring-offset-2 dark:focus:ring-offset-dark-surface-primary outline-none"
           >
             <LogOut size={18} />
             <span>{t('logout')}</span>
@@ -144,7 +144,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
         </nav>
 
         <div className="p-4 pb-6 space-y-3">
-          <div className="bg-surface-secondary dark:bg-dark-surface-secondary rounded-xl p-3 border border-border dark:border-dark-border">
+          <div className="bg-surface-secondary dark:bg-dark-surface-secondary rounded-md p-3 border border-border dark:border-dark-border">
             <div className="flex items-center gap-2 mb-3 text-primary dark:text-dark-primary font-bold text-sm">
               <Languages size={16} />
               <span>Language</span>
@@ -155,7 +155,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                   key={lang}
                   onClick={() => setLanguage(lang as any)}
                   className={cn(
-                    "text-[10px] font-bold py-1 rounded-md transition-all uppercase",
+                    "text-[10px] font-bold py-1 rounded-sm transition-all uppercase",
                     language === lang 
                       ? "bg-primary text-white shadow-sm" 
                       : "text-text-muted hover:bg-white hover:text-primary dark:hover:bg-dark-surface-tertiary"

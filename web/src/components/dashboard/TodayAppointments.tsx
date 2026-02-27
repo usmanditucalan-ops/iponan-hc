@@ -86,10 +86,10 @@ export const TodayAppointments = ({ view = 'ADMIN' }: TodayAppointmentsProps) =>
         </div>
         
         {showRequestsTab && (
-        <div className="flex bg-surface-secondary dark:bg-dark-surface-tertiary p-1 rounded-xl border border-border dark:border-dark-border">
+        <div className="flex bg-surface-secondary dark:bg-dark-surface-tertiary p-1 rounded-md border border-border dark:border-dark-border">
           <button
             onClick={() => setActiveTab('queue')}
-            className={`px-4 py-1.5 rounded-lg text-xs font-black transition-all ${
+            className={`px-4 py-1.5 rounded text-xs font-black transition-all ${
               activeTab === 'queue' 
               ? 'bg-white dark:bg-dark-surface-secondary text-primary dark:text-dark-primary shadow-sm' 
               : 'text-text-muted-dark hover:text-text-primary dark:text-dark-text-muted-dark'
@@ -99,7 +99,7 @@ export const TodayAppointments = ({ view = 'ADMIN' }: TodayAppointmentsProps) =>
           </button>
           <button
             onClick={() => setActiveTab('requests')}
-            className={`px-4 py-1.5 rounded-lg text-xs font-black transition-all ${
+            className={`px-4 py-1.5 rounded text-xs font-black transition-all ${
               activeTab === 'requests' 
               ? 'bg-white dark:bg-dark-surface-secondary text-primary dark:text-dark-primary shadow-sm' 
               : 'text-text-muted-dark hover:text-text-primary dark:text-dark-text-muted-dark'
@@ -140,11 +140,11 @@ export const TodayAppointments = ({ view = 'ADMIN' }: TodayAppointmentsProps) =>
             const hasIntake = !!apt.intakeForm;
 
             return (
-              <div key={apt.id} className="group relative bg-white dark:bg-dark-surface-secondary/50 border border-border dark:border-dark-border rounded-2xl p-4 hover:shadow-lg hover:border-primary/20 dark:hover:border-dark-primary/20 transition-all">
+              <div key={apt.id} className="group relative bg-white dark:bg-dark-surface-secondary/50 border border-border dark:border-dark-border rounded-lg p-4 hover:shadow-lg hover:border-primary/20 dark:hover:border-dark-primary/20 transition-all">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-center gap-4">
                     <div className="relative">
-                      <div className="w-12 h-12 bg-primary/5 dark:bg-dark-primary/10 text-primary dark:text-dark-primary rounded-2xl flex items-center justify-center font-black text-lg border border-primary/10">
+                      <div className="w-12 h-12 bg-primary/5 dark:bg-dark-primary/10 text-primary dark:text-dark-primary rounded-lg flex items-center justify-center font-black text-lg border border-primary/10">
                         {initial}
                       </div>
                       {hasIntake && (
@@ -159,7 +159,7 @@ export const TodayAppointments = ({ view = 'ADMIN' }: TodayAppointmentsProps) =>
                           {firstName} {lastName}
                         </h4>
                         {!hasIntake && activeTab === 'queue' && view !== 'PATIENT' && (
-                           <span className="flex items-center gap-1 text-[10px] font-bold text-amber-500 bg-amber-50 dark:bg-amber-950/30 px-2 py-0.5 rounded-md border border-amber-100 dark:border-amber-900/30">
+                           <span className="flex items-center gap-1 text-[10px] font-bold text-amber-500 bg-amber-50 dark:bg-amber-950/30 px-2 py-0.5 rounded-sm border border-amber-100 dark:border-amber-900/30">
                               <Smartphone size={10} /> Needs Intake
                            </span>
                         )}
@@ -180,7 +180,7 @@ export const TodayAppointments = ({ view = 'ADMIN' }: TodayAppointmentsProps) =>
                       <button
                         onClick={() => handleConfirm(apt.id)}
                         disabled={updatingId === apt.id}
-                        className="flex items-center gap-2 px-4 py-2 bg-primary text-white text-[10px] font-black uppercase tracking-widest rounded-xl hover:bg-primary-hover active:scale-95 transition-all disabled:opacity-50 shadow-md shadow-primary/20"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary text-white text-[10px] font-black uppercase tracking-widest rounded-md hover:bg-primary-hover active:scale-95 transition-all disabled:opacity-50 shadow-md shadow-primary/20"
                       >
                         {updatingId === apt.id ? <Loader2 size={12} className="animate-spin" /> : <CheckCircle size={12} />}
                         Confirm
@@ -188,7 +188,7 @@ export const TodayAppointments = ({ view = 'ADMIN' }: TodayAppointmentsProps) =>
                     ) : view === 'STAFF' ? (
                       <button
                         onClick={() => navigate('/appointments')}
-                        className="flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white text-[10px] font-black uppercase tracking-widest rounded-xl hover:bg-emerald-700 active:scale-95 transition-all shadow-md shadow-emerald-500/20"
+                        className="flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white text-[10px] font-black uppercase tracking-widest rounded-md hover:bg-emerald-700 active:scale-95 transition-all shadow-md shadow-emerald-500/20"
                       >
                         View Summary
                         <ArrowRight size={12} />
@@ -196,7 +196,7 @@ export const TodayAppointments = ({ view = 'ADMIN' }: TodayAppointmentsProps) =>
                     ) : view === 'DOCTOR' ? (
                       <button
                         onClick={() => navigate('/appointments')}
-                        className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest rounded-xl hover:bg-blue-700 active:scale-95 transition-all shadow-md shadow-blue-500/20"
+                        className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest rounded-md hover:bg-blue-700 active:scale-95 transition-all shadow-md shadow-blue-500/20"
                       >
                         Consult
                         <ArrowRight size={12} />
@@ -204,7 +204,7 @@ export const TodayAppointments = ({ view = 'ADMIN' }: TodayAppointmentsProps) =>
                     ) : (
                       <button
                         onClick={() => navigate('/appointments')}
-                        className="flex items-center gap-2 px-4 py-2 bg-primary text-white text-[10px] font-black uppercase tracking-widest rounded-xl hover:bg-primary-hover active:scale-95 transition-all shadow-md shadow-primary/20"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary text-white text-[10px] font-black uppercase tracking-widest rounded-md hover:bg-primary-hover active:scale-95 transition-all shadow-md shadow-primary/20"
                       >
                         Open
                         <ArrowRight size={12} />

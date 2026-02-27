@@ -27,7 +27,7 @@ export class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-dark-surface-primary p-6 text-center">
-          <div className="w-20 h-20 bg-red-100 dark:bg-red-950/30 text-red-600 dark:text-red-400 rounded-3xl flex items-center justify-center mb-6">
+          <div className="w-20 h-20 bg-red-100 dark:bg-red-950/30 text-red-600 dark:text-red-400 rounded-xl flex items-center justify-center mb-6">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
@@ -39,7 +39,7 @@ export class ErrorBoundary extends Component<Props, State> {
           <div className="flex gap-4">
             <button
               onClick={() => window.location.reload()}
-              className="px-6 py-2 bg-[#10B981] dark:bg-emerald-600 text-white rounded-xl font-bold hover:opacity-90 dark:hover:opacity-80 transition-all"
+              className="px-6 py-2 bg-[#10B981] dark:bg-emerald-600 text-white rounded-md font-bold hover:opacity-90 dark:hover:opacity-80 transition-all"
             >
               Reload Page
             </button>
@@ -48,13 +48,13 @@ export class ErrorBoundary extends Component<Props, State> {
                 localStorage.clear();
                 window.location.href = '/login';
               }}
-              className="px-6 py-2 bg-white dark:bg-dark-surface-secondary border border-gray-200 dark:border-dark-border text-gray-600 dark:text-dark-text-secondary rounded-xl font-bold hover:bg-gray-50 dark:hover:bg-dark-surface-tertiary transition-all"
+              className="px-6 py-2 bg-white dark:bg-dark-surface-secondary border border-gray-200 dark:border-dark-border text-gray-600 dark:text-dark-text-secondary rounded-md font-bold hover:bg-gray-50 dark:hover:bg-dark-surface-tertiary transition-all"
             >
               Clear Session & Logout
             </button>
           </div>
           {this.state.error && (
-            <div className="mt-8 p-4 bg-surface-secondary dark:bg-dark-surface-secondary rounded-lg text-left max-w-2xl w-full overflow-auto border border-gray-200 dark:border-dark-border">
+            <div className="mt-8 p-4 bg-surface-secondary dark:bg-dark-surface-secondary rounded text-left max-w-2xl w-full overflow-auto border border-gray-200 dark:border-dark-border">
               <p className="text-xs font-bold text-gray-700 dark:text-dark-text-muted-dark mb-2">Error Details:</p>
               <pre className="text-[10px] text-gray-500 dark:text-dark-text-muted-dark font-mono whitespace-pre-wrap">
                 {this.state.error.toString()}

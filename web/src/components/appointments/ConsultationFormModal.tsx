@@ -299,10 +299,10 @@ export const ConsultationFormModal = ({ onClose, onSuccess, appointment }: Consu
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[140] flex items-center justify-center p-4">
-      <div className="bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+      <div className="bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary w-full max-w-4xl rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
         <div className="px-6 py-4 border-b border-border dark:border-dark-border flex items-center justify-between bg-primary/5 dark:bg-dark-primary/10">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+            <div className="w-10 h-10 rounded-md bg-primary/10 text-primary flex items-center justify-center">
               <ClipboardList size={20} />
             </div>
             <div>
@@ -312,7 +312,7 @@ export const ConsultationFormModal = ({ onClose, onSuccess, appointment }: Consu
               </p>
             </div>
           </div>
-          <button onClick={onClose} className="p-2 hover:bg-white dark:hover:bg-dark-surface-tertiary rounded-xl transition-colors">
+          <button onClick={onClose} className="p-2 hover:bg-white dark:hover:bg-dark-surface-tertiary rounded-md transition-colors">
             <X size={20} className="text-text-muted" />
           </button>
         </div>
@@ -323,7 +323,7 @@ export const ConsultationFormModal = ({ onClose, onSuccess, appointment }: Consu
               <h3 className="text-4 font-bold flex items-center gap-2"><Stethoscope size={20} /> Physical Examination</h3>
 
               <div className="space-y-4">
-                <div className="rounded-2xl border border-border dark:border-dark-border p-4 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30">
+                <div className="rounded-lg border border-border dark:border-dark-border p-4 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30">
                   <h4 className="font-bold mb-2 text-2xl">Heart:</h4>
                   <label className="flex items-center gap-2 mb-1">
                     <input type="checkbox" checked={physicalExam.heartRegular} onChange={(e) => setPhysicalExam({ ...physicalExam, heartRegular: e.target.checked, heartAbnormal: !e.target.checked ? true : physicalExam.heartAbnormal })} />
@@ -335,7 +335,7 @@ export const ConsultationFormModal = ({ onClose, onSuccess, appointment }: Consu
                   </label>
                 </div>
 
-                <div className="rounded-2xl border border-border dark:border-dark-border p-4 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30">
+                <div className="rounded-lg border border-border dark:border-dark-border p-4 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30">
                   <h4 className="font-bold mb-2 text-2xl">Abdomen:</h4>
                   <label className="flex items-center gap-2 mb-1">
                     <input type="checkbox" checked={physicalExam.abdomenSoft} onChange={(e) => setPhysicalExam({ ...physicalExam, abdomenSoft: e.target.checked, abdomenTenderness: !e.target.checked ? true : physicalExam.abdomenTenderness })} />
@@ -347,7 +347,7 @@ export const ConsultationFormModal = ({ onClose, onSuccess, appointment }: Consu
                   </label>
                 </div>
 
-                <div className="rounded-2xl border border-border dark:border-dark-border p-4 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30">
+                <div className="rounded-lg border border-border dark:border-dark-border p-4 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30">
                   <h4 className="font-bold mb-2 text-2xl">Skin:</h4>
                   <label className="flex items-center gap-2 mb-1">
                     <input type="checkbox" checked={physicalExam.skinNoRashes} onChange={(e) => setPhysicalExam({ ...physicalExam, skinNoRashes: e.target.checked, skinFindings: !e.target.checked ? true : physicalExam.skinFindings })} />
@@ -359,14 +359,14 @@ export const ConsultationFormModal = ({ onClose, onSuccess, appointment }: Consu
                   </label>
                 </div>
 
-                <div className="rounded-2xl border border-border dark:border-dark-border p-4 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30">
+                <div className="rounded-lg border border-border dark:border-dark-border p-4 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30">
                   <h4 className="font-bold mb-2 text-2xl">Notes:</h4>
                   <textarea
                     value={physicalExam.notes}
                     onChange={(e) => setPhysicalExam({ ...physicalExam, notes: e.target.value })}
                     placeholder="Additional examination notes..."
                     rows={3}
-                    className="w-full px-3 py-2 rounded-xl border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary text-sm outline-none"
+                    className="w-full px-3 py-2 rounded-md border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary text-sm outline-none"
                   />
                 </div>
               </div>
@@ -377,7 +377,7 @@ export const ConsultationFormModal = ({ onClose, onSuccess, appointment }: Consu
             <div className="space-y-6">
               <h3 className="text-4 font-bold flex items-center gap-2"><ClipboardList size={20} /> Assessment & Plan</h3>
 
-              <div className="rounded-2xl border border-border dark:border-dark-border p-4 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30">
+              <div className="rounded-lg border border-border dark:border-dark-border p-4 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30">
                 <h4 className="font-bold mb-2 text-2xl">Assessment / Impression:</h4>
                 <div className="space-y-1">
                   {assessmentOptions.map((opt) => (
@@ -392,7 +392,7 @@ export const ConsultationFormModal = ({ onClose, onSuccess, appointment }: Consu
                             value={assessmentPlan.otherImpression}
                             onChange={(e) => setAssessmentPlan({ ...assessmentPlan, otherImpression: e.target.value })}
                             placeholder="Please specify..."
-                            className="w-full px-3 py-1.5 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary text-xs outline-none focus:border-primary transition-colors"
+                            className="w-full px-3 py-1.5 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary text-xs outline-none focus:border-primary transition-colors"
                           />
                         </div>
                       )}
@@ -401,33 +401,33 @@ export const ConsultationFormModal = ({ onClose, onSuccess, appointment }: Consu
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-border dark:border-dark-border p-4 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30">
+              <div className="rounded-lg border border-border dark:border-dark-border p-4 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30">
                 <h4 className="font-bold mb-2 text-2xl">Final Diagnosis:</h4>
                 <input
                   value={assessmentPlan.finalDiagnosis}
                   onChange={(e) => setAssessmentPlan({ ...assessmentPlan, finalDiagnosis: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary text-sm outline-none"
+                  className="w-full px-3 py-2 rounded-md border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary text-sm outline-none"
                 />
               </div>
 
-              <div className="rounded-2xl border border-border dark:border-dark-border p-4 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30 space-y-3">
+              <div className="rounded-lg border border-border dark:border-dark-border p-4 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30 space-y-3">
                 <h4 className="font-bold mb-1 text-2xl">Medication Prescription:</h4>
 
                 <div className="space-y-2">
                   {medications.map((m, idx) => (
                     <div key={idx} className="grid grid-cols-12 gap-2 items-center">
-                      <input value={m.drug} onChange={(e) => updateMedication(idx, 'drug', e.target.value)} placeholder="Drug" className="col-span-3 px-3 py-2 rounded-xl border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary text-sm outline-none" />
-                      <input value={m.dose} onChange={(e) => updateMedication(idx, 'dose', e.target.value)} placeholder="Dose" className="col-span-3 px-3 py-2 rounded-xl border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary text-sm outline-none" />
-                      <input value={m.frequency} onChange={(e) => updateMedication(idx, 'frequency', e.target.value)} placeholder="Frequency" className="col-span-3 px-3 py-2 rounded-xl border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary text-sm outline-none" />
-                      <input value={m.days} onChange={(e) => updateMedication(idx, 'days', e.target.value)} placeholder="Days" className="col-span-2 px-3 py-2 rounded-xl border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary text-sm outline-none" />
-                      <button type="button" onClick={() => removeMedication(idx)} className="col-span-1 p-2 rounded-lg text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20">
+                      <input value={m.drug} onChange={(e) => updateMedication(idx, 'drug', e.target.value)} placeholder="Drug" className="col-span-3 px-3 py-2 rounded-md border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary text-sm outline-none" />
+                      <input value={m.dose} onChange={(e) => updateMedication(idx, 'dose', e.target.value)} placeholder="Dose" className="col-span-3 px-3 py-2 rounded-md border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary text-sm outline-none" />
+                      <input value={m.frequency} onChange={(e) => updateMedication(idx, 'frequency', e.target.value)} placeholder="Frequency" className="col-span-3 px-3 py-2 rounded-md border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary text-sm outline-none" />
+                      <input value={m.days} onChange={(e) => updateMedication(idx, 'days', e.target.value)} placeholder="Days" className="col-span-2 px-3 py-2 rounded-md border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary text-sm outline-none" />
+                      <button type="button" onClick={() => removeMedication(idx)} className="col-span-1 p-2 rounded text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20">
                         <Trash2 size={16} />
                       </button>
                     </div>
                   ))}
                 </div>
 
-                <button type="button" onClick={addMedication} className="w-full py-2 rounded-xl border border-border dark:border-dark-border font-bold text-sm hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary">
+                <button type="button" onClick={addMedication} className="w-full py-2 rounded-md border border-border dark:border-dark-border font-bold text-sm hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary">
                   + Add Medication
                 </button>
 
@@ -437,7 +437,7 @@ export const ConsultationFormModal = ({ onClose, onSuccess, appointment }: Consu
                     type="date"
                     value={assessmentPlan.followUpDate}
                     onChange={(e) => setAssessmentPlan({ ...assessmentPlan, followUpDate: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary text-sm outline-none"
+                    className="w-full px-3 py-2 rounded-md border border-border dark:border-dark-border bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary text-sm outline-none"
                   />
                 </div>
               </div>
@@ -579,26 +579,26 @@ export const ConsultationFormModal = ({ onClose, onSuccess, appointment }: Consu
           )}
         </div>
 
-        <div className="p-6 border-t border-border dark:border-dark-border bg-surface-secondary/30 dark:bg-dark-surface-tertiary/10 flex justify-between gap-3 rounded-b-3xl">
+        <div className="p-6 border-t border-border dark:border-dark-border bg-surface-secondary/30 dark:bg-dark-surface-tertiary/10 flex justify-between gap-3 rounded-b-2xl">
           {step > 1 ? (
-            <button onClick={handleBack} className="px-6 py-2.5 text-text-secondary font-bold hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-xl transition-all">
+            <button onClick={handleBack} className="px-6 py-2.5 text-text-secondary font-bold hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-md transition-all">
               Back
             </button>
           ) : (
-            <button onClick={onClose} className="px-6 py-2.5 text-text-secondary font-bold hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-xl transition-all">
+            <button onClick={onClose} className="px-6 py-2.5 text-text-secondary font-bold hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-md transition-all">
               Cancel
             </button>
           )}
 
           {step < 3 ? (
-            <button onClick={handleNext} className="px-8 py-2.5 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/30 hover:opacity-90 transition-opacity">
+            <button onClick={handleNext} className="px-8 py-2.5 bg-primary text-white font-bold rounded-md shadow-lg shadow-primary/30 hover:opacity-90 transition-opacity">
               Next
             </button>
           ) : (
             <button
               onClick={handleSaveEMR}
               disabled={loading || !canSaveEmr}
-              className="px-8 py-2.5 bg-green-600 text-white font-bold rounded-xl shadow-lg shadow-green-600/30 flex items-center gap-2 hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
+              className="px-8 py-2.5 bg-green-600 text-white font-bold rounded-md shadow-lg shadow-green-600/30 flex items-center gap-2 hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
             >
               {loading ? <Loader2 className="animate-spin" size={18} /> : <Check size={18} />}
               {loading ? 'Saving...' : 'Save EMR'}

@@ -32,7 +32,7 @@ export const PrintableForm = ({ title, subtitle, patientInfo, children }: Printa
       </div>
 
       {/* Patient Info Block */}
-      <div className="bg-gray-50 p-6 rounded-2xl mb-8 grid grid-cols-2 gap-6 border border-gray-100">
+      <div className="bg-gray-50 p-6 rounded-lg mb-8 grid grid-cols-2 gap-6 border border-gray-100">
         <div>
           <span className="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Patient Name</span>
           <p className="font-bold text-lg">{patientInfo.name}</p>
@@ -72,7 +72,7 @@ export const PrintableForm = ({ title, subtitle, patientInfo, children }: Printa
       <div className="no-print fixed bottom-8 right-8 flex gap-3">
          <button 
             onClick={() => window.print()} 
-            className="px-8 py-3 bg-primary text-white font-bold rounded-xl shadow-xl hover:opacity-90 transition-opacity"
+            className="px-8 py-3 bg-primary text-white font-bold rounded-md shadow-xl hover:opacity-90 transition-opacity"
          >
             Print Now
          </button>

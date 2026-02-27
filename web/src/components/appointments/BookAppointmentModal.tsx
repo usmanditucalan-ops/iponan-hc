@@ -341,7 +341,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-lg mx-auto">
                <button 
                   onClick={() => { setBookingType('myself'); }}
-                  className={`flex flex-col items-center justify-center p-8 rounded-2xl border-2 transition-all group ${bookingType === 'myself' ? 'border-primary bg-primary/10 dark:bg-dark-primary/20' : 'border-border dark:border-dark-border hover:border-primary/50 bg-surface-secondary dark:bg-dark-surface-secondary'}`}
+                  className={`flex flex-col items-center justify-center p-8 rounded-lg border-2 transition-all group ${bookingType === 'myself' ? 'border-primary bg-primary/10 dark:bg-dark-primary/20' : 'border-border dark:border-dark-border hover:border-primary/50 bg-surface-secondary dark:bg-dark-surface-secondary'}`}
                >
                   <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors ${bookingType === 'myself' ? 'bg-primary text-white shadow-lg shadow-primary/30' : 'bg-gray-100 dark:bg-dark-surface-tertiary text-text-muted dark:text-dark-text-muted-dark group-hover:text-primary'}`}>
                      <User size={32} />
@@ -351,7 +351,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                </button>
                <button 
                   onClick={() => { setBookingType('dependent'); }}
-                  className={`flex flex-col items-center justify-center p-8 rounded-2xl border-2 transition-all group ${bookingType === 'dependent' ? 'border-primary bg-primary/10 dark:bg-dark-primary/20' : 'border-border dark:border-dark-border hover:border-primary/50 bg-surface-secondary dark:bg-dark-surface-secondary'}`}
+                  className={`flex flex-col items-center justify-center p-8 rounded-lg border-2 transition-all group ${bookingType === 'dependent' ? 'border-primary bg-primary/10 dark:bg-dark-primary/20' : 'border-border dark:border-dark-border hover:border-primary/50 bg-surface-secondary dark:bg-dark-surface-secondary'}`}
                >
                   <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors ${bookingType === 'dependent' ? 'bg-primary text-white shadow-lg shadow-primary/30' : 'bg-gray-100 dark:bg-dark-surface-tertiary text-text-muted dark:text-dark-text-muted-dark group-hover:text-primary'}`}>
                      <Users size={32} />
@@ -368,7 +368,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
             <h3 className="text-xl font-bold border-b border-border dark:border-dark-border pb-4 uppercase tracking-tighter">Patient Form</h3>
             
             {bookingType === 'dependent' && (
-              <div className="space-y-4 bg-blue-50/30 dark:bg-dark-primary/5 p-4 rounded-xl border border-blue-100 dark:border-dark-primary/20">
+              <div className="space-y-4 bg-blue-50/30 dark:bg-dark-primary/5 p-4 rounded-md border border-blue-100 dark:border-dark-primary/20">
                 <h4 className="text-xs font-bold uppercase text-blue-600 dark:text-primary">Guardian Information</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-1">
@@ -377,7 +377,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                       type="text"
                       readOnly
                       value={patientData.guardianName}
-                      className="w-full px-4 py-2 rounded-lg bg-gray-100/50 dark:bg-dark-surface-tertiary text-sm outline-none cursor-not-allowed"
+                      className="w-full px-4 py-2 rounded bg-gray-100/50 dark:bg-dark-surface-tertiary text-sm outline-none cursor-not-allowed"
                     />
                   </div>
                   <div className="space-y-1">
@@ -387,7 +387,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                       placeholder="e.g. Mother, Father"
                       value={patientData.relation}
                       onChange={(e) => setPatientData({...patientData, relation: e.target.value})}
-                      className="w-full px-4 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
+                      className="w-full px-4 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
                     />
                   </div>
                 </div>
@@ -404,7 +404,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                     placeholder="Enter patient full name"
                     value={patientData.name}
                     onChange={(e) => setPatientData({...patientData, name: e.target.value})}
-                    className="w-full px-4 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
+                    className="w-full px-4 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
                   />
                 </div>
                 <div className="space-y-1">
@@ -413,7 +413,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                     type="date"
                     value={patientData.dob}
                     onChange={(e) => setPatientData({...patientData, dob: e.target.value})}
-                    className="w-full px-4 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
+                    className="w-full px-4 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-2">
@@ -423,7 +423,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                       type="text"
                       readOnly
                       value={patientData.age}
-                      className="w-full px-4 py-2 rounded-lg bg-gray-100/50 dark:bg-dark-surface-tertiary text-sm outline-none"
+                      className="w-full px-4 py-2 rounded bg-gray-100/50 dark:bg-dark-surface-tertiary text-sm outline-none"
                     />
                   </div>
                   <div className="space-y-1">
@@ -431,7 +431,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                     <select 
                       value={patientData.sex}
                       onChange={(e) => setPatientData({...patientData, sex: e.target.value})}
-                      className="w-full px-4 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
+                      className="w-full px-4 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
                     >
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
@@ -445,7 +445,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                     placeholder="Enter address"
                     value={patientData.address}
                     onChange={(e) => setPatientData({...patientData, address: e.target.value})}
-                    className="w-full px-4 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
+                    className="w-full px-4 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
                   />
                 </div>
                 <div className="space-y-1">
@@ -455,7 +455,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                     placeholder="09XXXXXXXXX"
                     value={patientData.contact}
                     onChange={(e) => setPatientData({...patientData, contact: e.target.value})}
-                    className="w-full px-4 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
+                    className="w-full px-4 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
                   />
                 </div>
                 <div className="space-y-1">
@@ -465,7 +465,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                     placeholder="example@email.com"
                     value={patientData.email}
                     onChange={(e) => setPatientData({...patientData, email: e.target.value})}
-                    className="w-full px-4 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
+                    className="w-full px-4 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
                   />
                 </div>
               </div>
@@ -483,7 +483,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                 'Diarrhea / vomiting', 'Fatigue / weakness', 'High blood pressure',
                 'Diabetes / sugar check', 'Follow-up visit'
               ].map(opt => (
-                <label key={opt} className="flex items-center gap-3 p-3 rounded-lg border border-border dark:border-dark-border bg-surface-secondary dark:bg-dark-surface-secondary cursor-pointer hover:bg-surface-tertiary dark:hover:bg-dark-surface-tertiary transition-colors">
+                <label key={opt} className="flex items-center gap-3 p-3 rounded border border-border dark:border-dark-border bg-surface-secondary dark:bg-dark-surface-secondary cursor-pointer hover:bg-surface-tertiary dark:hover:bg-dark-surface-tertiary transition-colors">
                   <input 
                     type="checkbox"
                     checked={reasons.includes(opt)}
@@ -491,13 +491,13 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                        const next = e.target.checked ? [...reasons, opt] : reasons.filter(r => r !== opt);
                        setReasons(next);
                     }}
-                    className="w-4 h-4 rounded text-primary focus:ring-primary"
+                    className="w-4 h-4 rounded-sm text-primary focus:ring-primary"
                   />
                   <span className="text-sm font-medium">{opt}</span>
                 </label>
               ))}
               <div className="md:col-span-2 space-y-2">
-                <label className="flex items-center gap-3 p-3 rounded-lg border border-border dark:border-dark-border bg-surface-secondary dark:bg-dark-surface-secondary cursor-pointer">
+                <label className="flex items-center gap-3 p-3 rounded border border-border dark:border-dark-border bg-surface-secondary dark:bg-dark-surface-secondary cursor-pointer">
                   <input 
                     type="checkbox"
                     checked={reasons.includes('Other')}
@@ -505,7 +505,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                        const next = e.target.checked ? [...reasons, 'Other'] : reasons.filter(r => r !== 'Other');
                        setReasons(next);
                     }}
-                    className="w-4 h-4 rounded text-primary focus:ring-primary"
+                    className="w-4 h-4 rounded-sm text-primary focus:ring-primary"
                   />
                   <span className="text-sm font-medium">Other</span>
                 </label>
@@ -515,7 +515,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                     placeholder="Please specify..."
                     value={otherReason}
                     onChange={(e) => setOtherReason(e.target.value)}
-                    className="w-full px-4 py-2 ml-7 w-[calc(100%-1.75rem)] rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
+                    className="w-full px-4 py-2 ml-7 w-[calc(100%-1.75rem)] rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
                   />
                 )}
               </div>
@@ -530,7 +530,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
               {[
                 'Fever', 'Pain', 'Difficulty breathing', 'Vomiting', 'Diarrhea', 'Dizziness / fainting'
               ].map(opt => (
-                <label key={opt} className="flex items-center gap-3 p-3 rounded-lg border border-border dark:border-dark-border bg-surface-secondary dark:bg-dark-surface-secondary cursor-pointer hover:bg-surface-tertiary dark:hover:bg-dark-surface-tertiary transition-colors">
+                <label key={opt} className="flex items-center gap-3 p-3 rounded border border-border dark:border-dark-border bg-surface-secondary dark:bg-dark-surface-secondary cursor-pointer hover:bg-surface-tertiary dark:hover:bg-dark-surface-tertiary transition-colors">
                   <input 
                     type="checkbox"
                     checked={symptoms.includes(opt)}
@@ -538,13 +538,13 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                        const next = e.target.checked ? [...symptoms, opt] : symptoms.filter(s => s !== opt);
                        setSymptoms(next);
                     }}
-                    className="w-4 h-4 rounded text-primary focus:ring-primary"
+                    className="w-4 h-4 rounded-sm text-primary focus:ring-primary"
                   />
                   <span className="text-sm font-medium">{opt}</span>
                 </label>
               ))}
               <div className="md:col-span-2 space-y-2">
-                <label className="flex items-center gap-3 p-3 rounded-lg border border-border dark:border-dark-border bg-surface-secondary dark:bg-dark-surface-secondary cursor-pointer">
+                <label className="flex items-center gap-3 p-3 rounded border border-border dark:border-dark-border bg-surface-secondary dark:bg-dark-surface-secondary cursor-pointer">
                   <input 
                     type="checkbox"
                     checked={symptoms.includes('Other')}
@@ -552,7 +552,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                        const next = e.target.checked ? [...symptoms, 'Other'] : symptoms.filter(s => s !== 'Other');
                        setSymptoms(next);
                     }}
-                    className="w-4 h-4 rounded text-primary focus:ring-primary"
+                    className="w-4 h-4 rounded-sm text-primary focus:ring-primary"
                   />
                   <span className="text-sm font-medium">Other</span>
                 </label>
@@ -562,7 +562,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                     placeholder="Please specify..."
                     value={otherSymptom}
                     onChange={(e) => setOtherSymptom(e.target.value)}
-                    className="w-full px-4 py-2 ml-7 w-[calc(100%-1.75rem)] rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
+                    className="w-full px-4 py-2 ml-7 w-[calc(100%-1.75rem)] rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
                   />
                 )}
               </div>
@@ -578,11 +578,11 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
               <div className="space-y-2">
                 <label className="text-[10px] font-bold text-text-muted uppercase">Illness</label>
                 <div className="flex gap-4">
-                  <label className={`flex-1 flex items-center justify-center p-3 rounded-xl border-2 transition-colors cursor-pointer ${medHistory.illnessType === 'none' ? 'border-primary bg-primary/5 text-primary' : 'border-border dark:border-dark-border hover:border-primary/50'}`}>
+                  <label className={`flex-1 flex items-center justify-center p-3 rounded-md border-2 transition-colors cursor-pointer ${medHistory.illnessType === 'none' ? 'border-primary bg-primary/5 text-primary' : 'border-border dark:border-dark-border hover:border-primary/50'}`}>
                     <input type="radio" className="hidden" name="illness" value="none" checked={medHistory.illnessType === 'none'} onChange={(_) => setMedHistory({...medHistory, illnessType: 'none', illnessDetails: ''})} />
                     <span className="font-bold text-sm">No known illness</span>
                   </label>
-                  <label className={`flex-1 flex items-center justify-center p-3 rounded-xl border-2 transition-colors cursor-pointer ${medHistory.illnessType === 'existing' ? 'border-primary bg-primary/5 text-primary' : 'border-border dark:border-dark-border hover:border-primary/50'}`}>
+                  <label className={`flex-1 flex items-center justify-center p-3 rounded-md border-2 transition-colors cursor-pointer ${medHistory.illnessType === 'existing' ? 'border-primary bg-primary/5 text-primary' : 'border-border dark:border-dark-border hover:border-primary/50'}`}>
                     <input type="radio" className="hidden" name="illness" value="existing" checked={medHistory.illnessType === 'existing'} onChange={(_) => setMedHistory({...medHistory, illnessType: 'existing'})} />
                     <span className="font-bold text-sm">With existing illness</span>
                   </label>
@@ -593,7 +593,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                     placeholder="Describe illness..."
                     value={medHistory.illnessDetails}
                     onChange={(e) => setMedHistory({...medHistory, illnessDetails: e.target.value})}
-                    className="w-full px-4 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none animate-in fade-in slide-in-from-top-1"
+                    className="w-full px-4 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none animate-in fade-in slide-in-from-top-1"
                   />
                 )}
               </div>
@@ -605,7 +605,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                   placeholder="e.g. Peanuts, Penicillin (Leave blank if none)"
                   value={medHistory.allergy}
                   onChange={(e) => setMedHistory({...medHistory, allergy: e.target.value})}
-                  className="w-full px-4 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
+                  className="w-full px-4 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
                 />
               </div>
 
@@ -613,7 +613,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                 <label className="text-[10px] font-bold text-text-muted uppercase">Currently taking medicines?</label>
                 <div className="flex gap-4">
                   {['Yes', 'No'].map(opt => (
-                    <label key={opt} className={`flex-1 flex items-center justify-center p-3 rounded-xl border-2 transition-colors cursor-pointer ${medHistory.takingMeds === opt ? 'border-primary bg-primary/5 text-primary' : 'border-border dark:border-dark-border hover:border-primary/50'}`}>
+                    <label key={opt} className={`flex-1 flex items-center justify-center p-3 rounded-md border-2 transition-colors cursor-pointer ${medHistory.takingMeds === opt ? 'border-primary bg-primary/5 text-primary' : 'border-border dark:border-dark-border hover:border-primary/50'}`}>
                       <input type="radio" className="hidden" name="meds" value={opt} checked={medHistory.takingMeds === opt} onChange={(e) => setMedHistory({...medHistory, takingMeds: e.target.value})} />
                       <span className="font-bold text-sm">{opt}</span>
                     </label>
@@ -636,7 +636,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                    min={todayString}
                    value={date}
                    onChange={(e) => setDate(e.target.value)}
-                   className="w-full px-4 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
+                   className="w-full px-4 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
                 />
               </div>
               <div className="space-y-1">
@@ -644,7 +644,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                  <select 
                     value={time}
                     onChange={(e) => setTime(e.target.value)}
-                    className="w-full px-4 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
+                    className="w-full px-4 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
                  >
                     <option value="">Select Time</option>
                     {timeSlots.map(t => <option key={t} value={t}>{t}</option>)}
@@ -652,7 +652,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
               </div>
             </div>
 
-            <div className="bg-surface-secondary/50 dark:bg-dark-surface-tertiary/30 p-4 rounded-xl border border-border dark:border-dark-border space-y-4 text-xs font-medium">
+            <div className="bg-surface-secondary/50 dark:bg-dark-surface-tertiary/30 p-4 rounded-md border border-border dark:border-dark-border space-y-4 text-xs font-medium">
                <div className="flex justify-between border-b border-border dark:border-dark-border pb-2 gap-4">
                   <span className="text-text-muted font-bold uppercase text-[9px] shrink-0">Service</span>
                   <span className="text-right">General Consultation - Barangay Iponan Health Clinic</span>
@@ -727,8 +727,8 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                </div>
             </div>
 
-            <label className="flex items-start gap-4 p-4 rounded-xl border border-blue-100 dark:border-blue-900/30 bg-blue-50/50 dark:bg-blue-900/10 cursor-pointer">
-               <div className={`mt-0.5 w-6 h-6 rounded border flex items-center justify-center shrink-0 transition-colors ${confirmed ? 'bg-primary border-primary text-white' : 'border-gray-300 bg-white dark:bg-dark-surface-tertiary'}`}>
+            <label className="flex items-start gap-4 p-4 rounded-md border border-blue-100 dark:border-blue-900/30 bg-blue-50/50 dark:bg-blue-900/10 cursor-pointer">
+               <div className={`mt-0.5 w-6 h-6 rounded-sm border flex items-center justify-center shrink-0 transition-colors ${confirmed ? 'bg-primary border-primary text-white' : 'border-gray-300 bg-white dark:bg-dark-surface-tertiary'}`}>
                   {confirmed && <Check size={14} strokeWidth={3} />}
                </div>
                <div className="flex-1">
@@ -751,10 +751,10 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
             </p>
             
             <div className="pt-8 flex flex-col gap-3 max-w-xs mx-auto">
-               <button onClick={() => { onSuccess(); onClose(); }} className="w-full py-3.5 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/30 hover:opacity-90 transition-opacity">
+               <button onClick={() => { onSuccess(); onClose(); }} className="w-full py-3.5 bg-primary text-white font-bold rounded-md shadow-lg shadow-primary/30 hover:opacity-90 transition-opacity">
                   View My Appointments
                </button>
-               <button onClick={onClose} className="w-full py-3.5 text-text-secondary font-bold hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-xl transition-colors">
+               <button onClick={onClose} className="w-full py-3.5 text-text-secondary font-bold hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-md transition-colors">
                   Close
                </button>
             </div>
@@ -767,7 +767,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[140] flex items-center justify-center p-4">
-      <div className="bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+      <div className="bg-white dark:bg-dark-surface-secondary text-text-primary dark:text-dark-text-primary w-full max-w-2xl rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
         {/* Header */}
         <div className="px-6 py-4 border-b border-border dark:border-dark-border flex items-center justify-between">
           <h2 className="text-lg font-bold">{initialData?.id ? 'Edit Appointment' : 'Book Appointment'}</h2>
@@ -785,7 +785,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
         {step < 7 && (
           <div className="p-6 border-t border-border dark:border-dark-border flex justify-between bg-surface-secondary/30 dark:bg-dark-surface-tertiary/10">
             {step > 1 ? (
-              <button onClick={handleBack} className="px-6 py-2.5 text-text-secondary font-bold hover:bg-surface-secondary rounded-xl flex items-center gap-2">
+              <button onClick={handleBack} className="px-6 py-2.5 text-text-secondary font-bold hover:bg-surface-secondary rounded-md flex items-center gap-2">
                 <ChevronLeft size={18} /> Back
               </button>
             ) : <div />}
@@ -793,7 +793,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
             <button 
               onClick={handleNext} 
               disabled={loading}
-              className="px-6 py-2.5 bg-primary text-white font-bold rounded-xl shadow-lg flex items-center gap-2 hover:opacity-90 disabled:opacity-50 transition-opacity"
+              className="px-6 py-2.5 bg-primary text-white font-bold rounded-md shadow-lg flex items-center gap-2 hover:opacity-90 disabled:opacity-50 transition-opacity"
             >
               {loading ? 'Processing...' : (step === 6 ? 'Confirm Appointment' : 'Next')} 
               {!loading && <ChevronRight size={18} />}

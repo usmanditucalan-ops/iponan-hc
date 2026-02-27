@@ -94,7 +94,7 @@ const Dashboard = () => {
       default:
         return (
           <div className="flex flex-col items-center justify-center h-[calc(100vh-300px)] text-center">
-            <div className="w-20 h-20 bg-red-50 dark:bg-red-950/30 text-red-500 dark:text-red-400 rounded-2xl flex items-center justify-center mb-6">
+            <div className="w-20 h-20 bg-red-50 dark:bg-red-950/30 text-red-500 dark:text-red-400 rounded-lg flex items-center justify-center mb-6">
               <AlertCircle size={40} />
             </div>
             <h3 className="text-xl font-bold text-text-primary dark:text-dark-text-primary mb-2">Role Not Recognized</h3>

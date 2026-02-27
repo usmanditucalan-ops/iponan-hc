@@ -92,7 +92,7 @@ export const WelcomeTour = () => {
             </button>
             <button 
               onClick={handleNext}
-              className="flex-1 py-3 bg-primary hover:bg-primary/90 text-white rounded-xl font-bold shadow-lg shadow-primary/30 active:scale-95 transition-all flex items-center justify-center gap-2"
+              className="flex-1 py-3 bg-primary hover:bg-primary/90 text-white rounded-md font-bold shadow-lg shadow-primary/30 active:scale-95 transition-all flex items-center justify-center gap-2"
             >
               {currentStep === TOUR_STEPS.length - 1 ? (
                 <>Get Started <Check size={18} /></>

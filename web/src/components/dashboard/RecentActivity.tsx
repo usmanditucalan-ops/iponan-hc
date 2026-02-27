@@ -59,11 +59,11 @@ export const RecentActivity = ({ limit = 5, compact = false }: RecentActivityPro
         {activities.map((item) => (
           <div 
             key={`${item.id}-${item.timestamp}`}
-            className="group flex items-center justify-between p-2 rounded-lg hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary transition-all cursor-pointer border border-transparent hover:border-border dark:hover:border-dark-border"
+            className="group flex items-center justify-between p-2 rounded hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary transition-all cursor-pointer border border-transparent hover:border-border dark:hover:border-dark-border"
             onClick={() => navigate(`/medical-records?patientId=${item.id}`)}
           >
             <div className="flex items-center gap-3">
-              <div className={`rounded-lg bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary flex items-center justify-center font-bold ${compact ? 'w-6 h-6 text-[10px]' : 'w-8 h-8 text-xs'}`}>
+              <div className={`rounded bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary flex items-center justify-center font-bold ${compact ? 'w-6 h-6 text-[10px]' : 'w-8 h-8 text-xs'}`}>
                 {item.patientName.charAt(0)}
               </div>
               <div className="min-w-0">

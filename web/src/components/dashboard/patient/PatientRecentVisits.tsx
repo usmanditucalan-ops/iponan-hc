@@ -15,7 +15,7 @@ export const PatientRecentVisits = () => {
 
   if (pastApts.length === 0) {
     return (
-      <div className="bg-white dark:bg-dark-surface-secondary rounded-[16px] shadow-sm border border-gray-100 dark:border-dark-border p-6 flex flex-col w-full h-full">
+      <div className="bg-white dark:bg-dark-surface-secondary rounded-[11px] shadow-sm border border-gray-100 dark:border-dark-border p-6 flex flex-col w-full h-full">
         <h2 className="text-[18px] font-semibold text-gray-900 dark:text-dark-text-primary leading-tight mb-6">Recent Visits</h2>
         <div className="flex-1 flex flex-col items-center justify-center min-h-[150px]">
            <div className="w-12 h-12 bg-gray-50 dark:bg-dark-surface-tertiary rounded-full flex items-center justify-center mb-3">
@@ -28,10 +28,10 @@ export const PatientRecentVisits = () => {
   }
 
   return (
-    <div className="bg-white dark:bg-dark-surface-secondary rounded-[16px] shadow-sm border border-gray-100 dark:border-dark-border p-6 flex flex-col w-full md:h-[360px] h-auto overflow-hidden">
+    <div className="bg-white dark:bg-dark-surface-secondary rounded-[11px] shadow-sm border border-gray-100 dark:border-dark-border p-6 flex flex-col w-full md:h-[360px] h-auto overflow-hidden">
       <h2 className="text-[18px] font-semibold text-gray-900 dark:text-dark-text-primary leading-tight mb-4 shrink-0">Recent Visits</h2>
       
-      <div className="flex-1 overflow-y-auto pr-1 flex flex-col gap-0 border border-gray-100 dark:border-dark-border rounded-xl">
+      <div className="flex-1 overflow-y-auto pr-1 flex flex-col gap-0 border border-gray-100 dark:border-dark-border rounded-md">
         {pastApts.map((apt, index) => {
           const displayDate = apt.date ? format(parseISO(apt.date), 'MMM dd, yyyy') : 'Unknown Date';
           const reason = apt.reason?.split(',')[0] || 'General';

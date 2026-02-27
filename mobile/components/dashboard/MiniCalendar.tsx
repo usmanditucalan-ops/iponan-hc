@@ -20,7 +20,7 @@ export const MiniCalendar = () => {
 
   return (
     <View 
-      className="mb-6 bg-white dark:bg-dark-surface-secondary rounded-3xl border border-gray-200 dark:border-dark-border p-5 shadow-sm"
+      className="mb-6 bg-white dark:bg-dark-surface-secondary rounded-xl border border-gray-200 dark:border-dark-border p-5 shadow-sm"
       style={{ 
         backgroundColor: isDark ? '#1E293B' : '#FFFFFF',
         borderColor: isDark ? '#334155' : '#E5E7EB'
@@ -35,10 +35,10 @@ export const MiniCalendar = () => {
             February 2026
           </Text>
           <View className="flex-row items-center gap-1">
-            <TouchableOpacity className="p-1 rounded-lg bg-gray-50 dark:bg-dark-surface-tertiary">
+            <TouchableOpacity className="p-1 rounded bg-gray-50 dark:bg-dark-surface-tertiary">
               <ChevronLeft size={16} color={colors.textMuted} />
             </TouchableOpacity>
-            <TouchableOpacity className="p-1 rounded-lg bg-gray-50 dark:bg-dark-surface-tertiary">
+            <TouchableOpacity className="p-1 rounded bg-gray-50 dark:bg-dark-surface-tertiary">
               <ChevronRight size={16} color={colors.textMuted} />
             </TouchableOpacity>
           </View>
@@ -58,7 +58,7 @@ export const MiniCalendar = () => {
           return (
             <TouchableOpacity 
               key={date} 
-              className={`w-[13%] aspect-square items-center justify-center rounded-xl mb-2 relative ${
+              className={`w-[13%] aspect-square items-center justify-center rounded-md mb-2 relative ${
                 isToday ? 'bg-primary dark:bg-blue-600' : ''
               }`}
             >
@@ -83,7 +83,7 @@ export const MiniCalendar = () => {
           </Text>
         </View>
         <View className="flex-row items-center gap-2">
-          <View className="w-4 h-4 bg-primary dark:bg-blue-600 rounded-md" />
+          <View className="w-4 h-4 bg-primary dark:bg-blue-600 rounded-sm" />
           <Text className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase">
             Today
           </Text>

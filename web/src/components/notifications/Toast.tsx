@@ -55,7 +55,7 @@ export const Toast: React.FC<ToastProps> = ({ toast, onDismiss }) => {
 
   return (
     <div
-      className={`${styles.bg} ${styles.border} border rounded-xl p-4 shadow-lg backdrop-blur-sm animate-in slide-in-from-right-4 duration-300 flex gap-4 items-start max-w-sm`}
+      className={`${styles.bg} ${styles.border} border rounded-md p-4 shadow-lg backdrop-blur-sm animate-in slide-in-from-right-4 duration-300 flex gap-4 items-start max-w-sm`}
       role="alert"
       aria-live="polite"
     >

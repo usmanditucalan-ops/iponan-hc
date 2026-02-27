@@ -53,7 +53,7 @@ export const AppointmentsTrendChart = () => {
   }, [appointments]);
 
   return (
-    <div className="bg-white dark:bg-dark-surface-secondary border border-border dark:border-dark-border shadow-sm rounded-2xl p-6 flex flex-col w-full h-full min-h-[350px]">
+    <div className="bg-white dark:bg-dark-surface-secondary border border-border dark:border-dark-border shadow-sm rounded-lg p-6 flex flex-col w-full h-full min-h-[350px]">
       <div className="flex flex-col items-center justify-center mb-6">
         <h3 className="text-[17px] font-bold text-text-primary dark:text-dark-text-primary tracking-tight">Appointments</h3>
         <p className="text-[11px] uppercase tracking-wider font-semibold text-text-muted dark:text-dark-text-muted-dark mt-1">{dateRangeLabel}</p>

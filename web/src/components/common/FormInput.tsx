@@ -65,7 +65,7 @@ export const FormInput: React.FC<FormInputProps> = ({
         )}
       </div>
       
-      <div className={`relative group flex items-center w-full bg-white dark:bg-[#2A2A35] border ${getBorderColor()} rounded-xl px-4 py-3 transition-all duration-200 shadow-sm`}>
+      <div className={`relative group flex items-center w-full bg-white dark:bg-[#2A2A35] border ${getBorderColor()} rounded-md px-4 py-3 transition-all duration-200 shadow-sm`}>
         {icon && (
           <div className={`shrink-0 transition-colors mr-3 ${getIconColor()}`}>
             {icon}
@@ -90,7 +90,7 @@ export const FormInput: React.FC<FormInputProps> = ({
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="p-1 text-text-muted dark:text-gray-400 hover:text-primary transition-colors focus:outline-none rounded-md hover:bg-black/5 dark:hover:bg-white/5"
+              className="p-1 text-text-muted dark:text-gray-400 hover:text-primary transition-colors focus:outline-none rounded-sm hover:bg-black/5 dark:hover:bg-white/5"
               tabIndex={-1}
             >
               {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}

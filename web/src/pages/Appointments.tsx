@@ -611,7 +611,7 @@ const Appointments = () => {
                placeholder="Search appointments..."
                value={searchQuery}
                onChange={(e) => setSearchQuery(e.target.value)}
-               className="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-dark-surface-secondary border border-border dark:border-dark-border rounded-xl outline-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary transition-all text-sm text-text-primary dark:text-dark-text-primary shadow-sm"
+               className="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-dark-surface-secondary border border-border dark:border-dark-border rounded-md outline-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary transition-all text-sm text-text-primary dark:text-dark-text-primary shadow-sm"
              />
           </div>
 
@@ -620,7 +620,7 @@ const Appointments = () => {
              <div className="relative group">
                 <button
                    onClick={() => setShowFilters(!showFilters)}
-                   className="flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-dark-surface-secondary border border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary rounded-xl font-bold text-sm cursor-pointer hover:bg-surface-secondary dark:hover:bg-dark-surface-secondary transition-all shadow-sm"
+                   className="flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-dark-surface-secondary border border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary rounded-md font-bold text-sm cursor-pointer hover:bg-surface-secondary dark:hover:bg-dark-surface-secondary transition-all shadow-sm"
                 >
                    <Filter size={18} />
                    <span>Filters</span>
@@ -628,14 +628,14 @@ const Appointments = () => {
                 </button>
                 
                 {showFilters && (
-                   <div className="absolute right-0 top-full mt-2 w-64 bg-white dark:bg-dark-surface-secondary rounded-xl shadow-xl border border-border dark:border-dark-border p-4 z-50 flex flex-col gap-4 animate-in fade-in slide-in-from-top-2 duration-200">
+                   <div className="absolute right-0 top-full mt-2 w-64 bg-white dark:bg-dark-surface-secondary rounded-md shadow-xl border border-border dark:border-dark-border p-4 z-50 flex flex-col gap-4 animate-in fade-in slide-in-from-top-2 duration-200">
                       <div>
                          <label className="block text-[10px] font-bold text-text-muted-dark uppercase tracking-wider mb-2">Timeline</label>
                          <div className="relative">
                            <select 
                                value={filterTimeline}
                                onChange={(e) => setFilterTimeline(e.target.value as any)}
-                               className="w-full bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border text-text-primary dark:text-dark-text-primary rounded-lg pl-3 pr-8 py-2 text-sm outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium appearance-none cursor-pointer"
+                               className="w-full bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border text-text-primary dark:text-dark-text-primary rounded pl-3 pr-8 py-2 text-sm outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium appearance-none cursor-pointer"
                            >
                                <option value="all">All Appointments</option>
                                {user?.role === 'DOCTOR' ? (
@@ -660,7 +660,7 @@ const Appointments = () => {
                            <select 
                                value={filterStatus}
                                onChange={(e) => setFilterStatus(e.target.value as any)}
-                               className="w-full bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border text-text-primary dark:text-dark-text-primary rounded-lg pl-3 pr-8 py-2 text-sm outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium appearance-none cursor-pointer"
+                               className="w-full bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border text-text-primary dark:text-dark-text-primary rounded pl-3 pr-8 py-2 text-sm outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium appearance-none cursor-pointer"
                            >
                                <option value="all">All Statuses</option>
                                <option value="pending">Pending</option>
@@ -685,7 +685,7 @@ const Appointments = () => {
              {canBook && (
                <button
                  onClick={() => setShowBookModal(true)}
-                 className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-primary to-accent text-white rounded-xl font-bold text-sm hover:opacity-90 active:scale-95 transition-all duration-200 shadow-lg shadow-primary/30 dark:shadow-dark-primary/30 whitespace-nowrap"
+                 className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-primary to-accent text-white rounded-md font-bold text-sm hover:opacity-90 active:scale-95 transition-all duration-200 shadow-lg shadow-primary/30 dark:shadow-dark-primary/30 whitespace-nowrap"
                >
                  <Plus size={18} />
                  Book New
@@ -696,7 +696,7 @@ const Appointments = () => {
       </div>
 
       <div className="space-y-6">
-          <div className="bg-white dark:bg-dark-surface-secondary p-6 rounded-2xl border border-border dark:border-dark-border shadow-sm dark:shadow-lg">
+          <div className="bg-white dark:bg-dark-surface-secondary p-6 rounded-lg border border-border dark:border-dark-border shadow-sm dark:shadow-lg">
             <h3 className="text-lg font-bold text-text-primary dark:text-dark-text-primary mb-6 flex items-center gap-2">
               <Calendar className="text-primary dark:text-dark-primary" size={20} />
               {filterStatus === 'all' ? 'All Appointments' : 
@@ -761,7 +761,7 @@ const Appointments = () => {
                             >
                               <td className="px-2 py-2">
                                 <div className="flex items-center gap-2">
-                                  <div className="w-8 h-8 bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary rounded-lg flex items-center justify-center font-bold text-xs shrink-0">
+                                  <div className="w-8 h-8 bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary rounded flex items-center justify-center font-bold text-xs shrink-0">
                                     {(displayName?.[0] || 'P').toUpperCase()}
                                   </div>
                                   <span className="text-xs font-medium text-text-primary dark:text-dark-text-primary leading-tight break-words">{displayName}</span>
@@ -851,7 +851,7 @@ const Appointments = () => {
                           <tr key={apt.id} className="border-b border-border dark:border-dark-border hover:bg-surface-secondary/20 dark:hover:bg-dark-surface-tertiary/20 transition-colors">
                             <td className="px-3 py-2.5">
                               <div className="flex items-center gap-3">
-                                <div className="w-9 h-9 bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary rounded-xl flex items-center justify-center font-bold text-sm">
+                                <div className="w-9 h-9 bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary rounded-md flex items-center justify-center font-bold text-sm">
                                   {(patientUser?.firstName?.[0] || 'P').toUpperCase()}
                                 </div>
                                 <span className="text-sm font-medium text-text-primary dark:text-dark-text-primary">{patientName}</span>
@@ -879,7 +879,7 @@ const Appointments = () => {
                             <td className="p-4 border-l border-border/40 dark:border-dark-border/40 text-right">
                               <button
                                 onClick={() => openAppointmentDetails(apt)}
-                                className="px-3 py-1.5 text-[11px] font-bold bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors"
+                                className="px-3 py-1.5 text-[11px] font-bold bg-primary/10 text-primary rounded hover:bg-primary/20 transition-colors"
                               >
                                 View Summary
                               </button>
@@ -939,7 +939,7 @@ const Appointments = () => {
                           <tr key={apt.id} className="border-b border-border dark:border-dark-border hover:bg-surface-secondary/20 dark:hover:bg-dark-surface-tertiary/20 transition-colors">
                             <td className="p-4">
                               <div className="flex items-center gap-3">
-                                <div className="w-9 h-9 bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary rounded-xl flex items-center justify-center font-bold text-sm">
+                                <div className="w-9 h-9 bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary rounded-md flex items-center justify-center font-bold text-sm">
                                   {(patientUser?.firstName?.[0] || 'P').toUpperCase()}
                                 </div>
                                 <span className="text-sm font-medium text-text-primary dark:text-dark-text-primary">{patientName}</span>
@@ -988,9 +988,9 @@ const Appointments = () => {
                   const patientUser = apt.patient?.user;
                   const name = patientUser ? `${patientUser.firstName} ${patientUser.lastName}` : '';
                   return (
-                    <div key={apt.id} className="flex gap-4 group justify-between items-start py-4 border-b border-border dark:border-dark-border last:border-none hover:bg-surface-secondary/20 dark:hover:bg-dark-surface-tertiary/20 rounded-xl px-2 transition-colors">
+                    <div key={apt.id} className="flex gap-4 group justify-between items-start py-4 border-b border-border dark:border-dark-border last:border-none hover:bg-surface-secondary/20 dark:hover:bg-dark-surface-tertiary/20 rounded-md px-2 transition-colors">
                       <div className="flex gap-4 w-full">
-                        <div className="w-14 h-14 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-2xl flex flex-col items-center justify-center border border-border dark:border-dark-border group-hover:bg-primary/5 dark:group-hover:bg-dark-primary/10 transition-all shrink-0">
+                        <div className="w-14 h-14 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-lg flex flex-col items-center justify-center border border-border dark:border-dark-border group-hover:bg-primary/5 dark:group-hover:bg-dark-primary/10 transition-all shrink-0">
                           <span className="text-[10px] font-bold text-text-muted dark:text-dark-text-muted-dark uppercase tracking-tighter">{d.toLocaleDateString('en-US', { month: 'short' })}</span>
                           <span className="text-xl font-bold text-text-primary dark:text-dark-text-primary">{d.getDate()}</span>
                         </div>
@@ -1011,7 +1011,7 @@ const Appointments = () => {
                                 {user?.role === 'STAFF' && (
                                   <button
                                     onClick={() => openAppointmentDetails(apt)}
-                                    className="p-1.5 rounded-lg text-text-muted hover:text-primary hover:bg-primary/10 transition-colors"
+                                    className="p-1.5 rounded text-text-muted hover:text-primary hover:bg-primary/10 transition-colors"
                                     title="View Appointment"
                                   >
                                     <Eye size={15} />
@@ -1032,7 +1032,7 @@ const Appointments = () => {
                                {user?.role === 'STAFF' && (
                                  <button
                                   onClick={() => openAppointmentDetails(apt)}
-                                  className="p-1.5 text-text-muted hover:text-primary dark:text-dark-text-muted-dark dark:hover:text-dark-primary transition-colors hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-lg"
+                                  className="p-1.5 text-text-muted hover:text-primary dark:text-dark-text-muted-dark dark:hover:text-dark-primary transition-colors hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded"
                                   title="View Details"
                                 >
                                   <Eye size={16} />
@@ -1040,7 +1040,7 @@ const Appointments = () => {
                                )}
                                <button
                                 onClick={() => handlePrintSlip(apt)}
-                                className="p-1.5 text-text-muted hover:text-primary dark:text-dark-text-muted-dark dark:hover:text-dark-primary transition-colors hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-lg"
+                                className="p-1.5 text-text-muted hover:text-primary dark:text-dark-text-muted-dark dark:hover:text-dark-primary transition-colors hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded"
                                 title="Print Slip"
                               >
                                 <Printer size={16} />
@@ -1056,7 +1056,7 @@ const Appointments = () => {
             </div>
             <button
               onClick={() => setShowCalendar(!showCalendar)}
-              className="w-full mt-6 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-xl font-bold text-xs hover:opacity-90 active:scale-95 transition-all uppercase tracking-widest shadow-md shadow-primary/20 focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none"
+              className="w-full mt-6 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-md font-bold text-xs hover:opacity-90 active:scale-95 transition-all uppercase tracking-widest shadow-md shadow-primary/20 focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none"
             >
               {showCalendar ? 'Hide Calendar' : 'View Full Calendar'}
             </button>
@@ -1065,14 +1065,14 @@ const Appointments = () => {
 
       {/* Full Calendar Grid */}
       {showCalendar && (
-        <div className="mt-6 bg-white dark:bg-dark-surface-secondary rounded-2xl border border-border dark:border-dark-border shadow-sm p-6">
+        <div className="mt-6 bg-white dark:bg-dark-surface-secondary rounded-lg border border-border dark:border-dark-border shadow-sm p-6">
           <div className="flex items-center justify-between mb-6">
             <button
               onClick={() => {
                 if (calendarMonth === 0) { setCalendarMonth(11); setCalendarYear(calendarYear - 1); }
                 else setCalendarMonth(calendarMonth - 1);
               }}
-              className="p-2 hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-xl transition-colors border border-border dark:border-dark-border"
+              className="p-2 hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-md transition-colors border border-border dark:border-dark-border"
             >
               <ChevronLeft size={18} className="text-text-muted-dark dark:text-dark-text-muted-dark" />
             </button>
@@ -1084,7 +1084,7 @@ const Appointments = () => {
                 if (calendarMonth === 11) { setCalendarMonth(0); setCalendarYear(calendarYear + 1); }
                 else setCalendarMonth(calendarMonth + 1);
               }}
-              className="p-2 hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-xl transition-colors border border-border dark:border-dark-border"
+              className="p-2 hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-md transition-colors border border-border dark:border-dark-border"
             >
               <ChevronRight size={18} className="text-text-muted-dark dark:text-dark-text-muted-dark" />
             </button>
@@ -1112,7 +1112,7 @@ const Appointments = () => {
                 cells.push(
                   <div
                     key={d}
-                    className={`h-12 flex items-center justify-center rounded-xl text-sm font-bold cursor-pointer transition-all hover:bg-primary/10 dark:hover:bg-dark-primary/10 relative ${
+                    className={`h-12 flex items-center justify-center rounded-md text-sm font-bold cursor-pointer transition-all hover:bg-primary/10 dark:hover:bg-dark-primary/10 relative ${
                       isToday
                         ? 'bg-gradient-to-br from-primary to-accent text-white shadow-md shadow-primary/20'
                         : 'text-text-primary dark:text-dark-text-primary'
@@ -1133,12 +1133,12 @@ const Appointments = () => {
       {confirmModal.visible && (
         <div className="fixed inset-0 z-[140] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200" role="presentation">
             <div
-              className="bg-white dark:bg-dark-surface-secondary w-full max-w-sm rounded-2xl shadow-2xl animate-in zoom-in-95 duration-200 p-6"
+              className="bg-white dark:bg-dark-surface-secondary w-full max-w-sm rounded-lg shadow-2xl animate-in zoom-in-95 duration-200 p-6"
               role="dialog"
               aria-modal="true"
             >
               <div className="flex flex-col items-center text-center">
-                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${
+                <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${
                   confirmModal.actionType === 'delete' ? 'bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400' :
                   confirmModal.actionType === 'complete' ? 'bg-primary/10 text-primary dark:bg-dark-primary/20 dark:text-dark-primary' :
                   'bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400'
@@ -1153,13 +1153,13 @@ const Appointments = () => {
                 <div className="flex gap-3 w-full">
                   <button
                     onClick={() => setConfirmModal({ ...confirmModal, visible: false })}
-                    className="flex-1 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary rounded-xl font-bold text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                    className="flex-1 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary rounded-md font-bold text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
                   >
                     Cancel
                   </button>
                   <button
                     onClick={confirmAction}
-                    className={`flex-1 py-3 text-white rounded-xl font-bold text-sm hover:opacity-90 transition-opacity shadow-lg ${
+                    className={`flex-1 py-3 text-white rounded-md font-bold text-sm hover:opacity-90 transition-opacity shadow-lg ${
                        confirmModal.actionType === 'delete' ? 'bg-red-600 shadow-red-600/30' : 
                        confirmModal.actionType === 'complete' ? 'bg-primary shadow-primary/30' :
                        'bg-green-600 shadow-green-600/30'
@@ -1176,7 +1176,7 @@ const Appointments = () => {
       {/* Nurse Reject Modal */}
       {rejectModal.visible && (
         <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200" role="presentation">
-          <div className="bg-white dark:bg-dark-surface-secondary w-full max-w-md rounded-2xl shadow-2xl animate-in zoom-in-95 duration-200 p-6" role="dialog" aria-modal="true">
+          <div className="bg-white dark:bg-dark-surface-secondary w-full max-w-md rounded-lg shadow-2xl animate-in zoom-in-95 duration-200 p-6" role="dialog" aria-modal="true">
             <div className="flex items-start justify-between gap-3 mb-4">
               <div>
                 <h3 className="text-xl font-bold text-text-primary dark:text-dark-text-primary">Reject Appointment</h3>
@@ -1184,7 +1184,7 @@ const Appointments = () => {
               </div>
               <button
                 onClick={() => setRejectModal({ visible: false, appointment: null, reason: '', loading: false })}
-                className="p-2 rounded-lg hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary transition-colors"
+                className="p-2 rounded hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary transition-colors"
               >
                 <X size={18} />
               </button>
@@ -1194,20 +1194,20 @@ const Appointments = () => {
               value={rejectModal.reason}
               onChange={(e) => setRejectModal((prev) => ({ ...prev, reason: e.target.value }))}
               rows={4}
-              className="w-full px-3 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-sm outline-none focus:ring-1 focus:ring-primary"
+              className="w-full px-3 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-sm outline-none focus:ring-1 focus:ring-primary"
               placeholder="Enter rejection reason..."
             />
             <div className="flex gap-3 mt-6">
               <button
                 onClick={() => setRejectModal({ visible: false, appointment: null, reason: '', loading: false })}
-                className="flex-1 py-2.5 rounded-xl bg-surface-secondary dark:bg-dark-surface-tertiary font-bold text-text-primary dark:text-dark-text-primary"
+                className="flex-1 py-2.5 rounded-md bg-surface-secondary dark:bg-dark-surface-tertiary font-bold text-text-primary dark:text-dark-text-primary"
               >
                 Cancel
               </button>
               <button
                 onClick={submitRejectAppointment}
                 disabled={rejectModal.loading}
-                className="flex-1 py-2.5 rounded-xl bg-red-600 text-white font-bold hover:opacity-90 disabled:opacity-60 transition-opacity"
+                className="flex-1 py-2.5 rounded-md bg-red-600 text-white font-bold hover:opacity-90 disabled:opacity-60 transition-opacity"
               >
                 {rejectModal.loading ? 'Submitting...' : 'Confirm Reject'}
               </button>
@@ -1219,7 +1219,7 @@ const Appointments = () => {
       {/* Patient Cancel Modal */}
       {cancelModal.visible && (
         <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200" role="presentation">
-          <div className="bg-white dark:bg-dark-surface-secondary w-full max-w-md rounded-2xl shadow-2xl animate-in zoom-in-95 duration-200 p-6" role="dialog" aria-modal="true">
+          <div className="bg-white dark:bg-dark-surface-secondary w-full max-w-md rounded-lg shadow-2xl animate-in zoom-in-95 duration-200 p-6" role="dialog" aria-modal="true">
             <div className="flex items-start justify-between gap-3 mb-4">
               <div>
                 <h3 className="text-xl font-bold text-text-primary dark:text-dark-text-primary">Cancel Appointment</h3>
@@ -1227,7 +1227,7 @@ const Appointments = () => {
               </div>
               <button
                 onClick={() => setCancelModal({ visible: false, appointment: null, reason: '', loading: false })}
-                className="p-2 rounded-lg hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary transition-colors"
+                className="p-2 rounded hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary transition-colors"
               >
                 <X size={18} />
               </button>
@@ -1237,20 +1237,20 @@ const Appointments = () => {
               value={cancelModal.reason}
               onChange={(e) => setCancelModal((prev) => ({ ...prev, reason: e.target.value }))}
               rows={4}
-              className="w-full px-3 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-sm outline-none focus:ring-1 focus:ring-primary"
+              className="w-full px-3 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-sm outline-none focus:ring-1 focus:ring-primary"
               placeholder="Enter reason for cancellation..."
             />
             <div className="flex gap-3 mt-6">
               <button
                 onClick={() => setCancelModal({ visible: false, appointment: null, reason: '', loading: false })}
-                className="flex-1 py-2.5 rounded-xl bg-surface-secondary dark:bg-dark-surface-tertiary font-bold text-text-primary dark:text-dark-text-primary"
+                className="flex-1 py-2.5 rounded-md bg-surface-secondary dark:bg-dark-surface-tertiary font-bold text-text-primary dark:text-dark-text-primary"
               >
                 Back
               </button>
               <button
                 onClick={submitCancelAppointment}
                 disabled={cancelModal.loading}
-                className="flex-1 py-2.5 rounded-xl bg-red-600 text-white font-bold hover:opacity-90 disabled:opacity-60 transition-opacity"
+                className="flex-1 py-2.5 rounded-md bg-red-600 text-white font-bold hover:opacity-90 disabled:opacity-60 transition-opacity"
               >
                 {cancelModal.loading ? 'Submitting...' : 'Confirm Cancel'}
               </button>
@@ -1262,7 +1262,7 @@ const Appointments = () => {
       {/* Nurse Vitals Modal */}
       {nurseVitalsModal.visible && (
         <div className="fixed inset-0 z-[140] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200" role="presentation">
-          <div className="bg-white dark:bg-dark-surface-secondary w-full max-w-2xl rounded-2xl shadow-2xl animate-in zoom-in-95 duration-200 flex flex-col max-h-[90vh] overflow-hidden" role="dialog" aria-modal="true">
+          <div className="bg-white dark:bg-dark-surface-secondary w-full max-w-2xl rounded-lg shadow-2xl animate-in zoom-in-95 duration-200 flex flex-col max-h-[90vh] overflow-hidden" role="dialog" aria-modal="true">
             <div className="flex items-center justify-between p-6 border-b border-border dark:border-dark-border">
               <div>
                 <h3 className="text-xl font-bold text-text-primary dark:text-dark-text-primary">Patient Electronic Medical Record</h3>
@@ -1272,7 +1272,7 @@ const Appointments = () => {
               </div>
               <button
                 onClick={() => setNurseVitalsModal({ visible: false, step: 1, appointment: null })}
-                className="p-2 text-text-muted hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-lg transition-colors"
+                className="p-2 text-text-muted hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded transition-colors"
               >
                 <X size={20} />
               </button>
@@ -1285,44 +1285,44 @@ const Appointments = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-[10px] font-bold uppercase tracking-wider text-text-muted mb-1">Temperature (°C)</label>
-                      <input value={nurseVitals.temperature} onChange={(e) => setNurseVitals(prev => ({ ...prev, temperature: e.target.value }))} className="w-full px-3 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
+                      <input value={nurseVitals.temperature} onChange={(e) => setNurseVitals(prev => ({ ...prev, temperature: e.target.value }))} className="w-full px-3 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
                     </div>
                     <div>
                       <label className="block text-[10px] font-bold uppercase tracking-wider text-text-muted mb-1">Blood Pressure</label>
                       <div className="grid grid-cols-2 gap-2">
-                        <input placeholder="Systolic" value={nurseVitals.systolic} onChange={(e) => setNurseVitals(prev => ({ ...prev, systolic: e.target.value }))} className="w-full px-3 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
-                        <input placeholder="Diastolic" value={nurseVitals.diastolic} onChange={(e) => setNurseVitals(prev => ({ ...prev, diastolic: e.target.value }))} className="w-full px-3 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
+                        <input placeholder="Systolic" value={nurseVitals.systolic} onChange={(e) => setNurseVitals(prev => ({ ...prev, systolic: e.target.value }))} className="w-full px-3 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
+                        <input placeholder="Diastolic" value={nurseVitals.diastolic} onChange={(e) => setNurseVitals(prev => ({ ...prev, diastolic: e.target.value }))} className="w-full px-3 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
                       </div>
                     </div>
                     <div>
                       <label className="block text-[10px] font-bold uppercase tracking-wider text-text-muted mb-1">Heart Rate (bpm)</label>
-                      <input value={nurseVitals.heartRate} onChange={(e) => setNurseVitals(prev => ({ ...prev, heartRate: e.target.value }))} className="w-full px-3 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
+                      <input value={nurseVitals.heartRate} onChange={(e) => setNurseVitals(prev => ({ ...prev, heartRate: e.target.value }))} className="w-full px-3 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
                     </div>
                     <div>
                       <label className="block text-[10px] font-bold uppercase tracking-wider text-text-muted mb-1">Respiratory Rate</label>
-                      <input value={nurseVitals.respiratoryRate} onChange={(e) => setNurseVitals(prev => ({ ...prev, respiratoryRate: e.target.value }))} className="w-full px-3 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
+                      <input value={nurseVitals.respiratoryRate} onChange={(e) => setNurseVitals(prev => ({ ...prev, respiratoryRate: e.target.value }))} className="w-full px-3 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
                     </div>
                     <div>
                       <label className="block text-[10px] font-bold uppercase tracking-wider text-text-muted mb-1">Oxygen Saturation (%)</label>
-                      <input value={nurseVitals.oxygenSaturation} onChange={(e) => setNurseVitals(prev => ({ ...prev, oxygenSaturation: e.target.value }))} className="w-full px-3 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
+                      <input value={nurseVitals.oxygenSaturation} onChange={(e) => setNurseVitals(prev => ({ ...prev, oxygenSaturation: e.target.value }))} className="w-full px-3 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
                     </div>
                     <div>
                       <label className="block text-[10px] font-bold uppercase tracking-wider text-text-muted mb-1">Weight / Height</label>
                       <div className="grid grid-cols-2 gap-2">
-                        <input placeholder="Weight (kg)" value={nurseVitals.weight} onChange={(e) => setNurseVitals(prev => ({ ...prev, weight: e.target.value }))} className="w-full px-3 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
-                        <input placeholder="Height (cm)" value={nurseVitals.height} onChange={(e) => setNurseVitals(prev => ({ ...prev, height: e.target.value }))} className="w-full px-3 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
+                        <input placeholder="Weight (kg)" value={nurseVitals.weight} onChange={(e) => setNurseVitals(prev => ({ ...prev, weight: e.target.value }))} className="w-full px-3 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
+                        <input placeholder="Height (cm)" value={nurseVitals.height} onChange={(e) => setNurseVitals(prev => ({ ...prev, height: e.target.value }))} className="w-full px-3 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
                       </div>
                     </div>
                     <div className="md:col-span-2">
                       <label className="block text-[10px] font-bold uppercase tracking-wider text-text-muted mb-1">Nurse Notes</label>
-                      <textarea value={nurseVitals.notes} onChange={(e) => setNurseVitals(prev => ({ ...prev, notes: e.target.value }))} rows={3} className="w-full px-3 py-2 rounded-lg border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
+                      <textarea value={nurseVitals.notes} onChange={(e) => setNurseVitals(prev => ({ ...prev, notes: e.target.value }))} rows={3} className="w-full px-3 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary" />
                     </div>
                   </div>
                 </div>
               ) : (
                 <div className="space-y-4 text-sm">
                   <h4 className="font-bold text-text-primary dark:text-dark-text-primary">Patient EMR Summary</h4>
-                  <div className="rounded-xl border border-border dark:border-dark-border p-4 bg-surface-secondary/40 dark:bg-dark-surface-tertiary/20 space-y-3">
+                  <div className="rounded-md border border-border dark:border-dark-border p-4 bg-surface-secondary/40 dark:bg-dark-surface-tertiary/20 space-y-3">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       <div>
                         <span className="block text-[10px] font-bold uppercase tracking-wider text-text-muted mb-1">Patient</span>
@@ -1366,21 +1366,21 @@ const Appointments = () => {
                   }
                   setNurseVitalsModal((prev) => ({ ...prev, step: 1 }));
                 }}
-                className="px-5 py-2.5 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl font-bold text-sm text-text-primary dark:text-dark-text-primary hover:opacity-90"
+                className="px-5 py-2.5 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md font-bold text-sm text-text-primary dark:text-dark-text-primary hover:opacity-90"
               >
                 Back
               </button>
               {nurseVitalsModal.step === 1 ? (
                 <button
                   onClick={() => setNurseVitalsModal((prev) => ({ ...prev, step: 2 }))}
-                  className="px-5 py-2.5 bg-primary text-white rounded-xl font-bold text-sm shadow-lg shadow-primary/30 hover:opacity-90"
+                  className="px-5 py-2.5 bg-primary text-white rounded-md font-bold text-sm shadow-lg shadow-primary/30 hover:opacity-90"
                 >
                   Next
                 </button>
               ) : (
                 <button
                   onClick={handleSubmitNurseVitals}
-                  className="px-5 py-2.5 bg-green-600 text-white rounded-xl font-bold text-sm shadow-lg shadow-green-600/30 hover:opacity-90"
+                  className="px-5 py-2.5 bg-green-600 text-white rounded-md font-bold text-sm shadow-lg shadow-green-600/30 hover:opacity-90"
                 >
                   Confirm
                 </button>
@@ -1426,7 +1426,7 @@ const Appointments = () => {
       {showViewModal && selectedViewAppointment && (
         <div className="fixed inset-0 z-[140] flex items-center justify-center p-4 sm:p-6 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200" role="presentation">
             <div
-               className="bg-white dark:bg-dark-surface-secondary w-full max-w-lg rounded-2xl shadow-2xl animate-in zoom-in-95 duration-200 flex flex-col max-h-[90vh] overflow-hidden"
+               className="bg-white dark:bg-dark-surface-secondary w-full max-w-lg rounded-lg shadow-2xl animate-in zoom-in-95 duration-200 flex flex-col max-h-[90vh] overflow-hidden"
                role="dialog"
                aria-modal="true"
             >
@@ -1442,7 +1442,7 @@ const Appointments = () => {
                  </div>
                  <button
                     onClick={() => { setShowViewModal(false); setSelectedViewAppointment(null); setIsEditingAppointment(false); }}
-                    className="absolute right-6 p-2 text-text-muted hover:bg-white dark:hover:bg-dark-surface-tertiary rounded-xl transition-colors"
+                    className="absolute right-6 p-2 text-text-muted hover:bg-white dark:hover:bg-dark-surface-tertiary rounded-md transition-colors"
                  >
                     <X size={20} />
                  </button>
@@ -1452,7 +1452,7 @@ const Appointments = () => {
               <div className="p-6 overflow-y-auto space-y-6">
 
                  {!isEditingAppointment && (
-                    <div className="bg-surface-secondary/50 dark:bg-dark-surface-tertiary/30 p-6 rounded-2xl border border-border dark:border-dark-border space-y-6">
+                    <div className="bg-surface-secondary/50 dark:bg-dark-surface-tertiary/30 p-6 rounded-lg border border-border dark:border-dark-border space-y-6">
                        <div className="flex items-center gap-3 pb-4 border-b border-border dark:border-dark-border">
                           <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
                              <FileText size={20} />
@@ -1754,7 +1754,7 @@ const Appointments = () => {
                                 </div>
                               )}
                               {selectedViewAppointment.status === 'CANCELLED' && cancelReason && (
-                                <div className="md:col-span-2 mt-2 pt-4 border-t border-border dark:border-dark-border bg-red-50/50 p-4 rounded-xl">
+                                <div className="md:col-span-2 mt-2 pt-4 border-t border-border dark:border-dark-border bg-red-50/50 p-4 rounded-md">
                                   <span className="block text-[10px] font-bold text-red-600 uppercase tracking-wider mb-1">Cancellation Reason</span>
                                   <span className="font-medium text-text-primary dark:text-dark-text-primary whitespace-pre-wrap">{cancelReason}</span>
                                 </div>
@@ -1795,7 +1795,7 @@ const Appointments = () => {
 
                   {/* Intake Form Data */}
                   {selectedViewAppointment?.intakeForm && (
-                     <div className="bg-primary/5 dark:bg-dark-primary/5 p-6 rounded-2xl border border-primary/20 dark:border-dark-primary/20 space-y-6">
+                     <div className="bg-primary/5 dark:bg-dark-primary/5 p-6 rounded-lg border border-primary/20 dark:border-dark-primary/20 space-y-6">
                         <div className="flex items-center gap-3 pb-4 border-b border-primary/10 dark:border-dark-primary/10">
                            <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
                               <ClipboardList size={20} />
@@ -1842,7 +1842,7 @@ const Appointments = () => {
                                 <div className="flex flex-wrap gap-2 mt-1">
                                   {medicalList.length > 0 ? (
                                     medicalList.map((c: string) => (
-                                      <span key={c} className="px-2 py-1 bg-surface-secondary dark:bg-dark-surface-tertiary rounded text-xs font-medium border border-border dark:border-dark-border">{c}</span>
+                                      <span key={c} className="px-2 py-1 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-sm text-xs font-medium border border-border dark:border-dark-border">{c}</span>
                                     ))
                                   ) : (
                                     <span className="text-xs text-text-muted">None recorded</span>
@@ -1875,7 +1875,7 @@ const Appointments = () => {
 
                   {/* Consultation Data (If completed) */}
                   {selectedViewAppointment?.consultationForm && (
-                     <div className="bg-emerald-50/50 dark:bg-emerald-900/5 p-6 rounded-2xl border border-emerald-100 dark:border-emerald-900/20 space-y-6">
+                     <div className="bg-emerald-50/50 dark:bg-emerald-900/5 p-6 rounded-lg border border-emerald-100 dark:border-emerald-900/20 space-y-6">
                          <div className="flex items-center gap-3 pb-4 border-b border-emerald-100 dark:border-emerald-900/10">
                            <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400 flex items-center justify-center shrink-0">
                               <Check size={20} />
@@ -1902,14 +1902,14 @@ const Appointments = () => {
               </div>
 
               {/* Actions Footer */}
-              <div className="p-6 border-t border-border dark:border-dark-border shrink-0 flex flex-wrap gap-3 justify-end bg-surface-secondary/30 dark:bg-dark-surface-tertiary/10 rounded-b-3xl">
+              <div className="p-6 border-t border-border dark:border-dark-border shrink-0 flex flex-wrap gap-3 justify-end bg-surface-secondary/30 dark:bg-dark-surface-tertiary/10 rounded-b-2xl">
                   {user?.role === 'PATIENT' && ['PENDING', 'RESCHEDULED'].includes(selectedViewAppointment.status) && (
                      <button
                         onClick={() => {
                            setShowViewModal(false);
                            openCancelModal(selectedViewAppointment);
                         }}
-                        className="px-6 py-2.5 text-red-600 bg-red-50 dark:bg-red-900/20 dark:text-red-400 font-bold rounded-xl hover:bg-red-100 transition-colors"
+                        className="px-6 py-2.5 text-red-600 bg-red-50 dark:bg-red-900/20 dark:text-red-400 font-bold rounded-md hover:bg-red-100 transition-colors"
                      >
                         Cancel Appointment
                      </button>
@@ -1920,7 +1920,7 @@ const Appointments = () => {
                            setShowViewModal(false);
                            navigate('/medical-records');
                         }}
-                        className="px-6 py-2.5 bg-blue-600 text-white font-bold rounded-xl shadow-lg shadow-blue-600/30 hover:opacity-90 transition-opacity"
+                        className="px-6 py-2.5 bg-blue-600 text-white font-bold rounded-md shadow-lg shadow-blue-600/30 hover:opacity-90 transition-opacity"
                      >
                         View Records
                      </button>
@@ -1929,13 +1929,13 @@ const Appointments = () => {
                     <>
                       <button
                         onClick={() => openRejectModal(selectedViewAppointment)}
-                        className="px-6 py-2.5 text-red-600 bg-red-50 dark:bg-red-900/20 dark:text-red-400 font-bold rounded-xl hover:bg-red-100 transition-colors"
+                        className="px-6 py-2.5 text-red-600 bg-red-50 dark:bg-red-900/20 dark:text-red-400 font-bold rounded-md hover:bg-red-100 transition-colors"
                       >
                         Reject Appointment
                       </button>
                       <button
                         onClick={() => handleNurseConfirmAppointment(selectedViewAppointment)}
-                        className="px-6 py-2.5 bg-green-600 text-white font-bold rounded-xl shadow-lg shadow-green-600/30 hover:opacity-90 transition-opacity"
+                        className="px-6 py-2.5 bg-green-600 text-white font-bold rounded-md shadow-lg shadow-green-600/30 hover:opacity-90 transition-opacity"
                       >
                         Confirm Appointment
                       </button>
@@ -1952,7 +1952,7 @@ const Appointments = () => {
                           appointment: selectedViewAppointment
                         });
                       }}
-                      className="px-6 py-2.5 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/30 hover:opacity-90 transition-opacity"
+                      className="px-6 py-2.5 bg-primary text-white font-bold rounded-md shadow-lg shadow-primary/30 hover:opacity-90 transition-opacity"
                     >
                       Record Vital Signs
                     </button>
@@ -1963,7 +1963,7 @@ const Appointments = () => {
                            setShowViewModal(false);
                            setShowConsultationModal(true);
                         }}
-                        className="px-6 py-2.5 bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-600/30 hover:opacity-90 transition-opacity"
+                        className="px-6 py-2.5 bg-emerald-600 text-white font-bold rounded-md shadow-lg shadow-emerald-600/30 hover:opacity-90 transition-opacity"
                      >
                         Start Consultation
                      </button>
@@ -1974,7 +1974,7 @@ const Appointments = () => {
                            setShowViewModal(false);
                            setShowBookModal(true);
                         }}
-                        className="px-6 py-2.5 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/30 hover:opacity-90 transition-opacity"
+                        className="px-6 py-2.5 bg-primary text-white font-bold rounded-md shadow-lg shadow-primary/30 hover:opacity-90 transition-opacity"
                      >
                         Edit Details
                      </button>

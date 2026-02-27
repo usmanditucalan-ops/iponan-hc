@@ -120,7 +120,7 @@ const Register = () => {
     <AuthLayout title="Register">
       <form onSubmit={handleSubmit} className="text-left">
         {error && (
-          <div className="mb-6 p-4 bg-red-50 dark:bg-red-950/20 border border-red-100 dark:border-red-900/50 rounded-lg flex items-start gap-3 text-red-600 dark:text-red-400">
+          <div className="mb-6 p-4 bg-red-50 dark:bg-red-950/20 border border-red-100 dark:border-red-900/50 rounded flex items-start gap-3 text-red-600 dark:text-red-400">
             <AlertCircle size={18} className="shrink-0 mt-0.5" />
             <p className="text-xs font-semibold">{error}</p>
           </div>
@@ -203,7 +203,7 @@ const Register = () => {
                     setFormData({ ...formData, gender: g });
                     if (formErrors.gender) setFormErrors({ ...formErrors, gender: '' });
                   }}
-                  className={`flex-1 py-2 rounded-lg text-xs font-bold border-2 transition-all ${
+                  className={`flex-1 py-2 rounded text-xs font-bold border-2 transition-all ${
                     formData.gender === g 
                       ? 'border-primary bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary' 
                       : 'border-border dark:border-dark-border text-text-muted dark:text-dark-text-muted-dark hover:border-text-muted dark:hover:border-dark-text-muted-dark'

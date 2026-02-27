@@ -28,7 +28,7 @@ export const TodayAppointments: React.FC<TodayAppointmentsProps> = ({ appointmen
 
   if (loading) {
     return (
-      <View className="p-6 rounded-3xl border items-center justify-center bg-white dark:bg-dark-surface-secondary border-gray-200 dark:border-dark-border h-48">
+      <View className="p-6 rounded-xl border items-center justify-center bg-white dark:bg-dark-surface-secondary border-gray-200 dark:border-dark-border h-48">
         <ActivityIndicator color={colors.primary} />
       </View>
     );
@@ -86,10 +86,10 @@ export const TodayAppointments: React.FC<TodayAppointmentsProps> = ({ appointmen
             return (
               <View 
                 key={apt.id} 
-                className="flex-row items-center justify-between p-3 mb-2 rounded-2xl bg-white dark:bg-dark-surface-secondary border border-gray-100 dark:border-dark-border"
+                className="flex-row items-center justify-between p-3 mb-2 rounded-lg bg-white dark:bg-dark-surface-secondary border border-gray-100 dark:border-dark-border"
               >
                 <View className="flex-row items-center gap-3 flex-1">
-                  <View className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-900/20 items-center justify-center">
+                  <View className="w-10 h-10 rounded-md bg-blue-50 dark:bg-blue-900/20 items-center justify-center">
                     <Text className="font-bold text-blue-600 dark:text-blue-400 text-sm">
                       {initial}
                     </Text>
@@ -111,7 +111,7 @@ export const TodayAppointments: React.FC<TodayAppointmentsProps> = ({ appointmen
                       {apt.time}
                     </Text>
                   </View>
-                  <View className={`px-2 py-0.5 rounded-md border border-transparent ${statusStyle.bg}`}>
+                  <View className={`px-2 py-0.5 rounded-sm border border-transparent ${statusStyle.bg}`}>
                     <Text className={`text-[9px] font-bold uppercase tracking-wider ${statusStyle.text}`}>
                       {displayStatus}
                     </Text>

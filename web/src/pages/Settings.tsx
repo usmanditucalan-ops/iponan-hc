@@ -138,7 +138,7 @@ const Settings = () => {
                 <button
                   type="button"
                   onClick={() => document.getElementById('photoInput')?.click()}
-                  className="absolute -bottom-1 -right-1 p-2 bg-gray-900 dark:bg-gray-700 text-white rounded-xl shadow-md hover:bg-black dark:hover:bg-gray-600 transition-all"
+                  className="absolute -bottom-1 -right-1 p-2 bg-gray-900 dark:bg-gray-700 text-white rounded-md shadow-md hover:bg-black dark:hover:bg-gray-600 transition-all"
                   aria-label="Change profile photo"
                 >
                   <Camera size={14} />
@@ -164,7 +164,7 @@ const Settings = () => {
                     type="text"
                     value={formData.firstName}
                     onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-secondary border border-border dark:border-dark-border rounded-xl outline-none focus:ring-2 focus:ring-primary/40 text-sm"
+                    className="w-full px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-secondary border border-border dark:border-dark-border rounded-md outline-none focus:ring-2 focus:ring-primary/40 text-sm"
                   />
                 </div>
                 <div>
@@ -173,7 +173,7 @@ const Settings = () => {
                     type="text"
                     value={formData.lastName}
                     onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-secondary border border-border dark:border-dark-border rounded-xl outline-none focus:ring-2 focus:ring-primary/40 text-sm"
+                    className="w-full px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-secondary border border-border dark:border-dark-border rounded-md outline-none focus:ring-2 focus:ring-primary/40 text-sm"
                   />
                 </div>
                 <div>
@@ -183,7 +183,7 @@ const Settings = () => {
                     inputMode="numeric"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value.replace(/[^0-9+]/g, '') })}
-                    className="w-full px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-secondary border border-border dark:border-dark-border rounded-xl outline-none focus:ring-2 focus:ring-primary/40 text-sm"
+                    className="w-full px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-secondary border border-border dark:border-dark-border rounded-md outline-none focus:ring-2 focus:ring-primary/40 text-sm"
                   />
                 </div>
                 <div>
@@ -192,7 +192,7 @@ const Settings = () => {
                     type="email"
                     value={formData.email}
                     readOnly
-                    className="w-full px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-secondary border border-border dark:border-dark-border rounded-xl outline-none opacity-60 cursor-not-allowed text-sm"
+                    className="w-full px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-secondary border border-border dark:border-dark-border rounded-md outline-none opacity-60 cursor-not-allowed text-sm"
                   />
                 </div>
               </div>
@@ -201,14 +201,14 @@ const Settings = () => {
                 <button
                   type="button"
                   onClick={handleRemovePhoto}
-                  className="px-4 py-2.5 text-text-secondary dark:text-dark-text-secondary font-bold text-sm hover:bg-surface-secondary dark:hover:bg-dark-surface-secondary rounded-xl transition-all"
+                  className="px-4 py-2.5 text-text-secondary dark:text-dark-text-secondary font-bold text-sm hover:bg-surface-secondary dark:hover:bg-dark-surface-secondary rounded-md transition-all"
                 >
                   Remove Photo
                 </button>
                 <button
                   type="button"
                   onClick={handleDiscard}
-                  className="px-4 py-2.5 text-text-secondary dark:text-dark-text-secondary font-bold text-sm hover:bg-surface-secondary dark:hover:bg-dark-surface-secondary rounded-xl transition-all"
+                  className="px-4 py-2.5 text-text-secondary dark:text-dark-text-secondary font-bold text-sm hover:bg-surface-secondary dark:hover:bg-dark-surface-secondary rounded-md transition-all"
                 >
                   Cancel
                 </button>
@@ -219,24 +219,24 @@ const Settings = () => {
           <Card>
             <h3 className="text-lg font-bold text-text-primary dark:text-dark-text-primary mb-4">Account & Security</h3>
             <div className="space-y-4">
-              <div className="flex items-center justify-between p-4 bg-surface-secondary dark:bg-dark-surface-secondary rounded-xl">
+              <div className="flex items-center justify-between p-4 bg-surface-secondary dark:bg-dark-surface-secondary rounded-md">
                 <div>
                   <p className="font-bold text-text-primary dark:text-dark-text-primary">Password</p>
                   <p className="text-xs text-text-muted dark:text-dark-text-muted-dark">Change password for account security</p>
                 </div>
                 <button
                   onClick={() => setShowPasswordModal(true)}
-                  className="px-4 py-2 bg-blue-600 dark:bg-blue-700 text-white rounded-lg text-sm font-bold hover:bg-blue-700 dark:hover:bg-blue-600 transition-all"
+                  className="px-4 py-2 bg-blue-600 dark:bg-blue-700 text-white rounded text-sm font-bold hover:bg-blue-700 dark:hover:bg-blue-600 transition-all"
                 >
                   Change Password
                 </button>
               </div>
-              <div className="flex items-center justify-between p-4 bg-surface-secondary dark:bg-dark-surface-secondary rounded-xl">
+              <div className="flex items-center justify-between p-4 bg-surface-secondary dark:bg-dark-surface-secondary rounded-md">
                 <div>
                   <p className="font-bold text-text-primary dark:text-dark-text-primary">Two-Factor Authentication (2FA)</p>
                   <p className="text-xs text-text-muted dark:text-dark-text-muted-dark">Extra security via OTP/email</p>
                 </div>
-                <button onClick={() => info('2FA setup would open here')} className="px-4 py-2 bg-amber-600 dark:bg-amber-700 text-white rounded-lg text-sm font-bold hover:bg-amber-700 dark:hover:bg-amber-600 transition-all">
+                <button onClick={() => info('2FA setup would open here')} className="px-4 py-2 bg-amber-600 dark:bg-amber-700 text-white rounded text-sm font-bold hover:bg-amber-700 dark:hover:bg-amber-600 transition-all">
                   Enable 2FA
                 </button>
               </div>
@@ -261,7 +261,7 @@ const Settings = () => {
               ].map((item) => {
                 const value = notificationPrefs[item.key as keyof typeof notificationPrefs];
                 return (
-                  <div key={item.key} className="flex items-center justify-between p-3 bg-surface-secondary dark:bg-dark-surface-secondary rounded-xl">
+                  <div key={item.key} className="flex items-center justify-between p-3 bg-surface-secondary dark:bg-dark-surface-secondary rounded-md">
                     <div>
                       <p className="font-medium text-text-primary dark:text-dark-text-primary">{item.label}</p>
                       <p className="text-xs text-text-muted dark:text-dark-text-muted-dark">{item.hint}</p>
@@ -288,7 +288,7 @@ const Settings = () => {
           <Card>
             <h3 className="text-lg font-bold text-text-primary dark:text-dark-text-primary mb-4">Theme Settings</h3>
             <div className="space-y-4">
-              <div className="flex items-center justify-between p-4 bg-surface-secondary dark:bg-dark-surface-secondary rounded-xl">
+              <div className="flex items-center justify-between p-4 bg-surface-secondary dark:bg-dark-surface-secondary rounded-md">
                 <div>
                   <p className="font-bold text-text-primary dark:text-dark-text-primary">Dark Mode</p>
                   <p className="text-xs text-text-muted dark:text-dark-text-muted-dark">Use dark appearance for all pages</p>
@@ -302,7 +302,7 @@ const Settings = () => {
                   <span className={`absolute left-0.5 top-1/2 w-5 h-5 -translate-y-1/2 rounded-full bg-white transition-transform duration-200 ${theme === 'dark' ? 'translate-x-6' : 'translate-x-0'}`} />
                 </button>
               </div>
-              <div className="p-4 bg-surface-secondary dark:bg-dark-surface-secondary rounded-xl">
+              <div className="p-4 bg-surface-secondary dark:bg-dark-surface-secondary rounded-md">
                 <div className="flex items-center gap-2 text-text-primary dark:text-dark-text-primary">
                   {theme === 'dark' ? <Moon size={16} /> : <Sun size={16} />}
                   <p className="font-medium text-sm">Current mode: {theme === 'dark' ? 'Dark' : 'Light'}</p>
@@ -326,7 +326,7 @@ const Settings = () => {
             <button
               type="button"
               onClick={handleDiscard}
-              className="px-4 py-2.5 text-text-secondary dark:text-dark-text-secondary font-bold text-sm hover:bg-surface-secondary dark:hover:bg-dark-surface-secondary rounded-xl transition-all"
+              className="px-4 py-2.5 text-text-secondary dark:text-dark-text-secondary font-bold text-sm hover:bg-surface-secondary dark:hover:bg-dark-surface-secondary rounded-md transition-all"
             >
               Cancel
             </button>
@@ -334,7 +334,7 @@ const Settings = () => {
               type="button"
               onClick={handleSaveAll}
               disabled={isLoading}
-              className="px-5 py-2.5 bg-gradient-to-r from-primary to-accent text-white rounded-xl font-bold text-sm hover:opacity-90 transition-all disabled:opacity-50 flex items-center gap-2"
+              className="px-5 py-2.5 bg-gradient-to-r from-primary to-accent text-white rounded-md font-bold text-sm hover:opacity-90 transition-all disabled:opacity-50 flex items-center gap-2"
             >
               {isLoading ? <Loader2 className="animate-spin text-white" size={16} /> : null}
               {isLoading ? 'Saving...' : 'Save Changes'}
@@ -345,12 +345,12 @@ const Settings = () => {
 
       {showPasswordModal && (
         <div className="fixed inset-0 z-[140] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-white dark:bg-dark-surface-primary w-full max-w-md rounded-2xl shadow-2xl border border-border dark:border-dark-border overflow-hidden transform animate-in zoom-in-95 duration-200">
+          <div className="bg-white dark:bg-dark-surface-primary w-full max-w-md rounded-lg shadow-2xl border border-border dark:border-dark-border overflow-hidden transform animate-in zoom-in-95 duration-200">
             <div className="p-6 pb-4 flex items-center justify-between">
               <h3 className="text-xl font-bold text-text-primary dark:text-dark-text-primary">Change Password</h3>
               <button
                 onClick={() => setShowPasswordModal(false)}
-                className="p-2 hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-xl transition-colors"
+                className="p-2 hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-md transition-colors"
               >
                 <X size={20} />
               </button>
@@ -364,7 +364,7 @@ const Settings = () => {
                   required
                   value={passwordData.currentPassword}
                   onChange={(e) => setPasswordData({ ...passwordData, currentPassword: e.target.value })}
-                  className="w-full px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-secondary border border-border dark:border-dark-border rounded-xl outline-none focus:ring-2 focus:ring-primary/40 text-sm"
+                  className="w-full px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-secondary border border-border dark:border-dark-border rounded-md outline-none focus:ring-2 focus:ring-primary/40 text-sm"
                 />
               </div>
               <div>
@@ -374,7 +374,7 @@ const Settings = () => {
                   required
                   value={passwordData.newPassword}
                   onChange={(e) => setPasswordData({ ...passwordData, newPassword: e.target.value })}
-                  className="w-full px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-secondary border border-border dark:border-dark-border rounded-xl outline-none focus:ring-2 focus:ring-primary/40 text-sm"
+                  className="w-full px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-secondary border border-border dark:border-dark-border rounded-md outline-none focus:ring-2 focus:ring-primary/40 text-sm"
                 />
               </div>
               <div>
@@ -384,7 +384,7 @@ const Settings = () => {
                   required
                   value={passwordData.confirmPassword}
                   onChange={(e) => setPasswordData({ ...passwordData, confirmPassword: e.target.value })}
-                  className="w-full px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-secondary border border-border dark:border-dark-border rounded-xl outline-none focus:ring-2 focus:ring-primary/40 text-sm"
+                  className="w-full px-4 py-2.5 bg-surface-secondary dark:bg-dark-surface-secondary border border-border dark:border-dark-border rounded-md outline-none focus:ring-2 focus:ring-primary/40 text-sm"
                 />
               </div>
 
@@ -392,14 +392,14 @@ const Settings = () => {
                 <button
                   type="button"
                   onClick={() => setShowPasswordModal(false)}
-                  className="flex-1 px-4 py-2.5 text-sm font-bold text-text-secondary hover:bg-surface-secondary rounded-xl transition-colors"
+                  className="flex-1 px-4 py-2.5 text-sm font-bold text-text-secondary hover:bg-surface-secondary rounded-md transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="flex-1 px-4 py-2.5 bg-primary text-white text-sm font-bold rounded-xl hover:opacity-90 transition-all shadow-md shadow-primary/30 flex items-center justify-center gap-2"
+                  className="flex-1 px-4 py-2.5 bg-primary text-white text-sm font-bold rounded-md hover:opacity-90 transition-all shadow-md shadow-primary/30 flex items-center justify-center gap-2"
                 >
                   {isLoading ? <Loader2 className="animate-spin text-white" size={18} /> : <Lock size={16} />}
                   Update Password

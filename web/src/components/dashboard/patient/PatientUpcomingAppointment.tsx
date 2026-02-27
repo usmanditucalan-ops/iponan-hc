@@ -27,7 +27,7 @@ export const PatientUpcomingAppointment = () => {
 
   if (!upcomingApt) {
     return (
-      <div className="bg-white dark:bg-dark-surface-secondary rounded-[16px] shadow-sm border border-gray-100 dark:border-dark-border p-6 flex flex-col justify-center items-center md:h-[320px] h-auto w-full">
+      <div className="bg-white dark:bg-dark-surface-secondary rounded-[11px] shadow-sm border border-gray-100 dark:border-dark-border p-6 flex flex-col justify-center items-center md:h-[320px] h-auto w-full">
         <div className="w-16 h-16 bg-gray-50 dark:bg-dark-surface-tertiary rounded-full flex items-center justify-center mb-4">
           <Calendar className="text-gray-400 dark:text-dark-text-muted-dark" size={32} />
         </div>
@@ -35,7 +35,7 @@ export const PatientUpcomingAppointment = () => {
         <p className="text-gray-500 dark:text-dark-text-muted-dark text-sm mt-1">You're all caught up! Book a new visit if needed.</p>
         <button 
           onClick={() => navigate('/appointments')}
-          className="mt-6 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl transition-colors shadow-sm"
+          className="mt-6 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors shadow-sm"
         >
           Book Now
         </button>
@@ -95,7 +95,7 @@ export const PatientUpcomingAppointment = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-dark-surface-secondary rounded-[16px] shadow-sm border border-gray-100 dark:border-dark-border p-6 flex flex-col w-full md:h-[320px] h-auto overflow-hidden justify-between">
+    <div className="bg-white dark:bg-dark-surface-secondary rounded-[11px] shadow-sm border border-gray-100 dark:border-dark-border p-6 flex flex-col w-full md:h-[320px] h-auto overflow-hidden justify-between">
       <div className="flex justify-between items-start mb-4">
         <div>
           <h2 className="text-[18px] font-semibold text-gray-900 dark:text-dark-text-primary leading-tight">Upcoming Appointment</h2>
@@ -106,7 +106,7 @@ export const PatientUpcomingAppointment = () => {
         </div>
       </div>
 
-      <div className="flex-1 bg-gray-50/50 dark:bg-dark-surface-tertiary/50 rounded-xl p-5 border border-gray-100 dark:border-dark-border mt-2">
+      <div className="flex-1 bg-gray-50/50 dark:bg-dark-surface-tertiary/50 rounded-md p-5 border border-gray-100 dark:border-dark-border mt-2">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -139,7 +139,7 @@ export const PatientUpcomingAppointment = () => {
           <div className="flex items-end sm:h-full pb-1">
             <button 
               onClick={() => setShowDetails(true)}
-              className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-dark-surface-secondary hover:bg-gray-50 dark:hover:bg-dark-surface-tertiary text-gray-700 dark:text-dark-text-secondary text-sm font-medium rounded-xl border border-gray-200 dark:border-dark-border transition-colors shadow-sm active:scale-95"
+              className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-dark-surface-secondary hover:bg-gray-50 dark:hover:bg-dark-surface-tertiary text-gray-700 dark:text-dark-text-secondary text-sm font-medium rounded-md border border-gray-200 dark:border-dark-border transition-colors shadow-sm active:scale-95"
             >
               <Eye size={16} />
               View Details
@@ -201,7 +201,7 @@ export const PatientUpcomingAppointment = () => {
 
       {confirmCancel && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in">
-          <div className="bg-white dark:bg-dark-surface-secondary w-full max-w-md rounded-2xl shadow-xl animate-in zoom-in-95">
+          <div className="bg-white dark:bg-dark-surface-secondary w-full max-w-md rounded-lg shadow-xl animate-in zoom-in-95">
             <div className="p-6">
               <h3 className="text-xl font-bold text-gray-900 dark:text-dark-text-primary mb-1">
                 Cancel Appointment
@@ -215,7 +215,7 @@ export const PatientUpcomingAppointment = () => {
                 value={cancelReason}
                 onChange={(e) => setCancelReason(e.target.value)}
                 rows={4}
-                className="w-full px-3 py-2 mb-6 rounded-lg border border-gray-200 dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-sm outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full px-3 py-2 mb-6 rounded border border-gray-200 dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-sm outline-none focus:ring-1 focus:ring-blue-500"
                 placeholder="Enter reason for cancellation..."
               />
 
@@ -226,14 +226,14 @@ export const PatientUpcomingAppointment = () => {
                     setConfirmCancel(false);
                     setCancelReason('');
                   }}
-                  className="flex-1 px-4 py-2.5 bg-gray-100 dark:bg-dark-surface-tertiary text-gray-700 dark:text-dark-text-secondary font-medium rounded-xl hover:bg-gray-200 transition-colors"
+                  className="flex-1 px-4 py-2.5 bg-gray-100 dark:bg-dark-surface-tertiary text-gray-700 dark:text-dark-text-secondary font-medium rounded-md hover:bg-gray-200 transition-colors"
                 >
                   Back
                 </button>
                 <button
                   disabled={cancelLoading}
                   onClick={handleCancelAppointment}
-                  className="flex-1 px-4 py-2.5 bg-red-600 text-white font-medium rounded-xl hover:bg-red-700 transition-colors flex items-center justify-center gap-2"
+                  className="flex-1 px-4 py-2.5 bg-red-600 text-white font-medium rounded-md hover:bg-red-700 transition-colors flex items-center justify-center gap-2"
                 >
                   {cancelLoading && <Loader2 size={16} className="animate-spin" />}
                   Confirm Cancel

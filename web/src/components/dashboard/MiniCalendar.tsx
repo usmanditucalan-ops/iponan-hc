@@ -14,13 +14,13 @@ export const MiniCalendar = () => {
           <span className="text-xs font-bold text-text-primary dark:text-dark-text-primary">February 2026</span>
           <div className="flex items-center gap-1">
             <button
-              className="p-1 hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-lg transition-colors focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none"
+              className="p-1 hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded transition-colors focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none"
               aria-label="Previous month"
             >
               <ChevronLeft size={16} />
             </button>
             <button
-              className="p-1 hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded-lg transition-colors focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none"
+              className="p-1 hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary rounded transition-colors focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:ring-offset-2 dark:focus:ring-offset-dark-surface-secondary outline-none"
               aria-label="Next month"
             >
               <ChevronRight size={16} />
@@ -40,7 +40,7 @@ export const MiniCalendar = () => {
           const hasApt = [3, 8, 12, 15, 18, 22, 25].includes(date);
           return (
             <div key={date} className="relative flex items-center justify-center">
-              <button className={`w-8 h-8 rounded-xl text-xs font-bold transition-all relative z-10 ${
+              <button className={`w-8 h-8 rounded-md text-xs font-bold transition-all relative z-10 ${
                 isToday ? 'bg-primary dark:bg-dark-primary text-white shadow-lg shadow-primary/30 dark:shadow-dark-primary/30' : 'text-text-primary dark:text-dark-text-primary hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary'
               }`}>
                 {date}
@@ -59,7 +59,7 @@ export const MiniCalendar = () => {
           <span className="text-[10px] font-bold text-text-muted-dark dark:text-dark-text-muted-dark uppercase">Has appointments</span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="w-4 h-4 bg-primary dark:bg-dark-primary rounded-md"></span>
+          <span className="w-4 h-4 bg-primary dark:bg-dark-primary rounded-sm"></span>
           <span className="text-[10px] font-bold text-text-muted-dark dark:text-dark-text-muted-dark uppercase">Today</span>
         </div>
       </div>

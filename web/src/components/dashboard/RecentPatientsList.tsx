@@ -35,7 +35,7 @@ export const RecentPatientsList = () => {
   }, [appointments]);
 
   return (
-    <div className="bg-white dark:bg-dark-surface-secondary border-2 border-border/50 dark:border-dark-border rounded-[24px] p-6 shadow-sm flex flex-col w-full h-full min-h-[250px]">
+    <div className="bg-white dark:bg-dark-surface-secondary border-2 border-border/50 dark:border-dark-border rounded-[17px] p-6 shadow-sm flex flex-col w-full h-full min-h-[250px]">
       <div className="flex justify-between items-center mb-6">
         <h3 className="text-[16px] font-bold text-text-primary dark:text-dark-text-primary">Recent Patients</h3>
       </div>

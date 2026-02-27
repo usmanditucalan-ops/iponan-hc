@@ -51,7 +51,7 @@ export const DiseaseReportsChart = () => {
   }, [appointments]);
 
   return (
-    <div className="bg-white dark:bg-dark-surface-secondary border border-border dark:border-dark-border shadow-sm rounded-2xl p-6 flex flex-col h-full w-full">
+    <div className="bg-white dark:bg-dark-surface-secondary border border-border dark:border-dark-border shadow-sm rounded-lg p-6 flex flex-col h-full w-full">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-xl font-bold text-text-primary dark:text-dark-text-primary tracking-tight">Reasons for Visit Reports</h3>
       </div>

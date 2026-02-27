@@ -92,19 +92,19 @@ export default function Dashboard() {
       case 'ADMIN':
         return (
           <View>
-            <View className="mb-4 bg-white dark:bg-dark-surface-secondary p-3 rounded-2xl border border-gray-200 dark:border-dark-border shadow-sm">
+            <View className="mb-4 bg-white dark:bg-dark-surface-secondary p-3 rounded-lg border border-gray-200 dark:border-dark-border shadow-sm">
               <Text className="text-xs font-bold text-gray-900 dark:text-gray-100 mb-2 uppercase tracking-wide">Quick Actions</Text>
               <View className="flex-row gap-2">
                 <TouchableOpacity 
                    onPress={() => router.push('/(tabs)/users')} 
-                   className="flex-1 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl items-center flex-row justify-center gap-2"
+                   className="flex-1 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-md items-center flex-row justify-center gap-2"
                 >
                   <UserPlus size={16} color="#3B82F6" />
                   <Text className="text-blue-600 dark:text-blue-400 font-bold text-xs">Add Doctor</Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
                    onPress={() => router.push('/(tabs)/users?tab=staff')}
-                   className="flex-1 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-xl items-center flex-row justify-center gap-2"
+                   className="flex-1 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-md items-center flex-row justify-center gap-2"
                 >
                   <Users size={16} color="#8B5CF6" />
                   <Text className="text-purple-600 dark:text-purple-400 font-bold text-xs">Add Staff</Text>
@@ -133,20 +133,20 @@ export default function Dashboard() {
       case 'NURSE':
         return (
           <View>
-            <View className="mb-4 bg-white dark:bg-dark-surface-secondary p-3 rounded-2xl border border-gray-200 dark:border-dark-border shadow-sm">
+            <View className="mb-4 bg-white dark:bg-dark-surface-secondary p-3 rounded-lg border border-gray-200 dark:border-dark-border shadow-sm">
               <Text className="text-xs font-bold text-gray-900 dark:text-gray-100 mb-2 uppercase tracking-wide">Quick Actions</Text>
               <View className="gap-2">
                 <View className="flex-row gap-2">
                     <TouchableOpacity 
                     onPress={() => router.push('/(tabs)/vitals')}
-                    className="flex-1 p-3 bg-pink-50 dark:bg-pink-900/20 rounded-xl items-center border border-pink-100 dark:border-pink-900/30 flex-row justify-center gap-2"
+                    className="flex-1 p-3 bg-pink-50 dark:bg-pink-900/20 rounded-md items-center border border-pink-100 dark:border-pink-900/30 flex-row justify-center gap-2"
                     >
                     <Activity size={16} color="#EC4899" />
                     <Text className="font-bold text-pink-600 dark:text-pink-400 text-xs">Vitals</Text>
                     </TouchableOpacity>
                     <TouchableOpacity 
                     onPress={() => router.push('/(tabs)/records')} 
-                    className="flex-1 p-3 bg-indigo-50 dark:bg-indigo-900/20 rounded-xl items-center border border-indigo-100 dark:border-indigo-900/30 flex-row justify-center gap-2"
+                    className="flex-1 p-3 bg-indigo-50 dark:bg-indigo-900/20 rounded-md items-center border border-indigo-100 dark:border-indigo-900/30 flex-row justify-center gap-2"
                     >
                     <FileText size={16} color="#6366F1" />
                     <Text className="font-bold text-indigo-600 dark:text-indigo-400 text-xs">Notes</Text>
@@ -154,7 +154,7 @@ export default function Dashboard() {
                 </View>
                 <TouchableOpacity 
                   onPress={() => router.push('/(tabs)/appointments')}
-                  className="p-3 bg-cyan-50 dark:bg-cyan-900/20 rounded-xl flex-row items-center justify-center border border-cyan-100 dark:border-cyan-900/30 gap-2"
+                  className="p-3 bg-cyan-50 dark:bg-cyan-900/20 rounded-md flex-row items-center justify-center border border-cyan-100 dark:border-cyan-900/30 gap-2"
                 >
                   <Users size={16} color="#06B6D4" />
                   <Text className="font-bold text-cyan-600 dark:text-cyan-400 text-xs">Manage Queue</Text>
@@ -174,7 +174,7 @@ export default function Dashboard() {
             {/* Book Now CTA - Priority */}
             <TouchableOpacity 
               onPress={() => router.push('/book')}
-              className="mb-4 w-full bg-blue-600 dark:bg-blue-500 rounded-2xl p-4 shadow-sm flex-row items-center justify-between"
+              className="mb-4 w-full bg-blue-600 dark:bg-blue-500 rounded-lg p-4 shadow-sm flex-row items-center justify-between"
               activeOpacity={0.9}
             >
               <View>

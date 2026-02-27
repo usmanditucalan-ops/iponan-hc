@@ -137,12 +137,12 @@ const VitalSigns = () => {
                   placeholder="Search patient to record or view vitals..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border rounded-xl outline-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary transition-all text-sm text-text-primary dark:text-dark-text-primary"
+                  className="w-full pl-12 pr-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border rounded-md outline-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary transition-all text-sm text-text-primary dark:text-dark-text-primary"
                 />
               </div>
               
               <div className="relative group w-full md:w-auto">
-                <div className="flex items-center gap-2 px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary rounded-xl font-bold text-sm cursor-pointer hover:bg-gray-100 dark:hover:bg-dark-surface-secondary transition-all outline-none focus-within:ring-2 focus-within:ring-primary dark:focus-within:ring-dark-primary">
+                <div className="flex items-center gap-2 px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary rounded-md font-bold text-sm cursor-pointer hover:bg-gray-100 dark:hover:bg-dark-surface-secondary transition-all outline-none focus-within:ring-2 focus-within:ring-primary dark:focus-within:ring-dark-primary">
                   <Filter size={18} />
                   <select
                     value={filterStatus}
@@ -179,9 +179,9 @@ const VitalSigns = () => {
                   }
 
                   return filteredPatients.map((p) => (
-                  <div key={p.id} className="p-4 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30 rounded-2xl border border-border dark:border-dark-border flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-primary/50 transition-colors">
+                  <div key={p.id} className="p-4 bg-surface-secondary/30 dark:bg-dark-surface-tertiary/30 rounded-lg border border-border dark:border-dark-border flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-primary/50 transition-colors">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary rounded-xl flex items-center justify-center font-bold">
+                      <div className="w-12 h-12 bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary rounded-md flex items-center justify-center font-bold">
                         {p.user.firstName[0]}
                       </div>
                       <div>
@@ -197,14 +197,14 @@ const VitalSigns = () => {
                     <div className="flex items-center gap-3">
                       <button
                         onClick={() => handleOpenHistory(p)}
-                        className="p-2.5 bg-surface-secondary dark:bg-dark-surface-tertiary text-text-secondary dark:text-dark-text-secondary rounded-xl hover:bg-white dark:hover:bg-dark-surface-secondary transition-all border border-border dark:border-dark-border"
+                        className="p-2.5 bg-surface-secondary dark:bg-dark-surface-tertiary text-text-secondary dark:text-dark-text-secondary rounded-md hover:bg-white dark:hover:bg-dark-surface-secondary transition-all border border-border dark:border-dark-border"
                         title="View History"
                       >
                         <History size={18} />
                       </button>
                       <button
                         onClick={() => handleOpenRecord(p)}
-                        className="px-4 py-2 bg-gradient-to-r from-primary to-accent text-white rounded-xl text-xs font-bold hover:opacity-90 active:scale-95 transition-all shadow-md shadow-primary/20"
+                        className="px-4 py-2 bg-gradient-to-r from-primary to-accent text-white rounded-md text-xs font-bold hover:opacity-90 active:scale-95 transition-all shadow-md shadow-primary/20"
                       >
                         Record Vitals
                       </button>
@@ -268,7 +268,7 @@ const VitalSigns = () => {
               </div>
               <button 
                 onClick={() => setShowRecordModal(false)}
-                className="p-2 hover:bg-white dark:hover:bg-dark-surface-tertiary rounded-xl transition-colors"
+                className="p-2 hover:bg-white dark:hover:bg-dark-surface-tertiary rounded-md transition-colors"
               >
                 <X size={20} />
               </button>
@@ -288,7 +288,7 @@ const VitalSigns = () => {
                         const val = e.target.value.replace(/[^0-9/]/g, '');
                         setVitalsData({...vitalsData, bloodPressure: val});
                       }}
-                      className="w-full pl-11 pr-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm outline-none focus:ring-2 focus:ring-primary transition-all"
+                      className="w-full pl-11 pr-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm outline-none focus:ring-2 focus:ring-primary transition-all"
                     />
                   </div>
                 </div>
@@ -304,7 +304,7 @@ const VitalSigns = () => {
                       value={vitalsData.heartRate}
                       onKeyDown={blockNonNumeric}
                       onChange={(e) => setVitalsData({...vitalsData, heartRate: e.target.value})}
-                      className="w-full pl-11 pr-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm outline-none focus:ring-2 focus:ring-primary transition-all"
+                      className="w-full pl-11 pr-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm outline-none focus:ring-2 focus:ring-primary transition-all"
                     />
                   </div>
                 </div>
@@ -321,7 +321,7 @@ const VitalSigns = () => {
                       value={vitalsData.temperature}
                       onKeyDown={blockNonNumeric}
                       onChange={(e) => setVitalsData({...vitalsData, temperature: e.target.value})}
-                      className="w-full pl-11 pr-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm outline-none focus:ring-2 focus:ring-primary transition-all"
+                      className="w-full pl-11 pr-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm outline-none focus:ring-2 focus:ring-primary transition-all"
                     />
                   </div>
                 </div>
@@ -337,7 +337,7 @@ const VitalSigns = () => {
                       value={vitalsData.oxygenSaturation}
                       onKeyDown={blockNonNumeric}
                       onChange={(e) => setVitalsData({...vitalsData, oxygenSaturation: e.target.value})}
-                      className="w-full pl-11 pr-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm outline-none focus:ring-2 focus:ring-primary transition-all"
+                      className="w-full pl-11 pr-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm outline-none focus:ring-2 focus:ring-primary transition-all"
                     />
                   </div>
                 </div>
@@ -354,7 +354,7 @@ const VitalSigns = () => {
                       value={vitalsData.weight}
                       onKeyDown={blockNonNumeric}
                       onChange={(e) => setVitalsData({...vitalsData, weight: e.target.value})}
-                      className="w-full pl-11 pr-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm outline-none focus:ring-2 focus:ring-primary transition-all"
+                      className="w-full pl-11 pr-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm outline-none focus:ring-2 focus:ring-primary transition-all"
                     />
                   </div>
                 </div>
@@ -370,7 +370,7 @@ const VitalSigns = () => {
                       value={vitalsData.height}
                       onKeyDown={blockNonNumeric}
                       onChange={(e) => setVitalsData({...vitalsData, height: e.target.value})}
-                      className="w-full pl-11 pr-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm outline-none focus:ring-2 focus:ring-primary transition-all"
+                      className="w-full pl-11 pr-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm outline-none focus:ring-2 focus:ring-primary transition-all"
                     />
                   </div>
                 </div>
@@ -383,7 +383,7 @@ const VitalSigns = () => {
                   placeholder="Additional health notes..."
                   value={vitalsData.notes}
                   onChange={(e) => setVitalsData({...vitalsData, notes: e.target.value})}
-                  className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-xl text-sm outline-none focus:ring-2 focus:ring-primary transition-all resize-none"
+                  className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm outline-none focus:ring-2 focus:ring-primary transition-all resize-none"
                 />
               </div>
 
@@ -391,14 +391,14 @@ const VitalSigns = () => {
                 <button 
                   type="button"
                   onClick={() => setShowRecordModal(false)}
-                  className="flex-1 py-3.5 text-sm font-bold text-text-secondary hover:bg-surface-secondary dark:hover:bg-dark-surface-secondary rounded-2xl transition-all"
+                  className="flex-1 py-3.5 text-sm font-bold text-text-secondary hover:bg-surface-secondary dark:hover:bg-dark-surface-secondary rounded-lg transition-all"
                 >
                   Cancel
                 </button>
                 <button 
                   type="submit"
                   disabled={vitalsLoading}
-                  className="flex-1 py-3.5 bg-gradient-to-r from-primary to-accent text-white rounded-2xl font-bold text-sm shadow-lg shadow-primary/30 hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2"
+                  className="flex-1 py-3.5 bg-gradient-to-r from-primary to-accent text-white rounded-lg font-bold text-sm shadow-lg shadow-primary/30 hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2"
                 >
                   {vitalsLoading ? <Loader2 size={18} className="animate-spin" /> : 'Save Vital Signs'}
                 </button>
@@ -422,7 +422,7 @@ const VitalSigns = () => {
               </div>
               <button 
                 onClick={() => setShowHistoryModal(false)}
-                className="p-2 hover:bg-white dark:hover:bg-dark-surface-tertiary rounded-xl transition-colors"
+                className="p-2 hover:bg-white dark:hover:bg-dark-surface-tertiary rounded-md transition-colors"
               >
                 <X size={20} />
               </button>
@@ -480,7 +480,7 @@ const VitalSigns = () => {
             <div className="p-6 border-t border-border dark:border-dark-border bg-surface-secondary/50 dark:bg-dark-surface-tertiary/50">
               <button 
                 onClick={() => setShowHistoryModal(false)}
-                className="w-full py-3 bg-white dark:bg-dark-surface-secondary border border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary rounded-xl font-bold text-sm hover:bg-gray-50 dark:hover:bg-dark-surface-tertiary transition-all"
+                className="w-full py-3 bg-white dark:bg-dark-surface-secondary border border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary rounded-md font-bold text-sm hover:bg-gray-50 dark:hover:bg-dark-surface-tertiary transition-all"
               >
                 Close History
               </button>

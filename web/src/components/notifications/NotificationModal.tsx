@@ -60,17 +60,17 @@ export const NotificationModal: React.FC<NotificationModalProps> = ({ isOpen, on
   if (!isOpen) return null;
 
   return (
-    <div className="absolute top-20 right-8 w-96 bg-white dark:bg-dark-surface-primary rounded-3xl shadow-2xl border border-border dark:border-dark-border overflow-hidden z-50 animate-in fade-in slide-in-from-top-4 duration-200">
+    <div className="absolute top-20 right-8 w-96 bg-white dark:bg-dark-surface-primary rounded-xl shadow-2xl border border-border dark:border-dark-border overflow-hidden z-50 animate-in fade-in slide-in-from-top-4 duration-200">
       <div className="p-6 border-b border-border dark:border-dark-border flex items-center justify-between bg-primary/5 dark:bg-dark-primary/10">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary rounded-xl flex items-center justify-center">
+          <div className="w-10 h-10 bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary rounded-md flex items-center justify-center">
             <Bell size={20} />
           </div>
           <h3 className="text-lg font-bold text-text-primary dark:text-dark-text-primary">Notifications</h3>
         </div>
         <button 
           onClick={onClose}
-          className="p-2 hover:bg-white dark:hover:bg-dark-surface-tertiary rounded-xl transition-colors text-text-muted dark:text-dark-text-muted-dark"
+          className="p-2 hover:bg-white dark:hover:bg-dark-surface-tertiary rounded-md transition-colors text-text-muted dark:text-dark-text-muted-dark"
         >
           <X size={20} />
         </button>
@@ -93,7 +93,7 @@ export const NotificationModal: React.FC<NotificationModalProps> = ({ isOpen, on
                   {!notification.read && (
                     <button 
                       onClick={() => markAsRead(notification.id)}
-                      className="p-1 hover:bg-primary/10 dark:hover:bg-dark-primary/20 text-primary dark:text-dark-primary rounded-md transition-colors"
+                      className="p-1 hover:bg-primary/10 dark:hover:bg-dark-primary/20 text-primary dark:text-dark-primary rounded-sm transition-colors"
                       title="Mark as read"
                     >
                       <Check size={14} />
@@ -124,7 +124,7 @@ export const NotificationModal: React.FC<NotificationModalProps> = ({ isOpen, on
         <div className="p-4 bg-surface-secondary dark:bg-dark-surface-secondary border-t border-border dark:border-dark-border">
           <button 
             onClick={clearAll}
-            className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-bold text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 rounded-xl transition-all"
+            className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-bold text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 rounded-md transition-all"
           >
             <Trash2 size={14} />
             Clear All Notifications

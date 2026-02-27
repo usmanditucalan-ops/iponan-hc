@@ -25,7 +25,7 @@ export const PatientSummaryCards = () => {
   const totalRecords = Array.isArray(records) ? records.length : 0;
 
   const Card = ({ title, subtitle, count, icon: Icon, bgClass, iconBgClass, iconColorClass }: any) => (
-    <div className={`p-6 rounded-[16px] shadow-sm flex items-center justify-between ${bgClass} border border-black/5 dark:border-white/5`}>
+    <div className={`p-6 rounded-[11px] shadow-sm flex items-center justify-between ${bgClass} border border-black/5 dark:border-white/5`}>
       <div className="flex flex-col">
         <span className="text-3xl font-bold text-gray-900 dark:text-white leading-none">{count}</span>
         <span className="text-[14px] font-semibold text-gray-900 dark:text-white mt-2">{title}</span>

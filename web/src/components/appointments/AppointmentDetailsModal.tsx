@@ -68,7 +68,7 @@ export const AppointmentDetailsModal = ({
   return (
     <>
       <div className="fixed inset-0 z-[140] flex items-center justify-center p-4 sm:p-6 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200" role="presentation">
-        <div className="bg-white dark:bg-dark-surface-secondary w-full max-w-lg rounded-2xl shadow-2xl animate-in zoom-in-95 duration-200 flex flex-col max-h-[90vh] overflow-hidden" role="dialog" aria-modal="true">
+        <div className="bg-white dark:bg-dark-surface-secondary w-full max-w-lg rounded-lg shadow-2xl animate-in zoom-in-95 duration-200 flex flex-col max-h-[90vh] overflow-hidden" role="dialog" aria-modal="true">
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-border dark:border-dark-border shrink-0 bg-primary/5 dark:bg-dark-primary/10 relative">
             <div className="w-full text-center">
@@ -81,7 +81,7 @@ export const AppointmentDetailsModal = ({
             </div>
             <button
               onClick={onClose}
-              className="absolute right-6 p-2 text-text-muted hover:bg-white dark:hover:bg-dark-surface-tertiary rounded-xl transition-colors"
+              className="absolute right-6 p-2 text-text-muted hover:bg-white dark:hover:bg-dark-surface-tertiary rounded-md transition-colors"
             >
               <X size={20} />
             </button>
@@ -89,7 +89,7 @@ export const AppointmentDetailsModal = ({
 
           {/* Content */}
           <div className="p-6 overflow-y-auto space-y-6">
-            <div className="bg-surface-secondary/50 dark:bg-dark-surface-tertiary/30 p-6 rounded-2xl border border-border dark:border-dark-border space-y-6">
+            <div className="bg-surface-secondary/50 dark:bg-dark-surface-tertiary/30 p-6 rounded-lg border border-border dark:border-dark-border space-y-6">
               <div className="flex items-center gap-3 pb-4 border-b border-border dark:border-dark-border">
                 <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
                   <FileText size={20} />
@@ -325,7 +325,7 @@ export const AppointmentDetailsModal = ({
 
             {/* Intake Form Data */}
             {selectedViewAppointment?.intakeForm && (
-              <div className="bg-primary/5 dark:bg-dark-primary/5 p-6 rounded-2xl border border-primary/20 dark:border-dark-primary/20 space-y-6">
+              <div className="bg-primary/5 dark:bg-dark-primary/5 p-6 rounded-lg border border-primary/20 dark:border-dark-primary/20 space-y-6">
                 <div className="flex items-center gap-3 pb-4 border-b border-primary/10 dark:border-dark-primary/10">
                   <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
                     <ClipboardList size={20} />
@@ -368,7 +368,7 @@ export const AppointmentDetailsModal = ({
                         <div className="flex flex-wrap gap-2 mt-1">
                           {medicalList.length > 0 ? (
                             medicalList.map((c: string) => (
-                              <span key={c} className="px-2 py-1 bg-surface-secondary dark:bg-dark-surface-tertiary rounded text-xs font-medium border border-border dark:border-dark-border">{c}</span>
+                              <span key={c} className="px-2 py-1 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-sm text-xs font-medium border border-border dark:border-dark-border">{c}</span>
                             ))
                           ) : (
                             <span className="text-xs text-text-muted">None recorded</span>
@@ -401,7 +401,7 @@ export const AppointmentDetailsModal = ({
 
             {/* Consultation Data (If completed) */}
             {selectedViewAppointment?.consultationForm && (
-              <div className="bg-emerald-50/50 dark:bg-emerald-900/5 p-6 rounded-2xl border border-emerald-100 dark:border-emerald-900/20 space-y-6">
+              <div className="bg-emerald-50/50 dark:bg-emerald-900/5 p-6 rounded-lg border border-emerald-100 dark:border-emerald-900/20 space-y-6">
                 <div className="flex items-center gap-3 pb-4 border-b border-emerald-100 dark:border-emerald-900/10">
                   <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400 flex items-center justify-center shrink-0">
                     <Check size={20} />
@@ -426,11 +426,11 @@ export const AppointmentDetailsModal = ({
           </div>
 
           {/* Actions Footer */}
-          <div className="p-6 border-t border-border dark:border-dark-border shrink-0 flex flex-wrap gap-3 justify-end bg-surface-secondary/30 dark:bg-dark-surface-tertiary/10 rounded-b-3xl">
+          <div className="p-6 border-t border-border dark:border-dark-border shrink-0 flex flex-wrap gap-3 justify-end bg-surface-secondary/30 dark:bg-dark-surface-tertiary/10 rounded-b-2xl">
             {user?.role === 'PATIENT' && ['PENDING', 'RESCHEDULED'].includes(selectedViewAppointment.status) && (
               <button
                 onClick={onCancelAppointment}
-                className="px-6 py-2.5 text-red-600 bg-red-50 dark:bg-red-900/20 dark:text-red-400 font-bold rounded-xl hover:bg-red-100 transition-colors"
+                className="px-6 py-2.5 text-red-600 bg-red-50 dark:bg-red-900/20 dark:text-red-400 font-bold rounded-md hover:bg-red-100 transition-colors"
               >
                 Cancel Appointment
               </button>
@@ -438,7 +438,7 @@ export const AppointmentDetailsModal = ({
             {user?.role === 'PATIENT' && ['PENDING', 'RESCHEDULED'].includes(selectedViewAppointment.status) && onEditDetails && (
               <button
                 onClick={onEditDetails}
-                className="px-6 py-2.5 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/30 hover:opacity-90 transition-opacity"
+                className="px-6 py-2.5 bg-primary text-white font-bold rounded-md shadow-lg shadow-primary/30 hover:opacity-90 transition-opacity"
               >
                 Edit Details
               </button>

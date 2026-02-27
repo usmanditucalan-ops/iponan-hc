@@ -18,7 +18,7 @@ export const DashboardCalendar = ({ className = '' }: DashboardCalendarProps) =>
   ];
 
   return (
-    <div className={`bg-white dark:bg-dark-surface-secondary border-2 border-border/50 dark:border-dark-border rounded-[24px] p-5 shadow-sm flex flex-col w-full overflow-hidden ${className || 'min-h-[350px] h-full'}`}>
+    <div className={`bg-white dark:bg-dark-surface-secondary border-2 border-border/50 dark:border-dark-border rounded-[17px] p-5 shadow-sm flex flex-col w-full overflow-hidden ${className || 'min-h-[350px] h-full'}`}>
       <div className="flex justify-between items-center mb-4 px-1">
         <button className="text-gray-400 hover:text-black dark:hover:text-white transition-colors">
           <ChevronLeft size={16} />

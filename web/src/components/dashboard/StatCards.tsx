@@ -24,7 +24,7 @@ export const StatCards = ({ view }: StatCardsProps) => {
   }
 
   if (error) {
-    return <div className="mb-5 p-4 bg-red-50 dark:bg-red-950/30 border border-red-100 dark:border-red-900/50 text-red-600 dark:text-red-400 rounded-2xl text-sm">{error}</div>;
+    return <div className="mb-5 p-4 bg-red-50 dark:bg-red-950/30 border border-red-100 dark:border-red-900/50 text-red-600 dark:text-red-400 rounded-lg text-sm">{error}</div>;
   }
 
   const roleView = view || (user?.role as any) || 'ADMIN';
@@ -157,7 +157,7 @@ export const StatCards = ({ view }: StatCardsProps) => {
       {cards.map((stat: any) => (
         <Card key={stat.label} className="p-4 flex items-center justify-between shadow-sm hover:shadow-md transition-all border border-border dark:border-dark-border">
           <div className="flex items-center gap-4">
-            <div className={`p-3 rounded-lg ${stat.iconBg} bg-opacity-20`}>
+            <div className={`p-3 rounded ${stat.iconBg} bg-opacity-20`}>
               <stat.icon className={stat.iconColor} size={20} />
             </div>
             <div>
