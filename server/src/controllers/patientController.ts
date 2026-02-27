@@ -43,7 +43,7 @@ export const getPatients = async (req: AuthRequest, res: Response) => {
       },
     });
 
-    const patientsWithLastVital = patients.map(p => ({
+    const patientsWithLastVital = patients.map((p: any) => ({
         ...p,
         lastVitalDate: p.vitalSigns[0]?.recordedAt || null,
         vitalSigns: undefined // Clean up response
@@ -129,7 +129,7 @@ export const updatePatientProfile = async (req: AuthRequest, res: Response) => {
     if (bloodType !== undefined) patientData.bloodType = bloodType;
     if (allergies !== undefined) patientData.allergies = allergies;
 
-    await prisma.$transaction(async (tx) => {
+    await prisma.$transaction(async (tx: any) => {
       if (Object.keys(userData).length > 0) {
         await tx.user.update({
           where: { id: patient.user.id },

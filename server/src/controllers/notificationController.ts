@@ -28,7 +28,7 @@ export const notifyAdmins = async (title: string, message: string, type: string 
     });
 
     await Promise.all(
-      admins.map(admin => 
+      admins.map((admin: any) => 
         prisma.notification.create({
           data: { userId: admin.id, title, message, type }
         })

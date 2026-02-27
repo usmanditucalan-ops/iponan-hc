@@ -7,7 +7,7 @@ type AuditPayload = {
   entity?: string;
   entityId?: string;
   status?: 'SUCCESS' | 'FAILED';
-  details?: Prisma.InputJsonValue;
+  details?: any;
   userId?: string;
 };
 

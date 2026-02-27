@@ -234,7 +234,7 @@ export const exportUsers = async (req: AuthRequest, res: Response) => {
 
     if (format === 'csv') {
       const header = 'ID,First Name,Last Name,Email,Phone,Role,Language,Joined\n';
-      const csv = users.map(u => 
+      const csv = users.map((u: any) => 
         `${u.id},${u.firstName},${u.lastName},${u.email},${u.phone},${u.role},${u.language},${u.createdAt.toISOString()}`
       ).join('\n');
       
