@@ -694,13 +694,13 @@ const Appointments = () => {
                  <div className="overflow-x-auto">
                    <table className="w-full table-fixed text-left border-collapse min-w-[700px]">
                      <thead>
-                       <tr className="border-b border-border dark:border-dark-border text-text-muted dark:text-dark-text-muted-dark text-[10px] uppercase tracking-wider">
-                         <th className="px-2 py-2 font-bold w-[20%]">User</th>
-                         <th className="px-2 py-2 font-bold w-[24%] border-l border-border/60 dark:border-dark-border/60">Contact Info</th>
-                         <th className="px-2 py-2 font-bold w-[30%] border-l border-border/60 dark:border-dark-border/60">Address</th>
-                         <th className="px-2 py-2 font-bold w-[9%] border-l border-border/60 dark:border-dark-border/60">Gender</th>
-                         <th className="px-2 py-2 font-bold w-[11%] border-l border-border/60 dark:border-dark-border/60 text-center">Status</th>
-                         <th className="px-2 py-2 font-bold w-[6%] border-l border-border/60 dark:border-dark-border/60 text-right">Actions</th>
+                       <tr className="border-b border-border dark:border-dark-border text-text-muted dark:text-dark-text-muted-dark text-xs uppercase tracking-wider">
+                         <th className="p-4 font-bold w-[20%]">User</th>
+                         <th className="p-4 font-bold border-l border-border/60 dark:border-dark-border/60 w-[24%]">Contact Info</th>
+                         <th className="p-4 font-bold border-l border-border/60 dark:border-dark-border/60 w-[26%]">Address</th>
+                         <th className="p-4 font-bold border-l border-border/60 dark:border-dark-border/60 w-[10%]">Gender</th>
+                         <th className="p-4 font-bold border-l border-border/60 dark:border-dark-border/60 text-center w-[12%]">Status</th>
+                         <th className="p-4 font-bold border-l border-border/60 dark:border-dark-border/60 text-right w-[8%]">Actions</th>
                        </tr>
                      </thead>
                      <tbody>
@@ -734,32 +734,34 @@ const Appointments = () => {
                               onClick={() => openAppointmentDetails(apt)}
                               className="border-b border-border dark:border-dark-border hover:bg-surface-secondary/20 dark:hover:bg-dark-surface-tertiary/20 cursor-pointer group transition-colors"
                             >
-                              <td className="px-2 py-2">
-                                <div className="flex items-center gap-2">
-                                  <div className="w-8 h-8 bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary rounded flex items-center justify-center font-bold text-xs shrink-0">
+                              <td className="p-4">
+                                <div className="flex items-center gap-3">
+                                  <div className="w-9 h-9 bg-primary/10 dark:bg-dark-primary/20 text-primary dark:text-dark-primary rounded-md flex items-center justify-center font-bold text-sm shrink-0">
                                     {(displayName?.[0] || 'P').toUpperCase()}
                                   </div>
-                                  <span className="text-xs font-medium text-text-primary dark:text-dark-text-primary leading-tight break-words">{displayName}</span>
+                                  <span className="text-sm font-medium text-text-primary dark:text-dark-text-primary break-words">{displayName}</span>
                                 </div>
                               </td>
-                              <td className="px-2 py-2 border-l border-border/40 dark:border-dark-border/40">
-                                <div className="space-y-0.5">
-                                  <div className="flex items-center gap-1.5 text-[11px] text-text-secondary dark:text-dark-text-secondary font-medium leading-tight break-all">
-                                    <Mail size={10} className="text-text-muted dark:text-dark-text-muted-dark shrink-0" />
+                              <td className="p-4 border-l border-border/40 dark:border-dark-border/40">
+                                <div className="space-y-1">
+                                  <div className="flex items-center gap-2 text-xs text-text-secondary dark:text-dark-text-secondary font-medium">
+                                    <Mail size={12} className="text-text-muted dark:text-dark-text-muted-dark shrink-0" />
                                     {displayEmail}
                                   </div>
-                                  <div className="flex items-center gap-1.5 text-[11px] text-text-secondary dark:text-dark-text-secondary font-medium leading-tight break-all">
-                                    <Phone size={10} className="text-text-muted dark:text-dark-text-muted-dark shrink-0" />
+                                  <div className="flex items-center gap-2 text-xs text-text-secondary dark:text-dark-text-secondary font-medium">
+                                    <Phone size={12} className="text-text-muted dark:text-dark-text-muted-dark shrink-0" />
                                     {displayPhone}
                                   </div>
                                 </div>
                               </td>
-                              <td className="px-2 py-2 border-l border-border/40 dark:border-dark-border/40 text-[11px] text-text-secondary dark:text-dark-text-secondary font-medium leading-tight break-words">
-                                {displayAddress}
+                              <td className="px-3 py-2.5 border-l border-border/40 dark:border-dark-border/40 text-xs text-text-secondary dark:text-dark-text-secondary font-medium">
+                                <div className="truncate max-w-[250px]" title={displayAddress}>
+                                  {displayAddress}
+                                </div>
                               </td>
-                              <td className="px-2 py-2 border-l border-border/40 dark:border-dark-border/40 text-[11px] text-text-secondary dark:text-dark-text-secondary font-bold">{displayGender}</td>
-                              <td className="px-2 py-2 border-l border-border/40 dark:border-dark-border/40 text-center">
-                                <span className={`text-[9px] whitespace-nowrap font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
+                              <td className="px-3 py-2.5 border-l border-border/40 dark:border-dark-border/40 text-sm text-text-secondary dark:text-dark-text-secondary font-bold">{displayGender}</td>
+                              <td className="px-3 py-2.5 border-l border-border/40 dark:border-dark-border/40 text-center">
+                                <span className={`text-[10px] whitespace-nowrap font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${
                                   apt.status === 'CONFIRMED' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 
                                   apt.status === 'PENDING' ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400' : 
                                   apt.status === 'RESCHEDULED' ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400' :
@@ -767,12 +769,16 @@ const Appointments = () => {
                                   'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
                                 }`}>{patientStatusLabel}</span>
                               </td>
-                              <td className="px-2 py-2 border-l border-border/40 dark:border-dark-border/40 text-right">
-                                <div className="flex items-center justify-end">
-                                  <div className="inline-flex items-center justify-center px-3 py-1.5 rounded text-[11px] font-bold bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
-                                    View
-                                  </div>
-                                </div>
+                              <td className="px-3 py-2.5 border-l border-border/40 dark:border-dark-border/40 text-right">
+                                <button
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    openAppointmentDetails(apt);
+                                  }}
+                                  className="px-3 py-1.5 text-[11px] font-bold bg-primary/10 text-primary rounded hover:bg-primary/20 transition-colors"
+                                >
+                                  View
+                                </button>
                               </td>
                             </tr>
                           )
