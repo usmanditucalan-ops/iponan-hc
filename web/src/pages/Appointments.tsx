@@ -553,7 +553,6 @@ const Appointments = () => {
   const [filterTimeline, setFilterTimeline] = useState<'all' | 'today' | 'upcoming' | 'past' | 'waiting' | 'ready'>('all');
   const [filterStatus, setFilterStatus] = useState<'all' | 'pending' | 'confirmed' | 'completed' | 'cancelled' | 'rejected'>('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchQuery, setSearchQuery] = useState('');
 
   const now = new Date();
   now.setHours(0, 0, 0, 0);
