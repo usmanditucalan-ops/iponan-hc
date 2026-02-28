@@ -433,6 +433,7 @@ const Patients = () => {
                   <label className="text-[10px] font-bold text-text-muted-dark dark:text-dark-text-muted-dark uppercase tracking-widest pl-1" htmlFor="patientBirthDate">Birth Date</label>
                   <input
                     type="date"
+                    max={new Date().toISOString().split('T')[0]}
                     id="patientBirthDate"
                     required
                     value={formData.dateOfBirth}
@@ -539,7 +540,7 @@ const Patients = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="text-[10px] font-bold uppercase tracking-wider text-text-muted mb-1 block">Birth Date</label>
-                  <input type="date" value={editFormData.dateOfBirth} onChange={(e) => setEditFormData({...editFormData, dateOfBirth: e.target.value})} className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm outline-none" />
+                  <input type="date" max={new Date().toISOString().split('T')[0]} value={editFormData.dateOfBirth} onChange={(e) => setEditFormData({...editFormData, dateOfBirth: e.target.value})} className="w-full px-4 py-3 bg-surface-secondary dark:bg-dark-surface-tertiary rounded-md text-sm outline-none" />
                 </div>
                 <div>
                   <label className="text-[10px] font-bold uppercase tracking-wider text-text-muted mb-1 block">Address</label>

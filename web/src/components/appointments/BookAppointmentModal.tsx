@@ -190,21 +190,24 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
         illnessType: rawHistory.illnessType || 'none',
         illnessDetails: rawHistory.illnessDetails || '',
         allergy: rawHistory.allergy || '',
-        takingMeds: rawHistory.takingMeds || 'No'
+        takingMeds: rawHistory.takingMeds?.startsWith('Yes') ? 'Yes' : 'No',
+        medicinesDetails: rawHistory.medicinesDetails || rawHistory.takingMeds?.replace('Yes', '').replace(/^\s*\(\s*|\s*\)\s*$/g, '').trim() || ''
       });
     } else if (Array.isArray(rawHistory)) {
       setMedHistory({
         illnessType: rawHistory.length > 0 ? 'existing' : 'none',
         illnessDetails: rawHistory.join(', '),
         allergy: '',
-        takingMeds: 'No'
+        takingMeds: 'No',
+        medicinesDetails: ''
       });
     } else if (typeof rawHistory === 'string' && rawHistory.trim()) {
       setMedHistory({
         illnessType: 'existing',
         illnessDetails: rawHistory,
         allergy: '',
-        takingMeds: 'No'
+        takingMeds: 'No',
+        medicinesDetails: ''
       });
     }
   }, [initialData]);
@@ -233,7 +236,8 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
     illnessType: 'none', // 'none' or 'existing'
     illnessDetails: '',
     allergy: '',
-    takingMeds: 'No'
+    takingMeds: 'No',
+    medicinesDetails: ''
   });
   
   const [date, setDate] = useState(initialData?.date || '');
@@ -260,6 +264,17 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
       }
       if (reasons.includes('Other') && !otherReason.trim()) {
         warning('Please specify the other reason');
+        return;
+      }
+    }
+
+    if (step === 4) {
+      if (symptoms.length === 0) {
+        warning('Please describe your symptoms');
+        return;
+      }
+      if (symptoms.includes('Other') && !otherSymptom.trim()) {
+        warning('Please specify the other symptom');
         return;
       }
     }
@@ -411,6 +426,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                   <label className="text-[10px] font-bold text-text-muted uppercase">Date of Birth</label>
                   <input 
                     type="date"
+                    max={todayString}
                     value={patientData.dob}
                     onChange={(e) => setPatientData({...patientData, dob: e.target.value})}
                     className="w-full px-4 py-2 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none"
@@ -614,11 +630,20 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                 <div className="flex gap-4">
                   {['Yes', 'No'].map(opt => (
                     <label key={opt} className={`flex-1 flex items-center justify-center p-3 rounded-md border-2 transition-colors cursor-pointer ${medHistory.takingMeds === opt ? 'border-primary bg-primary/5 text-primary' : 'border-border dark:border-dark-border hover:border-primary/50'}`}>
-                      <input type="radio" className="hidden" name="meds" value={opt} checked={medHistory.takingMeds === opt} onChange={(e) => setMedHistory({...medHistory, takingMeds: e.target.value})} />
+                      <input type="radio" className="hidden" name="meds" value={opt} checked={medHistory.takingMeds === opt} onChange={(e) => setMedHistory({...medHistory, takingMeds: e.target.value, medicinesDetails: e.target.value === 'No' ? '' : medHistory.medicinesDetails})} />
                       <span className="font-bold text-sm">{opt}</span>
                     </label>
                   ))}
                 </div>
+                {medHistory.takingMeds === 'Yes' && (
+                  <input 
+                    type="text"
+                    placeholder="Please specify the medicines..."
+                    value={medHistory.medicinesDetails || ''}
+                    onChange={(e) => setMedHistory({...medHistory, medicinesDetails: e.target.value})}
+                    className="w-full px-4 py-2 mt-3 rounded border border-border dark:border-dark-border bg-white dark:bg-dark-surface-tertiary text-text-primary dark:text-dark-text-primary text-sm focus:ring-1 focus:ring-primary outline-none animate-in fade-in slide-in-from-top-1"
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -723,7 +748,11 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
                </div>
                <div className="flex justify-between gap-4">
                   <span className="text-text-muted font-bold uppercase text-[9px] shrink-0">Taking Medicines</span>
-                  <span className="text-right">{medHistory.takingMeds || 'No'}</span>
+                  <span className="text-right">
+                    {medHistory.takingMeds === 'Yes' && medHistory.medicinesDetails 
+                      ? `Yes (${medHistory.medicinesDetails})` 
+                      : medHistory.takingMeds || 'No'}
+                  </span>
                </div>
             </div>
 
@@ -795,6 +824,7 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
               disabled={loading}
               className="px-6 py-2.5 bg-primary text-white font-bold rounded-md shadow-lg flex items-center gap-2 hover:opacity-90 disabled:opacity-50 transition-opacity"
             >
+              {loading && <div className="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin"></div>}
               {loading ? 'Processing...' : (step === 6 ? 'Confirm Appointment' : 'Next')} 
               {!loading && <ChevronRight size={18} />}
             </button>

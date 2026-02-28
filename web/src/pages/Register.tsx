@@ -178,6 +178,7 @@ const Register = () => {
                 label="Birth Date"
                 name="birthDate"
                 type="date"
+                max={new Date().toISOString().split('T')[0]}
                 value={formData.birthDate}
                 onChange={handleChange}
                 externalError={formErrors.birthDate}
