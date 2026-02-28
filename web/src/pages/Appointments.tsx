@@ -686,8 +686,8 @@ const Appointments = () => {
                   icon={CalendarX}
                   title="No Appointments Found"
                   description={`No appointments found for the selected filter: ${filterStatus}.`}
-                  actionLabel={canBook && filterStatus !== 'past' ? "Book Now" : undefined}
-                  onAction={canBook && filterStatus !== 'past' ? () => setShowBookModal(true) : undefined}
+                  actionLabel={canBook && filterTimeline !== 'past' ? "Book Now" : undefined}
+                  onAction={canBook && filterTimeline !== 'past' ? () => setShowBookModal(true) : undefined}
                   className="py-12"
                 />
               ) : user?.role === 'PATIENT' ? (
@@ -769,8 +769,8 @@ const Appointments = () => {
                               </td>
                               <td className="px-2 py-2 border-l border-border/40 dark:border-dark-border/40 text-right">
                                 <div className="flex items-center justify-end">
-                                  <div className="inline-flex items-center justify-center p-1.5 rounded-full text-text-muted dark:text-dark-text-muted-dark group-hover:text-primary dark:group-hover:text-dark-primary group-hover:bg-primary/10 dark:group-hover:bg-dark-primary/10 transition-colors">
-                                    <ChevronRight size={16} />
+                                  <div className="inline-flex items-center justify-center px-3 py-1.5 rounded text-[11px] font-bold text-text-muted dark:text-dark-text-muted-dark group-hover:text-primary dark:group-hover:text-dark-primary group-hover:bg-primary/10 dark:group-hover:bg-dark-primary/10 transition-colors">
+                                    View
                                   </div>
                                 </div>
                               </td>
@@ -856,7 +856,7 @@ const Appointments = () => {
                                 onClick={() => openAppointmentDetails(apt)}
                                 className="px-3 py-1.5 text-[11px] font-bold bg-primary/10 text-primary rounded hover:bg-primary/20 transition-colors"
                               >
-                                View Summary
+                                View
                               </button>
                             </td>
                           </tr>
@@ -944,11 +944,9 @@ const Appointments = () => {
                             <td className="px-3 py-2.5 border-l border-border/40 dark:border-dark-border/40 text-right">
                               <button
                                 onClick={() => openAppointmentDetails(apt)}
-                                className="inline-flex items-center justify-center p-2 rounded-full text-text-muted dark:text-dark-text-muted-dark hover:text-primary dark:hover:text-dark-primary hover:bg-primary/10 dark:hover:bg-dark-primary/10 transition-colors"
-                                title="View Summary"
-                                aria-label="View Summary"
+                                className="px-3 py-1.5 text-[11px] font-bold bg-primary/10 text-primary rounded hover:bg-primary/20 transition-colors"
                               >
-                                <ChevronRight size={18} />
+                                View
                               </button>
                             </td>
                           </tr>
