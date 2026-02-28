@@ -115,7 +115,7 @@ const Settings = () => {
   return (
     <DashboardLayout>
       <div className="grid grid-cols-1 xl:grid-cols-12 gap-6">
-        <div className="xl:col-span-7 space-y-6">
+        <div className="xl:col-span-7 space-y-6 flex flex-col h-full">
           <Card>
             <h3 className="text-lg font-bold text-text-primary dark:text-dark-text-primary mb-4">Profile Settings</h3>
 
@@ -235,7 +235,7 @@ const Settings = () => {
             </div>
           </Card>
 
-          <Card className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-primary/20 bg-primary/5 dark:bg-dark-primary/5">
+          <Card className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-primary/20 bg-primary/5 dark:bg-dark-primary/5 mt-auto">
             <div>
               <p className="font-bold text-text-primary dark:text-dark-text-primary">Confirm to apply new settings</p>
               <p className="text-xs text-text-muted dark:text-dark-text-muted-dark">Please review your information before submitting.</p>
@@ -261,7 +261,7 @@ const Settings = () => {
           </Card>
         </div>
 
-        <div className="xl:col-span-5 space-y-6">
+        <div className="xl:col-span-5 space-y-6 flex flex-col h-full">
           <Card>
             <div className="flex items-center gap-2 mb-4">
               <Bell size={18} className="text-text-muted dark:text-dark-text-muted-dark" />
@@ -302,7 +302,7 @@ const Settings = () => {
             </div>
           </Card>
 
-          <Card>
+          <Card className="mt-auto">
             <h3 className="text-lg font-bold text-text-primary dark:text-dark-text-primary mb-4">Theme Settings</h3>
             <div className="space-y-4">
               <div className="flex items-center justify-between p-4 bg-surface-secondary dark:bg-dark-surface-secondary rounded-md">
