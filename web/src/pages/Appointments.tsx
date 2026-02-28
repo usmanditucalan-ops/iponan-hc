@@ -769,7 +769,7 @@ const Appointments = () => {
                               </td>
                               <td className="px-2 py-2 border-l border-border/40 dark:border-dark-border/40 text-right">
                                 <div className="flex items-center justify-end">
-                                  <div className="inline-flex items-center justify-center px-3 py-1.5 rounded text-[11px] font-bold text-text-muted dark:text-dark-text-muted-dark group-hover:text-primary dark:group-hover:text-dark-primary group-hover:bg-primary/10 dark:group-hover:bg-dark-primary/10 transition-colors">
+                                  <div className="inline-flex items-center justify-center px-3 py-1.5 rounded text-[11px] font-bold bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
                                     View
                                   </div>
                                 </div>
@@ -844,7 +844,11 @@ const Appointments = () => {
                                 </div>
                               </div>
                             </td>
-                            <td className="p-4 border-l border-border/40 dark:border-dark-border/40 text-sm text-text-secondary dark:text-dark-text-secondary">{address}</td>
+                            <td className="px-3 py-2.5 border-l border-border/40 dark:border-dark-border/40 text-xs text-text-secondary dark:text-dark-text-secondary font-medium">
+                              <div className="truncate max-w-[250px]" title={address}>
+                                {address}
+                              </div>
+                            </td>
                             <td className="p-4 border-l border-border/40 dark:border-dark-border/40 text-sm text-text-secondary dark:text-dark-text-secondary font-bold">{gender}</td>
                             <td className="p-4 border-l border-border/40 dark:border-dark-border/40 text-center">
                               <span className={`text-[10px] whitespace-nowrap font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${statusClass}`}>
@@ -932,8 +936,10 @@ const Appointments = () => {
                                 </div>
                               </div>
                             </td>
-                            <td className="px-3 py-2.5 border-l border-border/40 dark:border-dark-border/40 text-xs text-text-secondary dark:text-dark-text-secondary font-medium whitespace-nowrap">
-                              {address}
+                            <td className="px-3 py-2.5 border-l border-border/40 dark:border-dark-border/40 text-xs text-text-secondary dark:text-dark-text-secondary font-medium">
+                              <div className="truncate max-w-[250px]" title={address}>
+                                {address}
+                              </div>
                             </td>
                             <td className="px-3 py-2.5 border-l border-border/40 dark:border-dark-border/40 text-sm text-text-secondary dark:text-dark-text-secondary font-bold">{gender}</td>
                             <td className="px-3 py-2.5 border-l border-border/40 dark:border-dark-border/40 text-center">
