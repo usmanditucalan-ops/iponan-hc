@@ -20,7 +20,7 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 overflow-x-hidden">
+    <div className="min-h-screen bg-transparent font-sans text-slate-900 overflow-x-hidden">
       {/* ── Navbar ── */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -179,7 +179,7 @@ const LandingPage = () => {
       </section>
 
       {/* ── Features Section ── */}
-      <section id="features" className="py-24 px-6 bg-slate-50">
+      <section id="features" className="py-24 px-6 bg-transparent">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 bg-[#f4e8ff] text-[#b721ff] font-bold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">

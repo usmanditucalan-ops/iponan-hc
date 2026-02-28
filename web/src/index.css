@@ -9,7 +9,8 @@
 }
 
 body {
-  @apply bg-gradient-to-br from-blue-100/40 via-slate-50 to-purple-100/50 dark:from-slate-900 dark:via-[#1E1E2D] dark:to-[#2d2447] bg-fixed min-h-screen text-text-primary antialiased;
+  background: linear-gradient(135deg, #e0eafc 0%, #fcfeff 100%);
+  @apply dark:bg-gradient-to-br dark:from-slate-900 dark:via-[#1E1E2D] dark:to-[#2d2447] bg-fixed min-h-screen text-text-primary antialiased;
 }
 
 /* Custom scrollbar for a more premium feel */
