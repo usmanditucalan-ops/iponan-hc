@@ -231,15 +231,7 @@ const Settings = () => {
                   Change Password
                 </button>
               </div>
-              <div className="flex items-center justify-between p-4 bg-surface-secondary dark:bg-dark-surface-secondary rounded-md">
-                <div>
-                  <p className="font-bold text-text-primary dark:text-dark-text-primary">Two-Factor Authentication (2FA)</p>
-                  <p className="text-xs text-text-muted dark:text-dark-text-muted-dark">Extra security via OTP/email</p>
-                </div>
-                <button onClick={() => info('2FA setup would open here')} className="px-4 py-2 bg-amber-600 dark:bg-amber-700 text-white rounded text-sm font-bold hover:bg-amber-700 dark:hover:bg-amber-600 transition-all">
-                  Enable 2FA
-                </button>
-              </div>
+
             </div>
           </Card>
         </div>

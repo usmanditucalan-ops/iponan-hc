@@ -279,6 +279,17 @@ export const BookAppointmentModal = ({ onClose, onSuccess, onBackToDetails, init
       }
     }
 
+    if (step === 5) {
+      if (medHistory.illnessType === 'existing' && !medHistory.illnessDetails.trim()) {
+        warning('Please describe your illness');
+        return;
+      }
+      if (medHistory.takingMeds === 'Yes' && !medHistory.medicinesDetails.trim()) {
+        warning('Please specify the medicines you are currently taking');
+        return;
+      }
+    }
+
     // Submit Logic at Step 6
     if (step === 6) {
       if (!date || !time) {
