@@ -234,6 +234,31 @@ const Settings = () => {
 
             </div>
           </Card>
+
+          <Card className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-primary/20 bg-primary/5 dark:bg-dark-primary/5">
+            <div>
+              <p className="font-bold text-text-primary dark:text-dark-text-primary">Confirm to apply new settings</p>
+              <p className="text-xs text-text-muted dark:text-dark-text-muted-dark">Please review your information before submitting.</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={handleDiscard}
+                className="px-4 py-2.5 text-text-secondary dark:text-dark-text-secondary font-bold text-sm hover:bg-surface-secondary dark:hover:bg-dark-surface-secondary rounded-md transition-all"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={handleSaveAll}
+                disabled={isLoading}
+                className="px-5 py-2.5 bg-gradient-to-r from-primary to-accent text-white rounded-md font-bold text-sm hover:opacity-90 transition-all disabled:opacity-50 flex items-center gap-2"
+              >
+                {isLoading ? <Loader2 className="animate-spin text-white" size={16} /> : null}
+                {isLoading ? 'Saving...' : 'Save Changes'}
+              </button>
+            </div>
+          </Card>
         </div>
 
         <div className="xl:col-span-5 space-y-6">
@@ -308,32 +333,6 @@ const Settings = () => {
         </div>
       </div>
 
-      <div className="mt-8">
-        <Card className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-          <div>
-            <p className="font-bold text-text-primary dark:text-dark-text-primary">Confirm to apply new settings</p>
-            <p className="text-xs text-text-muted dark:text-dark-text-muted-dark">Please review your information before submitting.</p>
-          </div>
-          <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={handleDiscard}
-              className="px-4 py-2.5 text-text-secondary dark:text-dark-text-secondary font-bold text-sm hover:bg-surface-secondary dark:hover:bg-dark-surface-secondary rounded-md transition-all"
-            >
-              Cancel
-            </button>
-            <button
-              type="button"
-              onClick={handleSaveAll}
-              disabled={isLoading}
-              className="px-5 py-2.5 bg-gradient-to-r from-primary to-accent text-white rounded-md font-bold text-sm hover:opacity-90 transition-all disabled:opacity-50 flex items-center gap-2"
-            >
-              {isLoading ? <Loader2 className="animate-spin text-white" size={16} /> : null}
-              {isLoading ? 'Saving...' : 'Save Changes'}
-            </button>
-          </div>
-        </Card>
-      </div>
 
       {showPasswordModal && (
         <div className="fixed inset-0 z-[140] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
