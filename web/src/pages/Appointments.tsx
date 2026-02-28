@@ -646,7 +646,7 @@ const Appointments = () => {
                      onChange={(e) => setFilterStatus(e.target.value as any)}
                      className="bg-white dark:bg-dark-surface-secondary border border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary rounded-md pl-4 pr-10 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/20 transition-all font-bold appearance-none cursor-pointer shadow-sm hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary"
                  >
-                     <option value="all">All Statuses</option>
+                     <option value="all">Status</option>
                      <option value="pending">Pending</option>
                      <option value="confirmed">Confirmed</option>
                      <option value="completed">Completed</option>
@@ -691,8 +691,8 @@ const Appointments = () => {
                   className="py-12"
                 />
               ) : user?.role === 'PATIENT' ? (
-                 <div className="overflow-x-hidden">
-                   <table className="w-full table-fixed text-left border-collapse">
+                 <div className="overflow-x-auto">
+                   <table className="w-full table-fixed text-left border-collapse min-w-[700px]">
                      <thead>
                        <tr className="border-b border-border dark:border-dark-border text-text-muted dark:text-dark-text-muted-dark text-[10px] uppercase tracking-wider">
                          <th className="px-2 py-2 font-bold w-[20%]">User</th>
@@ -782,15 +782,15 @@ const Appointments = () => {
                  </div>
               ) : user?.role === 'STAFF' ? (
                 <div className="overflow-x-auto">
-                  <table className="w-full text-left border-collapse min-w-[1080px]">
+                  <table className="w-full table-fixed text-left border-collapse min-w-[700px]">
                     <thead>
                       <tr className="border-b border-border dark:border-dark-border text-text-muted dark:text-dark-text-muted-dark text-xs uppercase tracking-wider">
-                        <th className="px-3 py-2.5 font-bold">User</th>
-                        <th className="px-3 py-2.5 font-bold border-l border-border/60 dark:border-dark-border/60">Contact Info</th>
-                        <th className="px-3 py-2.5 font-bold border-l border-border/60 dark:border-dark-border/60">Address</th>
-                        <th className="px-3 py-2.5 font-bold border-l border-border/60 dark:border-dark-border/60">Gender</th>
-                        <th className="px-3 py-2.5 font-bold border-l border-border/60 dark:border-dark-border/60 text-center">Status</th>
-                        <th className="px-3 py-2.5 font-bold border-l border-border/60 dark:border-dark-border/60 text-right">Actions</th>
+                        <th className="px-3 py-2.5 font-bold w-[20%]">User</th>
+                        <th className="px-3 py-2.5 font-bold border-l border-border/60 dark:border-dark-border/60 w-[24%]">Contact Info</th>
+                        <th className="px-3 py-2.5 font-bold border-l border-border/60 dark:border-dark-border/60 w-[26%]">Address</th>
+                        <th className="px-3 py-2.5 font-bold border-l border-border/60 dark:border-dark-border/60 w-[10%]">Gender</th>
+                        <th className="px-3 py-2.5 font-bold border-l border-border/60 dark:border-dark-border/60 text-center w-[12%]">Status</th>
+                        <th className="px-3 py-2.5 font-bold border-l border-border/60 dark:border-dark-border/60 text-right w-[8%]">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -867,15 +867,15 @@ const Appointments = () => {
                 </div>
               ) : user?.role === 'DOCTOR' ? (
                 <div className="overflow-x-auto">
-                  <table className="w-full text-left border-collapse min-w-[920px]">
+                  <table className="w-full table-fixed text-left border-collapse min-w-[700px]">
                     <thead>
                       <tr className="border-b border-border dark:border-dark-border text-text-muted dark:text-dark-text-muted-dark text-xs uppercase tracking-wider">
-                        <th className="p-4 font-bold">User</th>
-                        <th className="p-4 font-bold border-l border-border/60 dark:border-dark-border/60">Contact Info</th>
-                        <th className="p-4 font-bold border-l border-border/60 dark:border-dark-border/60">Address</th>
-                        <th className="p-4 font-bold border-l border-border/60 dark:border-dark-border/60">Gender</th>
-                        <th className="p-4 font-bold border-l border-border/60 dark:border-dark-border/60 text-center">Status</th>
-                        <th className="p-4 font-bold border-l border-border/60 dark:border-dark-border/60 text-right">Actions</th>
+                        <th className="p-4 font-bold w-[20%]">User</th>
+                        <th className="p-4 font-bold border-l border-border/60 dark:border-dark-border/60 w-[24%]">Contact Info</th>
+                        <th className="p-4 font-bold border-l border-border/60 dark:border-dark-border/60 w-[26%]">Address</th>
+                        <th className="p-4 font-bold border-l border-border/60 dark:border-dark-border/60 w-[10%]">Gender</th>
+                        <th className="p-4 font-bold border-l border-border/60 dark:border-dark-border/60 text-center w-[12%]">Status</th>
+                        <th className="p-4 font-bold border-l border-border/60 dark:border-dark-border/60 text-right w-[8%]">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
