@@ -39,7 +39,11 @@ const normalizePhone = (phone: string): string => {
 // ---- Base Senders ----
 
 const sendSmsInternal = async (to: string, body: string) => {
-  await iprogSmsService.sendSms(to, body);
+  try {
+    await iprogSmsService.sendSms(to, body);
+  } catch (err: any) {
+    console.warn(`[SMS Warning] Failed to send SMS to ${to}. Execution will continue to prevent UI blockages.`);
+  }
 };
 
 const sendEmailInternal = async (toEmail: string, toName: string, subject: string, htmlContent: string) => {
