@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { DashboardLayout } from '../components/layout/DashboardLayout';
 import { EmptyState } from '../components/common/EmptyState';
-import { Calendar, Plus, Filter, ChevronLeft, ChevronRight, ChevronDown, Loader2, CalendarX, X, Check, FileText,
+import { Calendar, Plus, ChevronLeft, ChevronRight, ChevronDown, Loader2, CalendarX, X, Check, FileText,
   Printer,
   AlertCircle,
   Search,
@@ -553,7 +553,7 @@ const Appointments = () => {
   const [filterTimeline, setFilterTimeline] = useState<'all' | 'today' | 'upcoming' | 'past' | 'waiting' | 'ready'>('all');
   const [filterStatus, setFilterStatus] = useState<'all' | 'pending' | 'confirmed' | 'completed' | 'cancelled' | 'rejected'>('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [showFilters, setShowFilters] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const now = new Date();
   now.setHours(0, 0, 0, 0);
@@ -616,70 +616,46 @@ const Appointments = () => {
           </div>
 
           <div className="flex items-center gap-3 shrink-0 w-full md:w-auto justify-end">
-             {/* Dropdown Filter */}
-             <div className="relative group">
-                <button
-                   onClick={() => setShowFilters(!showFilters)}
-                   className="flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-dark-surface-secondary border border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary rounded-md font-bold text-sm cursor-pointer hover:bg-surface-secondary dark:hover:bg-dark-surface-secondary transition-all shadow-sm"
-                >
-                   <Filter size={18} />
-                   <span>Filters</span>
-                   <ChevronDown size={14} className={`transition-transform duration-200 ${showFilters ? 'rotate-180' : ''}`} />
-                </button>
-                
-                {showFilters && (
-                   <div className="absolute right-0 top-full mt-2 w-64 bg-white dark:bg-dark-surface-secondary rounded-md shadow-xl border border-border dark:border-dark-border p-4 z-50 flex flex-col gap-4 animate-in fade-in slide-in-from-top-2 duration-200">
-                      <div>
-                         <label className="block text-[10px] font-bold text-text-muted-dark uppercase tracking-wider mb-2">Timeline</label>
-                         <div className="relative">
-                           <select 
-                               value={filterTimeline}
-                               onChange={(e) => setFilterTimeline(e.target.value as any)}
-                               className="w-full bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border text-text-primary dark:text-dark-text-primary rounded pl-3 pr-8 py-2 text-sm outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium appearance-none cursor-pointer"
-                           >
-                               <option value="all">All Appointments</option>
-                               {user?.role === 'DOCTOR' ? (
-                                 <>
-                                   <option value="waiting">Waiting (No Vitals)</option>
-                                   <option value="ready">Ready (Vitals Recorded)</option>
-                                 </>
-                               ) : (
-                                 <>
-                                   <option value="today">Today</option>
-                                   <option value="upcoming">Upcoming</option>
-                                   <option value="past">Past History</option>
-                                 </>
-                               )}
-                           </select>
-                           <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-text-muted-dark pointer-events-none" />
-                         </div>
-                      </div>
-                      <div>
-                         <label className="block text-[10px] font-bold text-text-muted-dark uppercase tracking-wider mb-2">Status</label>
-                         <div className="relative">
-                           <select 
-                               value={filterStatus}
-                               onChange={(e) => setFilterStatus(e.target.value as any)}
-                               className="w-full bg-surface-secondary dark:bg-dark-surface-tertiary border border-border dark:border-dark-border text-text-primary dark:text-dark-text-primary rounded pl-3 pr-8 py-2 text-sm outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium appearance-none cursor-pointer"
-                           >
-                               <option value="all">All Statuses</option>
-                               <option value="pending">Pending</option>
-                               <option value="confirmed">Confirmed</option>
-                               <option value="completed">Completed</option>
-                               <option value="cancelled">Cancelled</option>
-                               <option value="rejected">Rejected</option>
-                           </select>
-                           <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-text-muted-dark pointer-events-none" />
-                         </div>
-                      </div>
-                      
-                      <div className="flex justify-end pt-2 border-t border-border dark:border-dark-border">
-                         <button onClick={() => setShowFilters(false)} className="text-sm font-bold text-primary hover:underline">
-                            Close
-                         </button>
-                      </div>
-                   </div>
-                )}
+             {/* Inline Filters */}
+             <div className="flex items-center gap-3 w-full md:w-auto overflow-x-auto pb-1 md:pb-0 scrollbar-hide">
+               <div className="relative shrink-0">
+                 <select 
+                     value={filterTimeline}
+                     onChange={(e) => setFilterTimeline(e.target.value as any)}
+                     className="bg-white dark:bg-dark-surface-secondary border border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary rounded-md pl-4 pr-10 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/20 transition-all font-bold appearance-none cursor-pointer shadow-sm hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary"
+                 >
+                     <option value="all">All Appointments</option>
+                     {user?.role === 'DOCTOR' ? (
+                       <>
+                         <option value="waiting">Waiting (No Vitals)</option>
+                         <option value="ready">Ready (Vitals Recorded)</option>
+                       </>
+                     ) : (
+                       <>
+                         <option value="today">Today</option>
+                         <option value="upcoming">Upcoming</option>
+                         <option value="past">Past History</option>
+                       </>
+                     )}
+                 </select>
+                 <ChevronDown size={14} className="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-dark pointer-events-none" />
+               </div>
+
+               <div className="relative shrink-0">
+                 <select 
+                     value={filterStatus}
+                     onChange={(e) => setFilterStatus(e.target.value as any)}
+                     className="bg-white dark:bg-dark-surface-secondary border border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary rounded-md pl-4 pr-10 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/20 transition-all font-bold appearance-none cursor-pointer shadow-sm hover:bg-surface-secondary dark:hover:bg-dark-surface-tertiary"
+                 >
+                     <option value="all">All Statuses</option>
+                     <option value="pending">Pending</option>
+                     <option value="confirmed">Confirmed</option>
+                     <option value="completed">Completed</option>
+                     <option value="cancelled">Cancelled</option>
+                     <option value="rejected">Rejected</option>
+                 </select>
+                 <ChevronDown size={14} className="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-dark pointer-events-none" />
+               </div>
              </div>
 
              {canBook && (
