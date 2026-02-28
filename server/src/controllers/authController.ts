@@ -172,21 +172,28 @@ export const getProfile = async (req: Request, res: Response) => {
   }
 };
 
-// Request password reset (OTP via SMS)
+// Forgot password
 export const forgotPassword = async (req: Request, res: Response) => {
   try {
     const { email } = req.body;
+    
     if (!email) {
       return res.status(400).json({ error: 'Email is required' });
     }
 
-    const user = await prisma.user.findUnique({ where: { email } });
+    const cleanEmail = email.trim().toLowerCase();
+
+    // Find user by email only, since it's unique across all roles
+    const user = await prisma.user.findUnique({
+      where: { email: cleanEmail }
+    });
+
     if (!user) {
-      // For security, don't reveal if user exists
-      return res.json({ message: 'If an account with that email exists, we have sent a reset code.' });
+      // Simulate success for security
+      return res.json({ message: 'If an account with that email exists, we have sent a reset code via SMS.' });
     }
 
-    // Generate 6-digit OTP
+    // Generate 6 digit OTP
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
     const expiry = new Date();
     expiry.setMinutes(expiry.getMinutes() + 5);
@@ -221,9 +228,11 @@ export const verifyOtp = async (req: Request, res: Response) => {
       return res.status(400).json({ error: 'Code is required' });
     }
 
-    let whereClause: any = { resetOtp: token };
+    const cleanToken = token.toString().trim();
+    let whereClause: any = { resetOtp: cleanToken };
+    
     if (email) {
-       whereClause.email = email;
+       whereClause.email = email.trim().toLowerCase();
     }
 
     const user = await prisma.user.findFirst({
@@ -254,10 +263,12 @@ export const resetPassword = async (req: Request, res: Response) => {
       return res.status(400).json({ error: 'Code and new password are required' });
     }
 
+    const cleanToken = token.toString().trim();
+
     // Find user with this exact OTP (and optional email) which has not expired
-    let whereClause: any = { resetOtp: token };
+    let whereClause: any = { resetOtp: cleanToken };
     if (email) {
-       whereClause.email = email;
+       whereClause.email = email.trim().toLowerCase();
     }
 
     const user = await prisma.user.findFirst({
